@@ -1,0 +1,67 @@
+{
+  "$type": "Sungero.Metadata.EntityMetadata, Sungero.Metadata",
+  "NameGuid": "b8a4c955-387e-4a23-ae3d-cbbc95cc71e1",
+  "Name": "PreparedSolutionRealizationPlace",
+  "AccessRightsMode": "NoRight",
+  "BaseGuid": "a3d38bf5-0414-41f6-bb33-a4621d2e5a60",
+  "CanBeNavigationPropertyType": true,
+  "Code": "RealizePlace",
+  "ExtraSearchProperties": [],
+  "IsChildEntity": true,
+  "Properties": [
+    {
+      "$type": "Sungero.Metadata.NavigationPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "0b51d57f-a892-4d22-a5c4-65deccce4ac0",
+      "Name": "PreparedSolution",
+      "CanBeSearch": false,
+      "Code": "PreparedSoluti",
+      "EntityGuid": "ad7ae7bb-3075-4d95-9b92-f2de112ca2d6",
+      "IsReferenceToRootEntity": true,
+      "IsShowedInList": false
+    },
+    {
+      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "c513fa9a-24b5-4644-a0b8-c51a48b1b8cb",
+      "Name": "CounterParty",
+      "CanBeSearch": false,
+      "Code": "CounterParty",
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+      "PreviousPropertyGuid": "0b51d57f-a892-4d22-a5c4-65deccce4ac0"
+    },
+    {
+      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "a0fcbf26-ee46-4718-919a-adcacd9728c5",
+      "Name": "Note",
+      "CanBeSearch": false,
+      "Code": "Note",
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+      "PreviousPropertyGuid": "c513fa9a-24b5-4644-a0b8-c51a48b1b8cb"
+    }
+  ],
+  "PublicStructures": [],
+  "RibbonCardMetadata": {
+    "NameGuid": "7fab01a9-0bd3-412c-9b36-d31ec9056068",
+    "Name": "RibbonCard",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": [],
+    "RibbonKind": "Card"
+  },
+  "RibbonCollectionMetadata": {
+    "NameGuid": "f4213a33-ae01-4af6-932a-89c2de968718",
+    "Name": "RibbonCollection",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": []
+  },
+  "Versions": [
+    {
+      "Type": "EntityMetadata",
+      "Number": 11
+    }
+  ]
+}

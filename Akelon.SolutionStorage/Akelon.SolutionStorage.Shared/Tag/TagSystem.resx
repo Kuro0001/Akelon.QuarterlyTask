@@ -62,48 +62,12 @@
     <value>Name</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Prepared solution</value>
+    <value>Тэг</value>
   </data>
   <data name="AccusativeDisplayName" xml:space="preserve">
-    <value>Prepared solution</value>
+    <value>Тэг</value>
   </data>
   <data name="CollectionDisplayName" xml:space="preserve">
-    <value>Prepared solution</value>
-  </data>
-  <data name="Property_Url" xml:space="preserve">
-    <value>Solution url</value>
-  </data>
-  <data name="Property_RealizationPlace" xml:space="preserve">
-    <value>Realization place</value>
-  </data>
-  <data name="Property_Type" xml:space="preserve">
-    <value>Solution type</value>
-  </data>
-  <data name="Enum_Type_Incomplete" xml:space="preserve">
-    <value>Incomplete</value>
-  </data>
-  <data name="Enum_Type_Complete" xml:space="preserve">
-    <value>Complete</value>
-  </data>
-  <data name="Property_SolutionDocument" xml:space="preserve">
-    <value>Solution documents</value>
-  </data>
-  <data name="Property_Package" xml:space="preserve">
-    <value>Package</value>
-  </data>
-  <data name="Property_DirectumRXVersion" xml:space="preserve">
-    <value>Directum RX Version</value>
-  </data>
-  <data name="Property_Description" xml:space="preserve">
-    <value>Short descritpion</value>
-  </data>
-  <data name="Property_Responsible" xml:space="preserve">
-    <value>Responsible</value>
-  </data>
-  <data name="ControlGroup_bcf991a2776d4dd884d2fc155a283d60" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Property_AddTag" xml:space="preserve">
     <value>Тэги</value>
   </data>
 </root>

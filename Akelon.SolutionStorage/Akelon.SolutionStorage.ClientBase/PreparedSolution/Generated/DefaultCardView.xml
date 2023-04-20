@@ -1,14 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
   <ViewName>Default</ViewName>
-  <Collection97a04ac31bf14969b0be7137dd125a10 FormGuid="e930611f-bba8-453b-9fb4-c801e32120f4">
+  <Collectiona41ee789f54547918ce365ac3c9ce078 FormGuid="e930611f-bba8-453b-9fb4-c801e32120f4">
     <XtraSerializer version="1.0" application="GridControl">
       <property name="#LayoutVersion" isnull="true" />
       <property name="$GridControl" iskey="true" value="GridControl">
         <property name="View" isnull="true" iskey="true">
           <property name="LinesPerRowMode">None</property>
           <property name="ColumnChooserState" isnull="true" iskey="true">
-            <property name="Location">304,-2</property>
+            <property name="Location">297,-2</property>
+            <property name="Size">220,250</property>
+          </property>
+          <property name="AllowMoveColumnToDropArea">false</property>
+          <property name="AllowColumnMoving">true</property>
+          <property name="AllowSorting">true</property>
+          <property name="ShowTotalSummary">false</property>
+          <property name="IsRowCellMenuEnabled">false</property>
+          <property name="ShowGroupPanel">false</property>
+          <property name="AutoWidth">false</property>
+          <property name="AllowGrouping">false</property>
+        </property>
+        <property name="TotalSummary" iskey="true" value="0" />
+        <property name="SortInfo" iskey="true" value="0" />
+        <property name="GroupSummary" iskey="true" value="0" />
+        <property name="GroupCount">0</property>
+        <property name="Columns" iskey="true" value="1">
+          <property name="Item1" isnull="true" iskey="true">
+            <property name="Visible">true</property>
+            <property name="Name">PreparedSolution_Package_PackageUrl</property>
+            <property name="FieldName">PackageUrl</property>
+            <property name="VisibleIndex">0</property>
+            <property name="Width">214</property>
+            <property name="ActualWidth">17*</property>
+          </property>
+        </property>
+        <property name="GroupSummarySortInfo" iskey="true" value="0" />
+      </property>
+    </XtraSerializer>
+  </Collectiona41ee789f54547918ce365ac3c9ce078>
+  <Collectionea5cf333bbc74b4e8cee9ba534e3d6e0 FormGuid="e930611f-bba8-453b-9fb4-c801e32120f4">
+    <XtraSerializer version="1.0" application="GridControl">
+      <property name="#LayoutVersion" isnull="true" />
+      <property name="$GridControl" iskey="true" value="GridControl">
+        <property name="View" isnull="true" iskey="true">
+          <property name="LinesPerRowMode">None</property>
+          <property name="ColumnChooserState" isnull="true" iskey="true">
+            <property name="Location">295,-2</property>
             <property name="Size">220,250</property>
           </property>
           <property name="AllowMoveColumnToDropArea">false</property>
@@ -30,28 +67,30 @@
             <property name="Name">PreparedSolution_RealizationPlace_CounterParty</property>
             <property name="FieldName">CounterParty</property>
             <property name="VisibleIndex">0</property>
-            <property name="ActualWidth">NaN</property>
+            <property name="Width">227</property>
+            <property name="ActualWidth">18*</property>
           </property>
           <property name="Item2" isnull="true" iskey="true">
             <property name="Visible">true</property>
             <property name="Name">PreparedSolution_RealizationPlace_Note</property>
             <property name="FieldName">Note</property>
             <property name="VisibleIndex">1</property>
-            <property name="ActualWidth">NaN</property>
+            <property name="Width">252</property>
+            <property name="ActualWidth">20*</property>
           </property>
         </property>
         <property name="GroupSummarySortInfo" iskey="true" value="0" />
       </property>
     </XtraSerializer>
-  </Collection97a04ac31bf14969b0be7137dd125a10>
-  <Collectionb40d8f17a6904a9883f5edb50abc4b68 FormGuid="e930611f-bba8-453b-9fb4-c801e32120f4">
+  </Collectionea5cf333bbc74b4e8cee9ba534e3d6e0>
+  <Collection5cd2e284ef3c417892ab7f667322d97c FormGuid="e930611f-bba8-453b-9fb4-c801e32120f4">
     <XtraSerializer version="1.0" application="GridControl">
       <property name="#LayoutVersion" isnull="true" />
       <property name="$GridControl" iskey="true" value="GridControl">
         <property name="View" isnull="true" iskey="true">
           <property name="LinesPerRowMode">None</property>
           <property name="ColumnChooserState" isnull="true" iskey="true">
-            <property name="Location">269,-2</property>
+            <property name="Location">260,-2</property>
             <property name="Size">220,250</property>
           </property>
           <property name="AllowMoveColumnToDropArea">false</property>
@@ -73,11 +112,12 @@
             <property name="Name">PreparedSolution_SolutionDocument_DocumentUrl</property>
             <property name="FieldName">DocumentUrl</property>
             <property name="VisibleIndex">0</property>
-            <property name="ActualWidth">NaN</property>
+            <property name="Width">290</property>
+            <property name="ActualWidth">23*</property>
           </property>
         </property>
         <property name="GroupSummarySortInfo" iskey="true" value="0" />
       </property>
     </XtraSerializer>
-  </Collectionb40d8f17a6904a9883f5edb50abc4b68>
+  </Collection5cd2e284ef3c417892ab7f667322d97c>
 </settings>

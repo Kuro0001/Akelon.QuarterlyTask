@@ -71,7 +71,7 @@
     <value>Prepared solution</value>
   </data>
   <data name="Property_Url" xml:space="preserve">
-    <value>Url</value>
+    <value>Solution url</value>
   </data>
   <data name="Property_RealizationPlace" xml:space="preserve">
     <value>Realization place</value>

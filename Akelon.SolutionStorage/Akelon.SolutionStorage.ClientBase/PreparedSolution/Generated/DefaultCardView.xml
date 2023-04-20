@@ -8,7 +8,7 @@
         <property name="View" isnull="true" iskey="true">
           <property name="LinesPerRowMode">None</property>
           <property name="ColumnChooserState" isnull="true" iskey="true">
-            <property name="Location">297,-2</property>
+            <property name="Location">297,-15</property>
             <property name="Size">220,250</property>
           </property>
           <property name="AllowMoveColumnToDropArea">false</property>

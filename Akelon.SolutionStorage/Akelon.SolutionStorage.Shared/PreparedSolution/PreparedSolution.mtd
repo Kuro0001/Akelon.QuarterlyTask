@@ -229,9 +229,8 @@
     {
       "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
       "NameGuid": "9806b16f-913f-4b23-8a33-f9b31cdab6e2",
-      "Name": "Url",
-      "Code": "Url",
-      "IsRequired": true,
+      "Name": "CodeExampleUrl",
+      "Code": "CodeExampleUrl",
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "e249fb04-64bd-40c1-8f42-ba127118a011"
     },

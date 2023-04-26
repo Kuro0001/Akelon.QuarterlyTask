@@ -70,8 +70,8 @@
   <data name="CollectionDisplayName" xml:space="preserve">
     <value>Готовые решения</value>
   </data>
-  <data name="Property_Url" xml:space="preserve">
-    <value>Url решения</value>
+  <data name="Property_CodeExampleUrl" xml:space="preserve">
+    <value>Url примера кода</value>
   </data>
   <data name="Property_RealizationPlace" xml:space="preserve">
     <value>Места реализации</value>

@@ -70,8 +70,8 @@
   <data name="CollectionDisplayName" xml:space="preserve">
     <value>Prepared solution</value>
   </data>
-  <data name="Property_Url" xml:space="preserve">
-    <value>Solution url</value>
+  <data name="Property_CodeExampleUrl" xml:space="preserve">
+    <value>Code example url</value>
   </data>
   <data name="Property_RealizationPlace" xml:space="preserve">
     <value>Realization place</value>

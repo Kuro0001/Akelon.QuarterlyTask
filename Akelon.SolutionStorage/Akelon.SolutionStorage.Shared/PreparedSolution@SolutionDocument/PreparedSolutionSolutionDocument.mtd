@@ -22,9 +22,9 @@
     {
       "$type": "Sungero.Metadata.NavigationPropertyMetadata, Sungero.Metadata",
       "NameGuid": "42e11977-bc72-4051-9273-4740fa9c9371",
-      "Name": "DocumentUrl",
+      "Name": "Document",
       "CanBeSearch": false,
-      "Code": "DocumentUrl",
+      "Code": "Document",
       "EntityGuid": "030d8d67-9b94-4f0d-bcc6-691016eb70f3",
       "FlatListInStandaloneLookup": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",

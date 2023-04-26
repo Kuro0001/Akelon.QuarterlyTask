@@ -61,7 +61,13 @@
   <data name="Property_Name" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="Property_Note" xml:space="preserve">
-    <value>Note</value>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Тэг</value>
+  </data>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Тэг</value>
+  </data>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Тэги</value>
   </data>
 </root>

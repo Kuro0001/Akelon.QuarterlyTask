@@ -12,7 +12,7 @@ namespace Akelon.SolutionStorage
 
     public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)
     {
-      if (_obj.RealizationPlace.Any(rp => rp.CounterParty == null && string.IsNullOrEmpty(rp.Note)))
+      if (_obj.RealizationPlace.Any(rp => rp.Name == null && string.IsNullOrEmpty(rp.Note)))
         e.AddError(Akelon.SolutionStorage.PreparedSolutions.Resources.EmptyRowRealizationPlace);
     }
   }

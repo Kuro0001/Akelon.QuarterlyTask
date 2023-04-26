@@ -1,17 +1,17 @@
 {
   "$type": "Sungero.Metadata.EntityMetadata, Sungero.Metadata",
-  "NameGuid": "7db48fd0-a517-44e0-a104-0ff73e0fa561",
-  "Name": "PreparedSolutionSolutionDocument",
+  "NameGuid": "85e57b91-7511-4a3e-bac9-2739b4fc07ff",
+  "Name": "PreparedSolutionAddTag",
   "AccessRightsMode": "NoRight",
   "BaseGuid": "a3d38bf5-0414-41f6-bb33-a4621d2e5a60",
   "CanBeNavigationPropertyType": true,
-  "Code": "SolDoc",
+  "Code": "PreparedSolut1",
   "ExtraSearchProperties": [],
   "IsChildEntity": true,
   "Properties": [
     {
       "$type": "Sungero.Metadata.NavigationPropertyMetadata, Sungero.Metadata",
-      "NameGuid": "2ee4ab13-d0e1-4639-8f19-1b7a4f96fe3d",
+      "NameGuid": "9f2b7afa-5c9f-43a9-b79e-53a92251824a",
       "Name": "PreparedSolution",
       "CanBeSearch": false,
       "Code": "PreparedSoluti",
@@ -21,19 +21,19 @@
     },
     {
       "$type": "Sungero.Metadata.NavigationPropertyMetadata, Sungero.Metadata",
-      "NameGuid": "42e11977-bc72-4051-9273-4740fa9c9371",
-      "Name": "Document",
+      "NameGuid": "f610c58d-0529-4ac7-8b3c-1f415185853c",
+      "Name": "TagName",
       "CanBeSearch": false,
-      "Code": "Document",
-      "EntityGuid": "030d8d67-9b94-4f0d-bcc6-691016eb70f3",
+      "Code": "TagName",
+      "EntityGuid": "28b7b467-51ed-451c-8923-071822d4ff55",
       "FlatListInStandaloneLookup": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
-      "PreviousPropertyGuid": "2ee4ab13-d0e1-4639-8f19-1b7a4f96fe3d"
+      "PreviousPropertyGuid": "9f2b7afa-5c9f-43a9-b79e-53a92251824a"
     }
   ],
   "PublicStructures": [],
   "RibbonCardMetadata": {
-    "NameGuid": "7e1c36e7-e689-4fc0-8638-989fbe57a9c0",
+    "NameGuid": "05f68008-0ba9-4fc3-b5da-6af70ca21607",
     "Name": "RibbonCard",
     "Categories": [],
     "Elements": [],
@@ -43,7 +43,7 @@
     "RibbonKind": "Card"
   },
   "RibbonCollectionMetadata": {
-    "NameGuid": "32b9ec98-21c1-48f9-8e31-077e59046688",
+    "NameGuid": "63e04602-9817-449e-bf13-deaa2753e545",
     "Name": "RibbonCollection",
     "Categories": [],
     "Elements": [],

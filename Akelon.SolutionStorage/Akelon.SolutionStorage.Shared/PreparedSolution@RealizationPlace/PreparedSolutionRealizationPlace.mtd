@@ -22,9 +22,9 @@
     {
       "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
       "NameGuid": "c513fa9a-24b5-4644-a0b8-c51a48b1b8cb",
-      "Name": "CounterParty",
+      "Name": "Name",
       "CanBeSearch": false,
-      "Code": "CounterParty",
+      "Code": "Name",
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "0b51d57f-a892-4d22-a5c4-65deccce4ac0"
     },

@@ -95,7 +95,7 @@
     <value>Версия Directum RX</value>
   </data>
   <data name="Property_Description" xml:space="preserve">
-    <value>Краткое описание</value>
+    <value>Описание</value>
   </data>
   <data name="Property_Responsible" xml:space="preserve">
     <value>Ответвственный</value>

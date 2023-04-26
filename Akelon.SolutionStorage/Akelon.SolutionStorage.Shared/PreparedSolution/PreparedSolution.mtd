@@ -206,7 +206,8 @@
     }
   ],
   "HandledEvents": [
-    "BeforeSaveServer"
+    "BeforeSaveServer",
+    "ShowingClient"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "SolutionStoragePreparedSolution",
@@ -259,6 +260,9 @@
           "Name": "Complete",
           "Code": "Complete"
         }
+      ],
+      "HandledEvents": [
+        "ValueInputClient"
       ],
       "IsRequired": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToEnumerationBinder",

@@ -25,7 +25,7 @@
       "Name": "Package",
       "CanBeSearch": false,
       "Code": "Package",
-      "EntityGuid": "030d8d67-9b94-4f0d-bcc6-691016eb70f3",
+      "EntityGuid": "e5cff8ee-aecc-4ec7-86a6-6cd40c19874c",
       "FlatListInStandaloneLookup": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
       "PreviousPropertyGuid": "2f23e996-7f9f-4234-86a2-f3f3ce01944c"

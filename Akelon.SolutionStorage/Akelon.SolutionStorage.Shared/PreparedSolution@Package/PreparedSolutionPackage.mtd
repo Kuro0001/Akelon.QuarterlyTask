@@ -22,9 +22,9 @@
     {
       "$type": "Sungero.Metadata.NavigationPropertyMetadata, Sungero.Metadata",
       "NameGuid": "1854d07b-e092-4f2d-bea3-3e7fcd450a5a",
-      "Name": "PackageUrl",
+      "Name": "Package",
       "CanBeSearch": false,
-      "Code": "PackageUrl",
+      "Code": "Package",
       "EntityGuid": "030d8d67-9b94-4f0d-bcc6-691016eb70f3",
       "FlatListInStandaloneLookup": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",

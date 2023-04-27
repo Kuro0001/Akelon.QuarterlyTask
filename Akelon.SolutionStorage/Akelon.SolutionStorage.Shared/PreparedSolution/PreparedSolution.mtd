@@ -207,7 +207,8 @@
   ],
   "HandledEvents": [
     "BeforeSaveServer",
-    "ShowingClient"
+    "ShowingClient",
+    "CreatedServer"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "SolutionStoragePreparedSolution",
@@ -247,8 +248,8 @@
     {
       "$type": "Sungero.Metadata.EnumPropertyMetadata, Sungero.Metadata",
       "NameGuid": "2668019c-3133-4772-9e12-fd067960d77b",
-      "Name": "Type",
-      "Code": "Type",
+      "Name": "SolutionType",
+      "Code": "SolutionType",
       "DirectValues": [
         {
           "NameGuid": "8e7180ae-1aee-42ba-a863-848c512fd9be",

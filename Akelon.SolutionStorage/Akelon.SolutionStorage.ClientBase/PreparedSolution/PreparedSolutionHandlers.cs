@@ -12,14 +12,14 @@ namespace Akelon.SolutionStorage
 
     public override void Showing(Sungero.Presentation.FormShowingEventArgs e)
     {
-       
+       // Присвоить начальное значение полю "Тип решения"
     }
 
-    public virtual void TypeValueInput(Sungero.Presentation.EnumerationValueInputEventArgs e)
+    public virtual void SolutionTypeValueInput(Sungero.Presentation.EnumerationValueInputEventArgs e)
     {
       if (e.NewValue != null && e.NewValue != e.OldValue)
       {
-        if (e.NewValue.Equals(PreparedSolution.Type.Complete))
+        if (e.NewValue.Equals(PreparedSolution.SolutionType.Complete))
         {
           _obj.CodeExampleUrl = null;
           _obj.State.Properties.CodeExampleUrl.IsVisible = false;
@@ -27,7 +27,7 @@ namespace Akelon.SolutionStorage
           _obj.State.Properties.SolutionDocument.IsVisible = true;
           _obj.State.Properties.Package.IsVisible = true;
         }
-        else if (e.NewValue.Equals(PreparedSolution.Type.Incomplete))
+        else if (e.NewValue.Equals(PreparedSolution.SolutionType.Incomplete))
         {
           _obj.State.Properties.CodeExampleUrl.IsVisible = true;
           

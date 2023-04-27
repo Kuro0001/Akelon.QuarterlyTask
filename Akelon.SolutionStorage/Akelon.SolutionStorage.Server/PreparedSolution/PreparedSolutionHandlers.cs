@@ -10,6 +10,11 @@ namespace Akelon.SolutionStorage
   partial class PreparedSolutionServerHandlers
   {
 
+    public override void Created(Sungero.Domain.CreatedEventArgs e)
+    {
+      _obj.SolutionType = PreparedSolution.SolutionType.Incomplete;
+    }
+
     public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)
     {
       if (_obj.RealizationPlace.Any(rp => rp.Name == null && string.IsNullOrEmpty(rp.Note)))

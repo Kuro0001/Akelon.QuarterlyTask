@@ -208,7 +208,8 @@
   "HandledEvents": [
     "BeforeSaveServer",
     "ShowingClient",
-    "CreatedServer"
+    "CreatedServer",
+    "RefreshClient"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "SolutionStoragePreparedSolution",

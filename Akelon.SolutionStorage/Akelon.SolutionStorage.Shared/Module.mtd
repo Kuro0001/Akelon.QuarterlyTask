@@ -11,18 +11,54 @@
   "CompanyCode": "Akelon",
   "Cover": {
     "NameGuid": "7b53991a-b0b2-4a47-a92a-34dc45e1a0a7",
-    "Actions": [],
+    "Actions": [
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "089ff697-d4fc-43ad-bb3c-a3da50ae246f",
+        "Name": "OpenPreparedSolutionsList",
+        "EntityTypeId": "ad7ae7bb-3075-4d95-9b92-f2de112ca2d6",
+        "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "47bd6f9c-17a1-4607-ab6c-c4416736f63a",
+        "Name": "OpenTagsList",
+        "EntityTypeId": "28b7b467-51ed-451c-8923-071822d4ff55",
+        "GroupId": "c805396e-5658-4347-b555-d4efe880fc62"
+      }
+    ],
     "Background": null,
     "Footer": {
       "NameGuid": "8684c483-3d40-4950-bc35-a0a8db1a2118",
       "BackgroundPosition": "Stretch"
     },
-    "Groups": [],
+    "Groups": [
+      {
+        "NameGuid": "1c36d387-e25f-4589-b71e-aa0959280ca9",
+        "Name": "Solutions",
+        "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconGroup_1c36d387e25f4589b71eaa0959280ca9.png",
+        "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
+      },
+      {
+        "NameGuid": "c805396e-5658-4347-b555-d4efe880fc62",
+        "Name": "Tags",
+        "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconTags_c805396e56584347b555d4efe880fc62.png",
+        "PreviousItemGuid": "1c36d387-e25f-4589-b71e-aa0959280ca9",
+        "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
+      }
+    ],
     "Header": {
       "NameGuid": "86d43b19-9832-4564-80b4-6412e185f324",
       "BackgroundPosition": "Stretch"
     },
-    "Tabs": []
+    "Tabs": [
+      {
+        "NameGuid": "41ed9d2a-cd9d-452a-80f3-085ca6752039",
+        "Name": "Main"
+      }
+    ]
   },
   "Dependencies": [
     {
@@ -30,6 +66,16 @@
       "IsSolutionModule": true,
       "MaxVersion": "",
       "MinVersion": ""
+    },
+    {
+      "Id": "d534e107-a54d-48ec-85ff-bc44d731a82f",
+      "MaxVersion": "",
+      "MinVersion": "4.6.37.0"
+    },
+    {
+      "Id": "ec7b606a-21ee-4f16-aba8-ab8c2af76d12",
+      "MaxVersion": "",
+      "MinVersion": "0.0.1.0"
     }
   ],
   "ExplorerTreeOrder": [

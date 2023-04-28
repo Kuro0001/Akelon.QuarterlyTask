@@ -190,7 +190,7 @@
           "Name": "AddTag",
           "ColumnNumber": 0,
           "ColumnSpan": 2,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.MultiSelectFromListEditorToCollectionBinder",
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.MultiLikeEditorToCollectionBinder",
           "ParentGuid": "bcf991a2-776d-4dd8-84d2-fc155a283d60",
           "PropertyGuid": "d4bbd7ef-0d31-42c5-b02b-42da43ead31e",
           "RowNumber": 5,
@@ -199,6 +199,10 @@
             {
               "Name": "NavigationPropertyGuid",
               "Value": "f610c58d-0529-4ac7-8b3c-1f415185853c"
+            },
+            {
+              "Name": "IsDuplicatesAllowed",
+              "Value": false
             }
           ]
         }
@@ -208,7 +212,8 @@
   "HandledEvents": [
     "BeforeSaveServer",
     "ShowingClient",
-    "CreatedServer"
+    "CreatedServer",
+    "RefreshClient"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "SolutionStoragePreparedSolution",

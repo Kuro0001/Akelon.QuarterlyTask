@@ -8,7 +8,7 @@
         <property name="View" isnull="true" iskey="true">
           <property name="LinesPerRowMode">None</property>
           <property name="ColumnChooserState" isnull="true" iskey="true">
-            <property name="Location">297,-15</property>
+            <property name="Location">297,-229.2</property>
             <property name="Size">220,250</property>
           </property>
           <property name="AllowMoveColumnToDropArea">false</property>
@@ -21,22 +21,16 @@
           <property name="AllowGrouping">false</property>
         </property>
         <property name="TotalSummary" iskey="true" value="0" />
-        <property name="SortInfo" iskey="true" value="1">
-          <property name="Item1" isnull="true" iskey="true">
-            <property name="FieldName">PackageUrl</property>
-            <property name="SortOrder">Ascending</property>
-          </property>
-        </property>
+        <property name="SortInfo" iskey="true" value="0" />
         <property name="GroupSummary" iskey="true" value="0" />
         <property name="GroupCount">0</property>
         <property name="Columns" iskey="true" value="1">
           <property name="Item1" isnull="true" iskey="true">
             <property name="Visible">true</property>
-            <property name="Name">PreparedSolution_Package_PackageUrl</property>
-            <property name="FieldName">PackageUrl</property>
+            <property name="Name">PreparedSolution_Package_Package</property>
+            <property name="FieldName">Package</property>
             <property name="VisibleIndex">0</property>
-            <property name="Width">214</property>
-            <property name="ActualWidth">17*</property>
+            <property name="ActualWidth">NaN</property>
           </property>
         </property>
         <property name="GroupSummarySortInfo" iskey="true" value="0" />
@@ -69,18 +63,17 @@
         <property name="Columns" iskey="true" value="2">
           <property name="Item1" isnull="true" iskey="true">
             <property name="Visible">true</property>
-            <property name="Name">PreparedSolution_RealizationPlace_CounterParty</property>
-            <property name="FieldName">CounterParty</property>
+            <property name="Name">PreparedSolution_RealizationPlace_Name</property>
+            <property name="FieldName">Name</property>
             <property name="VisibleIndex">0</property>
-            <property name="Width">227</property>
-            <property name="ActualWidth">18*</property>
+            <property name="ActualWidth">NaN</property>
           </property>
           <property name="Item2" isnull="true" iskey="true">
             <property name="Visible">true</property>
             <property name="Name">PreparedSolution_RealizationPlace_Note</property>
             <property name="FieldName">Note</property>
             <property name="VisibleIndex">1</property>
-            <property name="Width">252</property>
+            <property name="Width">154</property>
             <property name="ActualWidth">20*</property>
           </property>
         </property>
@@ -95,7 +88,7 @@
         <property name="View" isnull="true" iskey="true">
           <property name="LinesPerRowMode">None</property>
           <property name="ColumnChooserState" isnull="true" iskey="true">
-            <property name="Location">260,-2</property>
+            <property name="Location">260,-107.6</property>
             <property name="Size">220,250</property>
           </property>
           <property name="AllowMoveColumnToDropArea">false</property>
@@ -108,22 +101,16 @@
           <property name="AllowGrouping">false</property>
         </property>
         <property name="TotalSummary" iskey="true" value="0" />
-        <property name="SortInfo" iskey="true" value="1">
-          <property name="Item1" isnull="true" iskey="true">
-            <property name="FieldName">DocumentUrl</property>
-            <property name="SortOrder">Ascending</property>
-          </property>
-        </property>
+        <property name="SortInfo" iskey="true" value="0" />
         <property name="GroupSummary" iskey="true" value="0" />
         <property name="GroupCount">0</property>
         <property name="Columns" iskey="true" value="1">
           <property name="Item1" isnull="true" iskey="true">
             <property name="Visible">true</property>
-            <property name="Name">PreparedSolution_SolutionDocument_DocumentUrl</property>
-            <property name="FieldName">DocumentUrl</property>
+            <property name="Name">PreparedSolution_SolutionDocument_Document</property>
+            <property name="FieldName">Document</property>
             <property name="VisibleIndex">0</property>
-            <property name="Width">290</property>
-            <property name="ActualWidth">23*</property>
+            <property name="ActualWidth">NaN</property>
           </property>
         </property>
         <property name="GroupSummarySortInfo" iskey="true" value="0" />

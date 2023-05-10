@@ -20,6 +20,7 @@ namespace Akelon.SolutionStorage.Client
       //if (solutionType.Equals(PreparedSolution.SolutionType.Complete))
       {
         _obj.CodeExampleUrl = null;
+        // Toggle
         _obj.State.Properties.CodeExampleUrl.IsVisible = false;
         
         _obj.State.Properties.SolutionDocument.IsVisible = true;

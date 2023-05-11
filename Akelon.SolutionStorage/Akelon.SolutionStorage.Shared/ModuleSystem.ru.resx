@@ -61,4 +61,16 @@
   <data name="DisplayName" xml:space="preserve">
     <value>Хранилище решений</value>
   </data>
+  <data name="CoverTab_Main" xml:space="preserve">
+    <value>Готовые решения</value>
+  </data>
+  <data name="CoverAction_OpenPreparedSolutionsList" xml:space="preserve">
+    <value>Готовые решения</value>
+  </data>
+  <data name="CoverAction_OpenTagsList" xml:space="preserve">
+    <value>Теги</value>
+  </data>
+  <data name="CoverTitle" xml:space="preserve">
+    <value>Хранилище решений</value>
+  </data>
 </root>

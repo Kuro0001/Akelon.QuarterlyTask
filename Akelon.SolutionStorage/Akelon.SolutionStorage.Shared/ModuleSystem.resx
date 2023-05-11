@@ -62,6 +62,33 @@
     <value>Solution storage</value>
   </data>
   <data name="CoverTitle" xml:space="preserve">
-    <value>SolutionStorage</value>
+    <value>Solution storage</value>
+  </data>
+  <data name="CoverTab_Main" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="CoverGroup_Solutions" xml:space="preserve">
+    <value>Solutions</value>
+  </data>
+  <data name="CoverDescription_OpenPreparedSolutionsList" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CoverAction_OpenPreparedSolutionsList" xml:space="preserve">
+    <value>Prepared solutions</value>
+  </data>
+  <data name="CoverAction_OpenTagsList" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="CoverDescription_OpenTagsList" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CoverGroup_Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="CoverDescription" xml:space="preserve">
+    <value>Модуль предназначен для хранения готовых решений компании</value>
+  </data>
+  <data name="CoverFooter" xml:space="preserve">
+    <value>@ 2023 Компания "ООО Акелон"</value>
   </data>
 </root>

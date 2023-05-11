@@ -10,35 +10,22 @@ namespace Akelon.SolutionStorage
   partial class PreparedSolutionClientHandlers
   {
 
-    public override void Showing(Sungero.Presentation.FormShowingEventArgs e)
+    public override void Refresh(Sungero.Presentation.FormRefreshEventArgs e)
     {
-       
+      SolutionStorage.Functions.PreparedSolution.SetFieldsVisibilityWithSolutionType(_obj, _obj.SolutionType);
     }
 
-    public virtual void TypeValueInput(Sungero.Presentation.EnumerationValueInputEventArgs e)
+    public override void Showing(Sungero.Presentation.FormShowingEventArgs e)
+    {
+       SolutionStorage.Functions.PreparedSolution.SetFieldsVisibilityWithSolutionType(_obj, _obj.SolutionType);
+    }
+
+    public virtual void SolutionTypeValueInput(Sungero.Presentation.EnumerationValueInputEventArgs e)
     {
       if (e.NewValue != null && e.NewValue != e.OldValue)
       {
-        if (e.NewValue.Equals(PreparedSolution.Type.Complete))
-        {
-          _obj.CodeExampleUrl = null;
-          _obj.State.Properties.CodeExampleUrl.IsVisible = false;
-          
-          _obj.State.Properties.SolutionDocument.IsVisible = true;
-          _obj.State.Properties.Package.IsVisible = true;
-        }
-        else if (e.NewValue.Equals(PreparedSolution.Type.Incomplete))
-        {
-          _obj.State.Properties.CodeExampleUrl.IsVisible = true;
-          
-          _obj.SolutionDocument.Clear();
-          _obj.Package.Clear();
-          
-          _obj.State.Properties.SolutionDocument.IsVisible = false;
-          _obj.State.Properties.Package.IsVisible = false;
-        }
+        SolutionStorage.Functions.PreparedSolution.SetFieldsVisibilityWithSolutionType(_obj, e.NewValue);
       }
     }
-
   }
 }

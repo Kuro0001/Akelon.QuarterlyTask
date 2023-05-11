@@ -25,6 +25,14 @@
         "Name": "OpenTagsList",
         "EntityTypeId": "28b7b467-51ed-451c-8923-071822d4ff55",
         "GroupId": "c805396e-5658-4347-b555-d4efe880fc62"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "50bb97cf-b363-4c70-95d2-c48d707d176e",
+        "Name": "CreateSolutionPackageAction",
+        "EntityTypeId": "e5cff8ee-aecc-4ec7-86a6-6cd40c19874c",
+        "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9",
+        "PreviousItemGuid": "089ff697-d4fc-43ad-bb3c-a3da50ae246f"
       }
     ],
     "Background": null,

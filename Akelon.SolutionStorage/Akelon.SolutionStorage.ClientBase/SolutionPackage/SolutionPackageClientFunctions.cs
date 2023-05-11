@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -9,6 +9,17 @@ namespace Akelon.SolutionStorage.Client
 {
   partial class SolutionPackageFunctions
   {
+
+    /// <summary>
+    /// 
+    /// </summary>   
+    public bool CheckZipInput(byte[] file)
+    {
+      if (file != null)
+        return true;
+      
+      return false;
+    }
 
   }
 }

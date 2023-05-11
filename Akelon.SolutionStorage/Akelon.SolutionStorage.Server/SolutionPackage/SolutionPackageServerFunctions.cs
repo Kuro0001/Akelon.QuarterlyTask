@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -9,6 +9,14 @@ namespace Akelon.SolutionStorage.Server
 {
   partial class SolutionPackageFunctions
   {
+
+    /// <summary>
+    /// 
+    /// </summary>       
+    public void Function()
+    {
+      
+    }
 
   }
 }

@@ -73,4 +73,7 @@
   <data name="CoverTitle" xml:space="preserve">
     <value>Хранилище решений</value>
   </data>
+  <data name="CoverAction_CreateSolutionPackageAction" xml:space="preserve">
+    <value>Создать пакет решения</value>
+  </data>
 </root>

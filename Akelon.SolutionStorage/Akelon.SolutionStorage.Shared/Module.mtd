@@ -103,8 +103,61 @@
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Akelon.SolutionStorage",
+  "IsolatedAreas": [
+    {
+      "NameGuid": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
+      "Name": "ZipHandler"
+    }
+  ],
   "IsolatedAssemblyName": "Akelon.SolutionStorage.Isolated",
+  "IsolatedFunctions": [
+    {
+      "NameGuid": "b80c6f8e-a726-4950-9500-f7bd975f0910",
+      "Name": "CheckZipInput",
+      "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
+      "Parameters": [
+        {
+          "Name": "content",
+          "ParameterType": "System.IO.MemoryStream",
+          "ParameterTypeFullName": "System.IO.MemoryStream"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean"
+    },
+    {
+      "NameGuid": "5bba91e9-d6ee-40fe-b2c7-2b9a7d33837e",
+      "Name": "CreateZipFromFiles",
+      "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
+      "Parameters": [
+        {
+          "Name": "fileDat",
+          "ParameterType": "System.IO.MemoryStream",
+          "ParameterTypeFullName": "System.IO.MemoryStream"
+        },
+        {
+          "Name": "fileXml",
+          "ParameterType": "System.IO.MemoryStream",
+          "ParameterTypeFullName": "System.IO.MemoryStream"
+        }
+      ],
+      "ReturnType": "System.IO.MemoryStream",
+      "ReturnTypeFullName": "System.IO.MemoryStream"
+    }
+  ],
   "IsolatedNamespace": "Akelon.SolutionStorage.Isolated",
+  "Libraries": [
+    {
+      "NameGuid": "723f67b1-d03b-4ab6-a516-2306a82d6679",
+      "Name": "Compresion",
+      "Scope": "Server"
+    },
+    {
+      "NameGuid": "6bc9155b-9f68-46bb-8163-4a62a845aa11",
+      "Name": "ZipFile",
+      "Scope": "Server"
+    }
+  ],
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Akelon.SolutionStorage",

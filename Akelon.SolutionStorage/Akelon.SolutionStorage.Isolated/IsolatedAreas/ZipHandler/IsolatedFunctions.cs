@@ -19,9 +19,9 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <param name="fileXml">.xml файл</param>
     /// <returns>zip-файл</returns>
     [Public]
-    public System.IO.MemoryStream CreateZipFromFiles(System.IO.MemoryStream fileDat, System.IO.MemoryStream fileXml)
+    public string CreateZipFromFiles(string fileDat, string fileXml)
     {
-      var result;
+      var result = string.Empty;
       
       
       return result;
@@ -33,10 +33,10 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <param name="content">zip-файл</param>
     /// <returns>true - если в архиве два нужных файла, иначе - false</returns>
     [Public]
-    public bool CheckZipInput(System.IO.MemoryStream content)
+    public bool CheckZipInput(string content)
     {
-      ZipHelper.Action();
-      
+      if (ZipHelper.Action())
+        return true;
       return false;
     }
 

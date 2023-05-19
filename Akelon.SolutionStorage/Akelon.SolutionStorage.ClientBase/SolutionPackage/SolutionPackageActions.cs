@@ -21,7 +21,7 @@ namespace Akelon.SolutionStorage.Client
       file.MaxFileSize(500*1024*1024);
       if (fileDialog.Show() == DialogButtons.Ok)
       {
-        if (SolutionStorage.Functions.SolutionPackage.CheckZipInput(_obj, file.Value.Content))
+        if (SolutionStorage.Functions.SolutionPackage.CheckZipInput(_obj, Convert.ToBase64String(file.Value.Content)))
         {
           var fileContent = file.Value.Content;
           using (var memory = new System.IO.MemoryStream(fileContent))

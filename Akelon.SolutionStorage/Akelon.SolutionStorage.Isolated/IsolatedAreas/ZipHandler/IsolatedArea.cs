@@ -15,7 +15,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       
     }
     
-    public static void Action(){}
+    public static bool Action(){return true;}
   }
     
 }

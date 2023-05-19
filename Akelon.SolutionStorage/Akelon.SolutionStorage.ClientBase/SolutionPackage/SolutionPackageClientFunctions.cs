@@ -14,7 +14,7 @@ namespace Akelon.SolutionStorage.Client
     /// <summary>
     /// 
     /// </summary>   
-    public bool CheckZipInput(byte[] file)
+    public bool CheckZipInput(string file)
     {
       if (Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CheckZipInput(file))
         return true;

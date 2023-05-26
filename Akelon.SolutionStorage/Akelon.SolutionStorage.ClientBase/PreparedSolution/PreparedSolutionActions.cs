@@ -7,5 +7,19 @@ using Akelon.SolutionStorage.PreparedSolution;
 
 namespace Akelon.SolutionStorage.Client
 {
+  internal static class PreparedSolutionPackageStaticActions
+  {
+
+    public static bool CanCreatePackage(Sungero.Domain.Client.CanExecuteChildCollectionActionArgs e)
+    {
+      return true;
+    }
+
+    public static void CreatePackage(Sungero.Domain.Client.ExecuteChildCollectionActionArgs e)
+    {
+      
+    }
+  }
+
 
 }

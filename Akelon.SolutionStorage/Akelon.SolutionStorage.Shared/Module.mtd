@@ -20,6 +20,21 @@
         "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9"
       },
       {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "0ac6fead-45cf-458a-b327-39bbaecbc409",
+        "Name": "ShowCompleteSolution",
+        "FunctionName": "ShowCompleteSolution",
+        "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9",
+        "PreviousItemGuid": "089ff697-d4fc-43ad-bb3c-a3da50ae246f"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "42ccb29e-7a4b-42cf-99ec-8671876f9fbb",
+        "Name": "ShowSolutionPackages",
+        "EntityTypeId": "e5cff8ee-aecc-4ec7-86a6-6cd40c19874c",
+        "GroupId": "914c3054-6993-4d13-81de-ddf23500257e"
+      },
+      {
         "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
         "NameGuid": "47bd6f9c-17a1-4607-ab6c-c4416736f63a",
         "Name": "OpenTagsList",
@@ -27,12 +42,20 @@
         "GroupId": "c805396e-5658-4347-b555-d4efe880fc62"
       },
       {
-        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
-        "NameGuid": "50bb97cf-b363-4c70-95d2-c48d707d176e",
-        "Name": "ShowSolutionPackagesAction",
-        "EntityTypeId": "e5cff8ee-aecc-4ec7-86a6-6cd40c19874c",
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "4dd6032c-f009-4b01-bdb5-7f271c6791d0",
+        "Name": "ShowIncompleteSolution",
+        "FunctionName": "ShowIncompleteSolution",
         "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9",
-        "PreviousItemGuid": "089ff697-d4fc-43ad-bb3c-a3da50ae246f"
+        "PreviousItemGuid": "0ac6fead-45cf-458a-b327-39bbaecbc409"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "a13dbddd-c892-484c-bc87-be9e6fffd71f",
+        "Name": "CreateSolutionPackage",
+        "FunctionName": "Function1",
+        "GroupId": "914c3054-6993-4d13-81de-ddf23500257e",
+        "PreviousItemGuid": "42ccb29e-7a4b-42cf-99ec-8671876f9fbb"
       }
     ],
     "Background": null,
@@ -49,11 +72,18 @@
         "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
       },
       {
+        "NameGuid": "914c3054-6993-4d13-81de-ddf23500257e",
+        "Name": "Packages",
+        "BackgroundPosition": "Stretch",
+        "PreviousItemGuid": "1c36d387-e25f-4589-b71e-aa0959280ca9",
+        "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
+      },
+      {
         "NameGuid": "c805396e-5658-4347-b555-d4efe880fc62",
         "Name": "Tags",
         "BackgroundPosition": "Stretch",
         "IconName": "GroupIconTags_c805396e56584347b555d4efe880fc62.png",
-        "PreviousItemGuid": "1c36d387-e25f-4589-b71e-aa0959280ca9",
+        "PreviousItemGuid": "914c3054-6993-4d13-81de-ddf23500257e",
         "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
       }
     ],

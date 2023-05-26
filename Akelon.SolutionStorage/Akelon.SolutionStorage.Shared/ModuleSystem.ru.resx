@@ -64,7 +64,7 @@
   <data name="CoverTab_Main" xml:space="preserve">
     <value>Готовые решения</value>
   </data>
-  <data name="CoverAction_OpenPreparedSolutionsList" xml:space="preserve">
+  <data name="CoverAction_ShowPreparedSolutions" xml:space="preserve">
     <value>Готовые решения</value>
   </data>
   <data name="CoverAction_OpenTagsList" xml:space="preserve">
@@ -73,7 +73,7 @@
   <data name="CoverTitle" xml:space="preserve">
     <value>Хранилище решений</value>
   </data>
-  <data name="CoverAction_CreateSolutionPackageAction" xml:space="preserve">
-    <value>Создать пакет решения</value>
+  <data name="CoverAction_ShowSolutionPackagesAction" xml:space="preserve">
+    <value>Открыть пакеты решений</value>
   </data>
 </root>

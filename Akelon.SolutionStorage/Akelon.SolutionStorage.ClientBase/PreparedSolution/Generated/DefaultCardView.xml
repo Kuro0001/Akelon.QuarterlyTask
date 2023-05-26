@@ -73,7 +73,7 @@
             <property name="Name">PreparedSolution_RealizationPlace_Note</property>
             <property name="FieldName">Note</property>
             <property name="VisibleIndex">1</property>
-            <property name="Width">154</property>
+            <property name="Width">241</property>
             <property name="ActualWidth">20*</property>
           </property>
         </property>

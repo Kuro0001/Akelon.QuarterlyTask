@@ -10,16 +10,6 @@ namespace Akelon.SolutionStorage.Client
 {
   partial class SolutionPackageFunctions
   {
-
-    /// <summary>
-    /// 
-    /// </summary>   
-    public bool CheckZipInput(string file)
-    {
-      if (Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CheckZipInput(file))
-        return true;
-      return false;
-    }
-
+    
   }
 }

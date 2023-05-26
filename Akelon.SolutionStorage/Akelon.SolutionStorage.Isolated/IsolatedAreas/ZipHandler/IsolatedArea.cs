@@ -15,7 +15,10 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       
     }
     
-    public static bool Action(){return true;}
+    public static bool CheckZipInput()
+    {
+      return true;
+    }
   }
     
 }

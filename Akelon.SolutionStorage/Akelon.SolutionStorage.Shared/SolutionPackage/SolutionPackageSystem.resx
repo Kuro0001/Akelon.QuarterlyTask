@@ -70,4 +70,37 @@
   <data name="Property_Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="Action_CreateFromZip" xml:space="preserve">
+    <value>Create from zip</value>
+  </data>
+  <data name="Action_CreateFromZipDescription" xml:space="preserve">
+    <value>Создать решение из архива с файлами</value>
+  </data>
+  <data name="Action_CreateFromZipHint" xml:space="preserve">
+    <value>Создать решение из архива</value>
+  </data>
+  <data name="Action_CreateFromZipConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_CreateFromZipConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_CreateFromDatXml" xml:space="preserve">
+    <value>Create from files</value>
+  </data>
+  <data name="Action_CreateFromDatXmlDescription" xml:space="preserve">
+    <value>Создать решение из файлов .xml и .dat</value>
+  </data>
+  <data name="Action_CreateFromDatXmlHint" xml:space="preserve">
+    <value>Создать решение из файлов .xml и .dat</value>
+  </data>
+  <data name="Action_CreateFromDatXmlConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_CreateFromDatXmlConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ribbon_Creation_9dd8b40e1c084d33875ef7412f3fb581" xml:space="preserve">
+    <value>Creation</value>
+  </data>
 </root>

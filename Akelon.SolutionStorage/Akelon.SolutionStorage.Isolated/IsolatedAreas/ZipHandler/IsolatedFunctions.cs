@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO.Compression; //
+using System.IO.Compression;
 using Newtonsoft.Json;
 using Sungero.Core;
 using Akelon.SolutionStorage.Structures.Module;
@@ -23,7 +23,6 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     {
       var result = string.Empty;
       
-      
       return result;
     }
 
@@ -35,10 +34,9 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     [Public]
     public bool CheckZipInput(string content)
     {
-      if (ZipHelper.Action())
+      if (ZipHelper.CheckZipInput())
         return true;
       return false;
     }
-
   }
 }

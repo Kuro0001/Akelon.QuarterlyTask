@@ -70,10 +70,10 @@
   <data name="CoverGroup_Solutions" xml:space="preserve">
     <value>Solutions</value>
   </data>
-  <data name="CoverDescription_OpenPreparedSolutionsList" xml:space="preserve">
-    <value />
+  <data name="CoverDescription_ShowPreparedSolutions" xml:space="preserve">
+    <value>Выбрать готовое решение</value>
   </data>
-  <data name="CoverAction_OpenPreparedSolutionsList" xml:space="preserve">
+  <data name="CoverAction_ShowPreparedSolutions" xml:space="preserve">
     <value>Prepared solutions</value>
   </data>
   <data name="CoverAction_OpenTagsList" xml:space="preserve">
@@ -91,10 +91,10 @@
   <data name="CoverFooter" xml:space="preserve">
     <value>@ 2023 Компания "ООО Акелон"</value>
   </data>
-  <data name="CoverAction_CreateSolutionPackageAction" xml:space="preserve">
-    <value>Create solution package</value>
+  <data name="CoverAction_ShowSolutionPackagesAction" xml:space="preserve">
+    <value>Show solution packages</value>
   </data>
-  <data name="CoverDescription_CreateSolutionPackageAction" xml:space="preserve">
-    <value />
+  <data name="CoverDescription_ShowSolutionPackagesAction" xml:space="preserve">
+    <value>Выбрать или загрузить пакет с решением</value>
   </data>
 </root>

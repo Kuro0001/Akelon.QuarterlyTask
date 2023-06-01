@@ -83,13 +83,30 @@
   ],
   "PublicFunctions": [
     {
-      "Name": "CreateFileFromDatXml",
+      "Name": "CreatePackage",
+      "IsRemote": true,
+      "Placement": "Shared",
+      "ReturnType": "global::Akelon.SolutionStorage.ISolutionPackage",
+      "ReturnTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
+    },
+    {
+      "Name": "CreatePackageFromDatXml",
       "IsRemote": true,
       "Parameters": [
         {
           "Name": "solutionPackage",
           "ParameterType": "global::Akelon.SolutionStorage.ISolutionPackage",
           "ParameterTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "fileDat",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "fileXml",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
         }
       ],
       "Placement": "Shared",
@@ -97,26 +114,18 @@
       "ReturnTypeFullName": "System.Void"
     },
     {
-      "Name": "CreateFileFromZip",
+      "Name": "CreatePackageFromZip",
       "IsRemote": true,
       "Parameters": [
         {
           "Name": "solutionPackage",
           "ParameterType": "global::Akelon.SolutionStorage.ISolutionPackage",
           "ParameterTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
-        }
-      ],
-      "Placement": "Shared",
-      "ReturnType": "void",
-      "ReturnTypeFullName": "System.Void"
-    },
-    {
-      "Name": "CreateFromDatXml",
-      "Parameters": [
+        },
         {
-          "Name": "solutionPackage",
-          "ParameterType": "global::Akelon.SolutionStorage.ISolutionPackage",
-          "ParameterTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
+          "Name": "fileZip",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
         }
       ],
       "Placement": "Shared",

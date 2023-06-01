@@ -97,10 +97,16 @@
   <data name="CoverDescription_ShowSolutionPackages" xml:space="preserve">
     <value>Выбрать пакет решения из справочника</value>
   </data>
-  <data name="CoverAction_CreateSolutionPackage" xml:space="preserve">
+  <data name="CoverAction_CreateSolutionPackageFromZip" xml:space="preserve">
     <value>Создать пакет решения из архива</value>
   </data>
-  <data name="CoverDescription_CreateSolutionPackage" xml:space="preserve">
+  <data name="CoverDescription_CreateSolutionPackageFromZip" xml:space="preserve">
     <value>Создать пакет решения из zip-архива</value>
+  </data>
+  <data name="CoverAction_CreateSolutionPackageFromDatXml" xml:space="preserve">
+    <value>Создать пакет из dat, xml-файлов</value>
+  </data>
+  <data name="CoverDescription_CreateSolutionPackageFromDatXml" xml:space="preserve">
+    <value>Создать пакет из dat, xml-файлов</value>
   </data>
 </root>

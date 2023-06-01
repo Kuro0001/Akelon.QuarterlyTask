@@ -52,10 +52,18 @@
       {
         "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
         "NameGuid": "a13dbddd-c892-484c-bc87-be9e6fffd71f",
-        "Name": "CreateSolutionPackage",
-        "FunctionName": "Function1",
+        "Name": "CreateSolutionPackageFromZip",
+        "FunctionName": "CreatePackageFromZip",
         "GroupId": "914c3054-6993-4d13-81de-ddf23500257e",
         "PreviousItemGuid": "42ccb29e-7a4b-42cf-99ec-8671876f9fbb"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "e743c86d-059e-48eb-9936-f2159b15cebf",
+        "Name": "CreateSolutionPackageFromDatXml",
+        "FunctionName": "CreatePackageFromDatXml",
+        "GroupId": "914c3054-6993-4d13-81de-ddf23500257e",
+        "PreviousItemGuid": "a13dbddd-c892-484c-bc87-be9e6fffd71f"
       }
     ],
     "Background": null,
@@ -156,7 +164,7 @@
       "ReturnTypeFullName": "System.Boolean"
     },
     {
-      "NameGuid": "3830a112-0bec-4d70-9873-8865bf0f7dee",
+      "NameGuid": "c9adce73-047b-449b-89e3-270c2c8788c1",
       "Name": "CreateZipFromFiles",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [

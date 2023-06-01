@@ -10,11 +10,21 @@ namespace Akelon.SolutionStorage.Client
   {
 
     /// <summary>
-    /// 
+    /// Создать пакет из dat, xml-файлов на обложке модуля SolutionStorage
     /// </summary>
-    public virtual void Function1()
+    public virtual void CreatePackageFromDatXml()
     {
-      PublicFunctions.SolutionPackage.Remote.CreateFromZip();
+      var document = Akelon.SolutionStorage.PublicFunctions.SolutionPackage.Remote.CreatePackage();
+      Functions.SolutionPackage.CreateFromDatXml(document);
+    }
+    
+    /// <summary>
+    /// Создать пакет из zip-файла на обложке модуля SolutionStorage
+    /// </summary>
+    public virtual void CreatePackageFromZip()
+    {
+      var document = Akelon.SolutionStorage.PublicFunctions.SolutionPackage.Remote.CreatePackage();
+      Functions.SolutionPackage.CreateFromZip(document);
     }
 
     /// <summary>

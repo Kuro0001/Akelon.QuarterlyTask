@@ -21,9 +21,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     [Public]
     public string CreateZipFromFiles(string fileDat, string fileXml)
     {
-      var result = string.Empty;
-      
-      return result;
+      return "true";
     }
 
     /// <summary>

@@ -7,14 +7,10 @@ using Akelon.SolutionStorage.SolutionPackage;
 
 namespace Akelon.SolutionStorage.Client
 {
+
   
   partial class SolutionPackageActions
   {
-    
-    public virtual bool CanCreateFromZip(Sungero.Domain.Client.CanExecuteActionArgs e)
-    {
-      return true;
-    }
 
     public override void CreateFromFile(Sungero.Domain.Client.ExecuteActionArgs e)
     {
@@ -40,21 +36,27 @@ namespace Akelon.SolutionStorage.Client
     {
       return true;
     }
-
-    /// <summary>
-    /// Загрузка zip-архива с пакетом решения
-    /// </summary>
-    public virtual void CreateFromZip(Sungero.Domain.Client.ExecuteActionArgs e)
-    {
-      PublicFunctions.SolutionPackage.Remote.CreateFromZip(_obj);
-    }
     
     /// <summary>
     /// Загрузка файлов с расширением .dat и .xml
     /// </summary>
     public virtual void CreateFromDatXml(Sungero.Domain.Client.ExecuteActionArgs e)
     {
-      PublicFunctions.SolutionPackage.Remote.CreateFromDatXml(_obj);
+      Functions.SolutionPackage.CreateFromDatXml(_obj);
+    }
+
+    
+    public virtual bool CanCreateFromZip(Sungero.Domain.Client.CanExecuteActionArgs e)
+    {
+      return true;
+    }
+
+    /// <summary>
+    /// Загрузка zip-архива с пакетом решения
+    /// </summary>
+    public virtual void CreateFromZip(Sungero.Domain.Client.ExecuteActionArgs e)
+    {
+      Functions.SolutionPackage.CreateFromZip(_obj);
     }
   }
 }

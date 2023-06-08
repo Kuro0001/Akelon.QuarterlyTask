@@ -21,6 +21,7 @@ namespace Akelon.SolutionStorage.Server
       return new MemoryStream(byteArray);
       
     }
+    
     /// <summary>
     /// Создать экземпляр документа
     /// </summary>
@@ -30,6 +31,7 @@ namespace Akelon.SolutionStorage.Server
     {
       return SolutionPackages.Create();
     }
+    
     /// <summary>
     /// Загрузка zip-архива с пакетом решения
     /// </summary>
@@ -50,7 +52,7 @@ namespace Akelon.SolutionStorage.Server
     [Public, Remote]
     public void CreatePackageFromDatXml(string fileDat, string fileXml)
     {
-      var fileString = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFromFiles(fileDat, fileXml);
+      var fileString = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFromFiles();
       try
       {
         using (var memory = new System.IO.MemoryStream(Encoding.ASCII.GetBytes(fileString)))
@@ -61,7 +63,7 @@ namespace Akelon.SolutionStorage.Server
       }
       catch
       {
-        throw AppliedCodeException.Create("error in server CreatePackageFromDatXml");//TODO сделать ресурсом сообщение об ошибке
+        throw AppliedCodeException.Create("Server error: CreatePackageFromDatXml"); //TODO сделать ресурсом сообщение об ошибке
       }
     }
   }

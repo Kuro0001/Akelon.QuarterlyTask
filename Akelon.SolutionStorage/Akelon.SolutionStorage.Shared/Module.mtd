@@ -76,13 +76,14 @@
         "NameGuid": "1c36d387-e25f-4589-b71e-aa0959280ca9",
         "Name": "Solutions",
         "BackgroundPosition": "Stretch",
-        "IconName": "GroupIconGroup_1c36d387e25f4589b71eaa0959280ca9.png",
+        "IconName": "GroupIconSolutions_1c36d387e25f4589b71eaa0959280ca9.png",
         "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
       },
       {
         "NameGuid": "914c3054-6993-4d13-81de-ddf23500257e",
         "Name": "Packages",
         "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconPackages_914c305469934d1381deddf23500257e.png",
         "PreviousItemGuid": "1c36d387-e25f-4589-b71e-aa0959280ca9",
         "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
       },
@@ -164,7 +165,7 @@
       "ReturnTypeFullName": "System.Boolean"
     },
     {
-      "NameGuid": "c9adce73-047b-449b-89e3-270c2c8788c1",
+      "NameGuid": "71ac8f61-1e0e-493e-bbf9-74a5947c9867",
       "Name": "CreateZipFromFiles",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [
@@ -188,6 +189,16 @@
     {
       "NameGuid": "6bc9155b-9f68-46bb-8163-4a62a845aa11",
       "Name": "ZipFile",
+      "Scope": "ClientBase"
+    },
+    {
+      "NameGuid": "65f202e7-199b-4326-a271-a597b5f6845e",
+      "Name": "IonicZip",
+      "Scope": "Server"
+    },
+    {
+      "NameGuid": "640ea379-0356-4d15-ac46-1e92018b8efe",
+      "Name": "CompressionLibrary",
       "Scope": "Server"
     }
   ],

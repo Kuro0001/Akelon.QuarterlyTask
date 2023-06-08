@@ -80,7 +80,7 @@
     <value>Tags</value>
   </data>
   <data name="CoverDescription_OpenTagsList" xml:space="preserve">
-    <value />
+    <value>Открыть список тэгов</value>
   </data>
   <data name="CoverGroup_Tags" xml:space="preserve">
     <value>Tags</value>

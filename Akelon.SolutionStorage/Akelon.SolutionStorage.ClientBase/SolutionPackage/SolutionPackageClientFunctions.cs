@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO.Compression;
+using System.IO;
 using Sungero.Core;
 using Sungero.CoreEntities;
 using Akelon.SolutionStorage.SolutionPackage;
@@ -49,15 +49,24 @@ namespace Akelon.SolutionStorage.Client
       
       if (fileDialog.Show() == DialogButtons.Ok)
       {
-        
         var files = fileSelect.Value;
         if (!IsFilesContainsDatXml(files))
         {
           return;
         }
+
         var fileDat = GetDatXmlFile(files, ".dat");
         var fileXml = GetDatXmlFile(files, ".xml");
+        
+        // TODO: Function
+        byte[] buffer = new Byte[fileDat.OpenReadStream().Length + 10];
+        var bytesCount = fileDat.OpenReadStream().Read(buffer, 0, 500 * 1024 * 1024);
+        var memory = new MemoryStream(buffer);
+        var sr = new StreamReader(memory);
+        var fileDatContent = sr.ReadToEnd().ToString();
+        
         PublicFunctions.SolutionPackage.Remote.CreatePackageFromDatXml(_obj, fileDat.ToString(), fileXml.ToString());
+        
         if (string.IsNullOrEmpty(_obj.Name))
         {
           var fileNameDialog = Dialogs.CreateInputDialog("Введите наименование пакета");

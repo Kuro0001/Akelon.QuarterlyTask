@@ -109,4 +109,10 @@
   <data name="CoverDescription_CreateSolutionPackageFromDatXml" xml:space="preserve">
     <value>Создать пакет из dat, xml-файлов</value>
   </data>
+  <data name="CoverGroup_Solutions" xml:space="preserve">
+    <value>Готовые решения</value>
+  </data>
+  <data name="CoverGroup_Tags" xml:space="preserve">
+    <value>Теги</value>
+  </data>
 </root>

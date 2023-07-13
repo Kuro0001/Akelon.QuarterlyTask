@@ -71,16 +71,16 @@
     <value>Solutions</value>
   </data>
   <data name="CoverDescription_ShowPreparedSolutions" xml:space="preserve">
-    <value>Show prepared solutions from databook</value>
+    <value>Show prepared solutions</value>
   </data>
   <data name="CoverAction_ShowPreparedSolutions" xml:space="preserve">
-    <value>Show solutions</value>
+    <value>Show all solutions</value>
   </data>
   <data name="CoverAction_OpenTagsList" xml:space="preserve">
     <value>Tags</value>
   </data>
   <data name="CoverDescription_OpenTagsList" xml:space="preserve">
-    <value>Открыть список тэгов</value>
+    <value>Show tags</value>
   </data>
   <data name="CoverGroup_Tags" xml:space="preserve">
     <value>Tags</value>
@@ -98,7 +98,7 @@
     <value>Packages</value>
   </data>
   <data name="CoverAction_ShowCompleteSolution" xml:space="preserve">
-    <value>Show complete solution</value>
+    <value>Show complete solutions</value>
   </data>
   <data name="CoverDescription_ShowCompleteSolution" xml:space="preserve">
     <value>Show complete solution</value>
@@ -110,7 +110,7 @@
     <value>Show incomplete solution</value>
   </data>
   <data name="CoverDescription_ShowSolutionPackages" xml:space="preserve">
-    <value>Show solution packages from databook</value>
+    <value>Show solution packages</value>
   </data>
   <data name="CoverAction_CreateSolutionPackageFromZip" xml:space="preserve">
     <value>Create solution package from archive</value>

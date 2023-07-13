@@ -45,14 +45,14 @@ namespace Akelon.SolutionStorage.Server
       //        package.Save();
       //      }
     }
-
+    
     /// <summary>
     /// Загрузка файлов с расширением .dat и .xml
     /// </summary>
     [Public, Remote]
     public void CreatePackageFromDatXml(string fileDat, string fileXml)
     {
-      var fileString = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFromFiles();
+      var fileString = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFromFiles(fileDat, fileXml);
       try
       {
         using (var memory = new System.IO.MemoryStream(Encoding.ASCII.GetBytes(fileString)))

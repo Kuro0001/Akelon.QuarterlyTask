@@ -3,6 +3,42 @@
   "NameGuid": "e5cff8ee-aecc-4ec7-86a6-6cd40c19874c",
   "Name": "SolutionPackage",
   "AccessRightsMode": "Both",
+  "Actions": [
+    {
+      "NameGuid": "cff11896-d843-428c-b768-dc6c7fe62d7a",
+      "Name": "CreateVersionFromLastVersion",
+      "GenerateHandler": true,
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "GenerateHandler"
+      ]
+    },
+    {
+      "NameGuid": "b807b816-dafa-4b17-acac-f06aa306c543",
+      "Name": "CreateFromFile",
+      "GenerateHandler": true,
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "GenerateHandler"
+      ]
+    },
+    {
+      "NameGuid": "2f973afe-cb66-47cb-be3e-2b5bcd8daa3f",
+      "Name": "CreateFromZip",
+      "ActionArea": "CardAndCollection",
+      "GenerateHandler": true,
+      "LargeIconName": "Action_CreateFromZip_large_2f973afecb6647cbbe3e2b5bcd8daa3f.png",
+      "SmallIconName": "Action_CreateFromZip_small_2f973afecb6647cbbe3e2b5bcd8daa3f.png"
+    },
+    {
+      "NameGuid": "8638a325-c6c7-4fa7-8cc2-2342b3c49ae7",
+      "Name": "CreateFromDatXml",
+      "ActionArea": "CardAndCollection",
+      "GenerateHandler": true,
+      "LargeIconName": "Action_CreateFromDatXml_large_8638a325c6c74fa78cc22342b3c49ae7.png",
+      "SmallIconName": "Action_CreateFromDatXml_small_8638a325c6c74fa78cc22342b3c49ae7.png"
+    }
+  ],
   "BaseGuid": "030d8d67-9b94-4f0d-bcc6-691016eb70f3",
   "CanBeNavigationPropertyType": true,
   "CreationAreaMetadata": {
@@ -18,6 +54,18 @@
     "Controls": [],
     "IsAncestorMetadata": true
   },
+  "Forms": [
+    {
+      "$type": "Sungero.Metadata.StandaloneFormMetadata, Sungero.Metadata",
+      "NameGuid": "fa03f748-4397-42ef-bdc2-22119af7bf7f",
+      "Name": "Card",
+      "Controls": [],
+      "IsAncestorMetadata": true,
+      "Overridden": [
+        "SettingsResourceKey"
+      ]
+    }
+  ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "SolutionStorageSolutionPackage",
   "OperationsClass": "",
@@ -33,14 +81,97 @@
       ]
     }
   ],
+  "PublicFunctions": [
+    {
+      "Name": "CreatePackage",
+      "IsRemote": true,
+      "Placement": "Shared",
+      "ReturnType": "global::Akelon.SolutionStorage.ISolutionPackage",
+      "ReturnTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
+    },
+    {
+      "Name": "CreatePackageFromDatXml",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "solutionPackage",
+          "ParameterType": "global::Akelon.SolutionStorage.ISolutionPackage",
+          "ParameterTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "fileDat",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "fileXml",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "CreatePackageFromZip",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "solutionPackage",
+          "ParameterType": "global::Akelon.SolutionStorage.ISolutionPackage",
+          "ParameterTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "fileZip",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    }
+  ],
   "PublicStructures": [],
-  "ResourcesKeys": [],
+  "ResourcesKeys": [
+    "ZipInputDialogTitle",
+    "DatXmlInputDialogTitle"
+  ],
   "RibbonCardMetadata": {
     "NameGuid": "856d71fc-d458-4ac3-b4ba-1f100ea398d3",
     "Name": "RibbonCard",
     "Categories": [],
-    "Elements": [],
-    "Groups": [],
+    "Elements": [
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "58b5b944-ad21-4b22-b4d4-26f6a580e292",
+        "Name": "CreateFromZip",
+        "ActionGuid": "2f973afe-cb66-47cb-be3e-2b5bcd8daa3f",
+        "ButtonSize": "Large",
+        "Index": -1,
+        "ParentGuid": "9dd8b40e-1c08-4d33-875e-f7412f3fb581"
+      },
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "81336904-a918-40b5-ab65-a3dde516552f",
+        "Name": "CreateFromDatXml",
+        "ActionGuid": "8638a325-c6c7-4fa7-8cc2-2342b3c49ae7",
+        "ButtonSize": "Large",
+        "Index": 0,
+        "ParentGuid": "9dd8b40e-1c08-4d33-875e-f7412f3fb581"
+      }
+    ],
+    "Groups": [
+      {
+        "NameGuid": "9dd8b40e-1c08-4d33-875e-f7412f3fb581",
+        "Name": "Creation",
+        "IconName": null,
+        "Index": 31,
+        "ParentGuid": "21a31627-5f58-4416-8c4a-90f538ee2e57",
+        "SmallIconName": null
+      }
+    ],
     "IsAncestorMetadata": true,
     "Pages": [],
     "RibbonKind": "Card"
@@ -49,7 +180,40 @@
     "NameGuid": "4258e1b0-d1ac-4d50-ba28-61d0d62b54b9",
     "Name": "RibbonCollection",
     "Categories": [],
-    "Elements": [],
+    "Elements": [
+      {
+        "$type": "Sungero.Metadata.RibbonDynamicDropDownButtonMetadata, Sungero.Metadata",
+        "NameGuid": "2c93f18c-4b91-457b-abcd-eb1afad3c09f",
+        "Name": "CreateEntity",
+        "CommandsPropertyName": "DescendantsAndItselfCreationCommands",
+        "Index": 1000,
+        "IsAncestorMetadata": true,
+        "IsVisibleOnlyInNonAbstractContext": true,
+        "Overridden": [
+          "IsShowInContextMenu"
+        ],
+        "ParentGuid": "279c95bb-6f40-49e9-a34c-98442a89e1ae",
+        "SingleCommandButtonTypeName": "Sungero.Presentation.CreateEntityContextMenuItem"
+      },
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "93aec69b-842c-4fdd-9a10-41cff1396914",
+        "Name": "CreateFromZip",
+        "ActionGuid": "2f973afe-cb66-47cb-be3e-2b5bcd8daa3f",
+        "ButtonSize": "Large",
+        "Index": 1001,
+        "ParentGuid": "279c95bb-6f40-49e9-a34c-98442a89e1ae"
+      },
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "eb6d422d-50b2-4960-a8d9-f6c4cea10f66",
+        "Name": "CreateFromDatXml",
+        "ActionGuid": "8638a325-c6c7-4fa7-8cc2-2342b3c49ae7",
+        "ButtonSize": "Large",
+        "Index": 1002,
+        "ParentGuid": "279c95bb-6f40-49e9-a34c-98442a89e1ae"
+      }
+    ],
     "Groups": [],
     "IsAncestorMetadata": true,
     "Pages": []

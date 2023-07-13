@@ -2,6 +2,18 @@
   "$type": "Sungero.Metadata.EntityMetadata, Sungero.Metadata",
   "NameGuid": "ad7ae7bb-3075-4d95-9b92-f2de112ca2d6",
   "Name": "PreparedSolution",
+  "Actions": [
+    {
+      "NameGuid": "90b79c48-6bdd-43a6-9ea2-950dc2441754",
+      "Name": "CreatePackage",
+      "ActionArea": "ChildCollection",
+      "CollectionPropertyGuid": "1701e4ee-f555-492d-a51a-f2585865f6b4",
+      "GenerateHandler": true,
+      "IsEmptySelectionAllowed": true,
+      "LargeIconName": "Action_CreatePackage_large_90b79c486bdd43a69ea2950dc2441754.png",
+      "SmallIconName": "Action_CreatePackage_small_90b79c486bdd43a69ea2950dc2441754.png"
+    }
+  ],
   "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
   "CanBeNavigationPropertyType": true,
   "CanBeSearch": true,

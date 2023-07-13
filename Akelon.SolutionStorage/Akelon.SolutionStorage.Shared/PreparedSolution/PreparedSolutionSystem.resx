@@ -106,4 +106,19 @@
   <data name="Property_AddTag" xml:space="preserve">
     <value>Тэги</value>
   </data>
+  <data name="Action_CreatePackage" xml:space="preserve">
+    <value>Создать пакет</value>
+  </data>
+  <data name="Action_CreatePackageDescription" xml:space="preserve">
+    <value>Создать пакет</value>
+  </data>
+  <data name="Action_CreatePackageHint" xml:space="preserve">
+    <value>Создать пакет</value>
+  </data>
+  <data name="Action_CreatePackageConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_CreatePackageConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
 </root>

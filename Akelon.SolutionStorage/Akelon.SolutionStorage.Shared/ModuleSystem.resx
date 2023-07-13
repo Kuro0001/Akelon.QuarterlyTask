@@ -70,17 +70,17 @@
   <data name="CoverGroup_Solutions" xml:space="preserve">
     <value>Solutions</value>
   </data>
-  <data name="CoverDescription_OpenPreparedSolutionsList" xml:space="preserve">
-    <value />
+  <data name="CoverDescription_ShowPreparedSolutions" xml:space="preserve">
+    <value>Show prepared solutions</value>
   </data>
-  <data name="CoverAction_OpenPreparedSolutionsList" xml:space="preserve">
-    <value>Prepared solutions</value>
+  <data name="CoverAction_ShowPreparedSolutions" xml:space="preserve">
+    <value>Show all solutions</value>
   </data>
   <data name="CoverAction_OpenTagsList" xml:space="preserve">
     <value>Tags</value>
   </data>
   <data name="CoverDescription_OpenTagsList" xml:space="preserve">
-    <value />
+    <value>Show tags</value>
   </data>
   <data name="CoverGroup_Tags" xml:space="preserve">
     <value>Tags</value>
@@ -90,5 +90,38 @@
   </data>
   <data name="CoverFooter" xml:space="preserve">
     <value>@ 2023 Компания "ООО Акелон"</value>
+  </data>
+  <data name="CoverAction_ShowSolutionPackages" xml:space="preserve">
+    <value>Show solution packages</value>
+  </data>
+  <data name="CoverGroup_Packages" xml:space="preserve">
+    <value>Packages</value>
+  </data>
+  <data name="CoverAction_ShowCompleteSolution" xml:space="preserve">
+    <value>Show complete solutions</value>
+  </data>
+  <data name="CoverDescription_ShowCompleteSolution" xml:space="preserve">
+    <value>Show complete solution</value>
+  </data>
+  <data name="CoverAction_ShowIncompleteSolution" xml:space="preserve">
+    <value>Show incomplete solution</value>
+  </data>
+  <data name="CoverDescription_ShowIncompleteSolution" xml:space="preserve">
+    <value>Show incomplete solution</value>
+  </data>
+  <data name="CoverDescription_ShowSolutionPackages" xml:space="preserve">
+    <value>Show solution packages</value>
+  </data>
+  <data name="CoverAction_CreateSolutionPackageFromZip" xml:space="preserve">
+    <value>Create solution package from archive</value>
+  </data>
+  <data name="CoverDescription_CreateSolutionPackageFromZip" xml:space="preserve">
+    <value>Create solution package from zip-archive</value>
+  </data>
+  <data name="CoverAction_CreateSolutionPackageFromDatXml" xml:space="preserve">
+    <value>Create solution package from dat-xml</value>
+  </data>
+  <data name="CoverDescription_CreateSolutionPackageFromDatXml" xml:space="preserve">
+    <value>Create solution package from dat xml files</value>
   </data>
 </root>

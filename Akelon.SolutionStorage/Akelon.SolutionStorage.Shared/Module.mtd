@@ -15,9 +15,24 @@
       {
         "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
         "NameGuid": "089ff697-d4fc-43ad-bb3c-a3da50ae246f",
-        "Name": "OpenPreparedSolutionsList",
+        "Name": "ShowPreparedSolutions",
         "EntityTypeId": "ad7ae7bb-3075-4d95-9b92-f2de112ca2d6",
         "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "0ac6fead-45cf-458a-b327-39bbaecbc409",
+        "Name": "ShowCompleteSolution",
+        "FunctionName": "ShowCompleteSolution",
+        "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9",
+        "PreviousItemGuid": "089ff697-d4fc-43ad-bb3c-a3da50ae246f"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "42ccb29e-7a4b-42cf-99ec-8671876f9fbb",
+        "Name": "ShowSolutionPackages",
+        "EntityTypeId": "e5cff8ee-aecc-4ec7-86a6-6cd40c19874c",
+        "GroupId": "914c3054-6993-4d13-81de-ddf23500257e"
       },
       {
         "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
@@ -25,6 +40,30 @@
         "Name": "OpenTagsList",
         "EntityTypeId": "28b7b467-51ed-451c-8923-071822d4ff55",
         "GroupId": "c805396e-5658-4347-b555-d4efe880fc62"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "4dd6032c-f009-4b01-bdb5-7f271c6791d0",
+        "Name": "ShowIncompleteSolution",
+        "FunctionName": "ShowIncompleteSolution",
+        "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9",
+        "PreviousItemGuid": "0ac6fead-45cf-458a-b327-39bbaecbc409"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "a13dbddd-c892-484c-bc87-be9e6fffd71f",
+        "Name": "CreateSolutionPackageFromZip",
+        "FunctionName": "CreatePackageFromZip",
+        "GroupId": "914c3054-6993-4d13-81de-ddf23500257e",
+        "PreviousItemGuid": "42ccb29e-7a4b-42cf-99ec-8671876f9fbb"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "e743c86d-059e-48eb-9936-f2159b15cebf",
+        "Name": "CreateSolutionPackageFromDatXml",
+        "FunctionName": "CreatePackageFromDatXml",
+        "GroupId": "914c3054-6993-4d13-81de-ddf23500257e",
+        "PreviousItemGuid": "a13dbddd-c892-484c-bc87-be9e6fffd71f"
       }
     ],
     "Background": null,
@@ -37,7 +76,15 @@
         "NameGuid": "1c36d387-e25f-4589-b71e-aa0959280ca9",
         "Name": "Solutions",
         "BackgroundPosition": "Stretch",
-        "IconName": "GroupIconGroup_1c36d387e25f4589b71eaa0959280ca9.png",
+        "IconName": "GroupIconSolutions_1c36d387e25f4589b71eaa0959280ca9.png",
+        "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
+      },
+      {
+        "NameGuid": "914c3054-6993-4d13-81de-ddf23500257e",
+        "Name": "Packages",
+        "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconPackages_914c305469934d1381deddf23500257e.png",
+        "PreviousItemGuid": "1c36d387-e25f-4589-b71e-aa0959280ca9",
         "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
       },
       {
@@ -45,7 +92,7 @@
         "Name": "Tags",
         "BackgroundPosition": "Stretch",
         "IconName": "GroupIconTags_c805396e56584347b555d4efe880fc62.png",
-        "PreviousItemGuid": "1c36d387-e25f-4589-b71e-aa0959280ca9",
+        "PreviousItemGuid": "914c3054-6993-4d13-81de-ddf23500257e",
         "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
       }
     ],
@@ -95,8 +142,66 @@
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Akelon.SolutionStorage",
+  "IsolatedAreas": [
+    {
+      "NameGuid": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
+      "Name": "ZipHandler"
+    }
+  ],
   "IsolatedAssemblyName": "Akelon.SolutionStorage.Isolated",
+  "IsolatedFunctions": [
+    {
+      "NameGuid": "0b150d9d-c828-4904-a91f-5ce6f99e20cd",
+      "Name": "CheckZipInput",
+      "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
+      "Parameters": [
+        {
+          "Name": "content",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean"
+    },
+    {
+      "NameGuid": "71ac8f61-1e0e-493e-bbf9-74a5947c9867",
+      "Name": "CreateZipFromFiles",
+      "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
+      "Parameters": [
+        {
+          "Name": "fileDat",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "fileXml",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String"
+    }
+  ],
   "IsolatedNamespace": "Akelon.SolutionStorage.Isolated",
+  "Libraries": [
+    {
+      "NameGuid": "6bc9155b-9f68-46bb-8163-4a62a845aa11",
+      "Name": "ZipFile",
+      "Scope": "ClientBase"
+    },
+    {
+      "NameGuid": "65f202e7-199b-4326-a271-a597b5f6845e",
+      "Name": "IonicZip",
+      "Scope": "Server"
+    },
+    {
+      "NameGuid": "640ea379-0356-4d15-ac46-1e92018b8efe",
+      "Name": "CompressionLibrary",
+      "Scope": "Server"
+    }
+  ],
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Akelon.SolutionStorage",

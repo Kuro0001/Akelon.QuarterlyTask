@@ -70,4 +70,13 @@
   <data name="Property_Name" xml:space="preserve">
     <value>Наименование</value>
   </data>
+  <data name="Action_CreateFromZip" xml:space="preserve">
+    <value>Создать из архива</value>
+  </data>
+  <data name="Action_CreateFromDatXml" xml:space="preserve">
+    <value>Создать из файлов</value>
+  </data>
+  <data name="Ribbon_Creation_9dd8b40e1c084d33875ef7412f3fb581" xml:space="preserve">
+    <value>Создание</value>
+  </data>
 </root>

@@ -55,26 +55,36 @@ namespace Akelon.SolutionStorage.Client
           return;
         }
 
+        // TODO: Into function
         var fileDat = GetDatXmlFile(files, ".dat");
         var fileXml = GetDatXmlFile(files, ".xml");
         
-        // TODO: Function
-        byte[] buffer = new Byte[fileDat.OpenReadStream().Length + 10];
-        var bytesCount = fileDat.OpenReadStream().Read(buffer, 0, 500 * 1024 * 1024);
-        var memory = new MemoryStream(buffer);
-        var sr = new StreamReader(memory);
-        var fileDatContent = sr.ReadToEnd().ToString();
+        var fileDatContent = GetStringFromFile(fileDat);
+        var fileXmlContent = GetStringFromFile(fileXml);
         
-        PublicFunctions.SolutionPackage.Remote.CreatePackageFromDatXml(_obj, fileDat.ToString(), fileXml.ToString());
+        PublicFunctions.SolutionPackage.Remote.CreatePackageFromDatXml(_obj, fileDatContent, fileXmlContent);
         
         if (string.IsNullOrEmpty(_obj.Name))
         {
           var fileNameDialog = Dialogs.CreateInputDialog("Введите наименование пакета");
-          var fileName = fileNameDialog.AddString("Наименование: ",true);
+          var fileName = fileNameDialog.AddString("Наименование: ", true);
           if (fileNameDialog.Show() == DialogButtons.Ok)
+          {
             _obj.Name = fileName.Value;
+            _obj.Save();
+          }
         }
       }
+    }
+    
+    public string GetStringFromFile(CommonLibrary.IFileObject file)
+    {
+      byte[] buffer = new Byte[file.OpenReadStream().Length + 10];
+      var bytesCount = file.OpenReadStream().Read(buffer, 0, 500 * 1024 * 1024);
+      var memory = new MemoryStream(buffer);
+      var sr = new StreamReader(memory);
+      
+      return sr.ReadToEnd().ToString();
     }
     
     public bool IsFilesContainsDatXml(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files)

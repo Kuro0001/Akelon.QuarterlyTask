@@ -20,15 +20,12 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
   
   public class ZipHelper
   {
-    const string path = "C:\\TempDirectory\\";
+    const string path = @"C:\TempDirectory\";
     const string fileDatName = path + "fileDat.dat";
     const string fileXmlName = path + "fileXml.xml";
     const string fileZipName = path + "fileZip.zip";
     
-    public ZipHelper()
-    {
-      
-    }
+    public ZipHelper() { }
     
     public static bool CheckZipInput()
     {
@@ -37,7 +34,13 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     
     public static string CreateZip(string fileDat, string fileXml)
     {
-      Directory.CreateDirectory(path);
+      Logger.Debug($"Isolate Dat: {fileDat}");
+      Logger.Debug($"Isolate Xml: {fileXml}");
+      if (!Directory.Exists(path))
+      {
+        Directory.CreateDirectory(path);
+      }
+      
       var zip = new ZipFile(fileZipName);
       
       CreateDefaultFile(fileDat, fileDatName);
@@ -49,7 +52,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       
       byte[] byteZip = File.ReadAllBytes(fileZipName);
       
-      Directory.Delete(path);
+      Directory.Delete(path, true);
       
       return Encoding.Default.GetString(byteZip);
     }
@@ -58,11 +61,9 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     {
       try
       {
-        // Create the file, or overwrite if the file exists.
         using (FileStream fs = File.Create(name))
         {
           byte[] info = new UTF8Encoding(true).GetBytes(file);
-          // Add some information to the file.
           fs.Write(info, 0, info.Length);
         }
       }

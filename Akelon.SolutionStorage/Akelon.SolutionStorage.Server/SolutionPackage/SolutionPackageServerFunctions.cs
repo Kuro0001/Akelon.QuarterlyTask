@@ -14,7 +14,7 @@ namespace Akelon.SolutionStorage.Server
 
     /// <summary>
     /// 
-    /// </summary>       
+    /// </summary>
     public System.IO.MemoryStream GetMemoryStreamFromString(string input)
     {
       byte[] byteArray = Encoding.ASCII.GetBytes(input);
@@ -52,18 +52,20 @@ namespace Akelon.SolutionStorage.Server
     [Public, Remote]
     public void CreatePackageFromDatXml(string fileDat, string fileXml)
     {
+      Logger.Debug($"Server Dat: {fileDat}");
+      Logger.Debug($"Server Xml: {fileXml}");
       var fileString = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFromFiles(fileDat, fileXml);
+      var fileBytes = Encoding.ASCII.GetBytes(fileString);
       try
       {
-        using (var memory = new System.IO.MemoryStream(Encoding.ASCII.GetBytes(fileString)))
+        using (var sw = new MemoryStream(fileBytes))
         {
-          _obj.CreateVersionFrom(memory, "zip");
-          _obj.Save();
+          _obj.CreateVersionFrom(sw, "zip");
         }
       }
-      catch
+      catch (Exception ex)
       {
-        throw AppliedCodeException.Create("Server error: CreatePackageFromDatXml"); //TODO сделать ресурсом сообщение об ошибке
+        throw AppliedCodeException.Create($"Server error: CreatePackageFromDatXml. {ex.Message}"); //TODO сделать ресурсом сообщение об ошибке
       }
     }
   }

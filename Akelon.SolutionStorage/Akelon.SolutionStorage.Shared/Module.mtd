@@ -165,7 +165,7 @@
       "ReturnTypeFullName": "System.Boolean"
     },
     {
-      "NameGuid": "71ac8f61-1e0e-493e-bbf9-74a5947c9867",
+      "NameGuid": "4afc24e6-49ac-4c1a-9288-ff8c55c5240c",
       "Name": "CreateZipFromFiles",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [

@@ -165,23 +165,23 @@
       "ReturnTypeFullName": "System.Boolean"
     },
     {
-      "NameGuid": "4afc24e6-49ac-4c1a-9288-ff8c55c5240c",
+      "NameGuid": "0fca3e1d-e204-48e9-8aba-734aafd70827",
       "Name": "CreateZipFromFiles",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [
         {
           "Name": "fileDat",
-          "ParameterType": "global::System.String",
-          "ParameterTypeFullName": "System.String"
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
         },
         {
           "Name": "fileXml",
-          "ParameterType": "global::System.String",
-          "ParameterTypeFullName": "System.String"
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
         }
       ],
-      "ReturnType": "global::System.String",
-      "ReturnTypeFullName": "System.String"
+      "ReturnType": "global::System.IO.Stream",
+      "ReturnTypeFullName": "System.IO.Stream"
     }
   ],
   "IsolatedNamespace": "Akelon.SolutionStorage.Isolated",

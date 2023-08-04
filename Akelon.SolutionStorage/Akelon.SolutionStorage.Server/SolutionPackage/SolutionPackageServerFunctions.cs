@@ -49,24 +49,58 @@ namespace Akelon.SolutionStorage.Server
     /// <summary>
     /// Загрузка файлов с расширением .dat и .xml
     /// </summary>
+    //    [Public, Remote]
+    //    public void CreatePackageFromDatXml(string fileDat, string fileXml)
+    //    {
+    //      var fileString = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFromFiles(fileDat, fileXml);
+    //      var fileBytes = Encoding.ASCII.GetBytes(fileString);
+    //      try
+    //      {
+    //        using (var sw = new MemoryStream(fileBytes))
+    //        {
+    //          _obj.CreateVersionFrom(sw, "zip");
+    //        }
+    //      }
+    //      catch (Exception ex)
+    //      {
+    //        throw AppliedCodeException.Create($"Server error: CreatePackageFromDatXml. {ex.Message}"); //TODO сделать ресурсом сообщение об ошибке
+    //      }
+    //    }
+    
     [Public, Remote]
-    public void CreatePackageFromDatXml(string fileDat, string fileXml)
+    public void CreatePackageFromFiles()
     {
-      Logger.Debug($"Server Dat: {fileDat}");
-      Logger.Debug($"Server Xml: {fileXml}");
-      var fileString = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFromFiles(fileDat, fileXml);
-      var fileBytes = Encoding.ASCII.GetBytes(fileString);
+      var files = _obj.Relations.GetRelated();
+      var fileDat = GetFileStream(files, "dat");
+      var fileXml = GetFileStream(files, "xml");
+      
+      var file = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFromFiles(fileDat, fileXml);
+      
       try
       {
-        using (var sw = new MemoryStream(fileBytes))
-        {
-          _obj.CreateVersionFrom(sw, "zip");
-        }
+        _obj.CreateVersionFrom(file, "zip");
       }
       catch (Exception ex)
       {
-        throw AppliedCodeException.Create($"Server error: CreatePackageFromDatXml. {ex.Message}"); //TODO сделать ресурсом сообщение об ошибке
+        throw AppliedCodeException.Create($"Server error: CreatePackageFromFiles. {ex.Message}"); //TODO сделать ресурсом сообщение об ошибке
       }
+    }
+    
+    public System.IO.MemoryStream GetFileStream(System.Collections.Generic.IEnumerable<Sungero.Content.IElectronicDocument> files, string extension)
+    {
+      var file = GetDatXmlFile(files, extension);
+      
+      var fs = file.LastVersion.Body.Read();
+      fs.Close();
+      
+      return fs;
+    }
+    
+    public Sungero.Content.IElectronicDocument GetDatXmlFile(System.Collections.Generic.IEnumerable<Sungero.Content.IElectronicDocument> files, string extension)
+    {
+      return files
+        .Where(file => file.Name.Contains(extension))
+        .First();
     }
   }
 }

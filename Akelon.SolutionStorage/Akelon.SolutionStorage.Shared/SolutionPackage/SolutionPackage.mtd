@@ -90,23 +90,13 @@
       "ReturnTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
     },
     {
-      "Name": "CreatePackageFromDatXml",
+      "Name": "CreatePackageFromFiles",
       "IsRemote": true,
       "Parameters": [
         {
           "Name": "solutionPackage",
           "ParameterType": "global::Akelon.SolutionStorage.ISolutionPackage",
           "ParameterTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
-        },
-        {
-          "Name": "fileDat",
-          "ParameterType": "global::System.String",
-          "ParameterTypeFullName": "System.String"
-        },
-        {
-          "Name": "fileXml",
-          "ParameterType": "global::System.String",
-          "ParameterTypeFullName": "System.String"
         }
       ],
       "Placement": "Shared",

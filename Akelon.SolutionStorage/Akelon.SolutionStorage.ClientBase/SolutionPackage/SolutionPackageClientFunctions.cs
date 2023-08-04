@@ -10,7 +10,6 @@ namespace Akelon.SolutionStorage.Client
 {
   partial class SolutionPackageFunctions
   {
-
     /// <summary>
     /// Загрузка zip-архива с пакетом решения
     /// Если записи не присвоено наименование, то будет автоматически присваиваться наименование файла</summary>
@@ -32,7 +31,7 @@ namespace Akelon.SolutionStorage.Client
           PublicFunctions.SolutionPackage.Remote.CreatePackageFromZip(_obj, Convert.ToBase64String(file.Content));
         }
         else
-          Dialogs.ShowMessage("error on client in CreateFromZip");//TODO сделать ресурсом сообщение об ошибке
+          Dialogs.ShowMessage("Client error in CreateFromZip"); //TODO сделать ресурсом сообщение об ошибке
       }
     }
     
@@ -50,41 +49,84 @@ namespace Akelon.SolutionStorage.Client
       if (fileDialog.Show() == DialogButtons.Ok)
       {
         var files = fileSelect.Value;
-        if (!IsFilesContainsDatXml(files))
-        {
-          return;
-        }
-
-        // TODO: Into function
-        var fileDat = GetDatXmlFile(files, ".dat");
-        var fileXml = GetDatXmlFile(files, ".xml");
-        
-        var fileDatContent = GetStringFromFile(fileDat);
-        var fileXmlContent = GetStringFromFile(fileXml);
-        
-        PublicFunctions.SolutionPackage.Remote.CreatePackageFromDatXml(_obj, fileDatContent, fileXmlContent);
+        CreateSimpleDocumentVersions(files);
         
         if (string.IsNullOrEmpty(_obj.Name))
         {
-          var fileNameDialog = Dialogs.CreateInputDialog("Введите наименование пакета");
-          var fileName = fileNameDialog.AddString("Наименование: ", true);
-          if (fileNameDialog.Show() == DialogButtons.Ok)
-          {
-            _obj.Name = fileName.Value;
-            _obj.Save();
-          }
+          SetPackageName();
         }
       }
     }
     
-    public string GetStringFromFile(CommonLibrary.IFileObject file)
+    public void SetPackageName()
     {
+      var fileNameDialog = Dialogs.CreateInputDialog("Введите наименование пакета");
+      var fileName = fileNameDialog.AddString("Наименование: ", true);
+      if (fileNameDialog.Show() == DialogButtons.Ok)
+      {
+        _obj.Name = fileName.Value;
+        _obj.Save();
+      }
+    }
+    
+    public void CreateSimpleDocumentVersions(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files)
+    {
+      var versions = new List<Sungero.Docflow.ISimpleDocument>(2);
+      foreach (var file in files)
+      {
+        byte[] buffer = new Byte[file.OpenReadStream().Length + 10];
+        var bytesCount = file.OpenReadStream().Read(buffer, 0, 500 * 1024 * 1024);
+        var memory = new MemoryStream(buffer);
+        
+        string extension = string.Empty;
+        if (file.FileName.Contains("dat"))
+        {
+          extension = "dat";
+        }
+        else if (file.FileName.Contains("xml"))
+        {
+          extension = "xml";
+        }
+        var version = Sungero.Docflow.SimpleDocuments.Create();
+        version.CreateVersionFrom(memory, extension);
+        version.Name = file.FileName;
+        
+        _obj.Relations.Add("Addendum", version);
+      }
+      
+      PublicFunctions.SolutionPackage.Remote.CreatePackageFromFiles(_obj);
+    }
+    
+    //    public void CreatePackageFromDatXml(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files)
+    //    {
+    //      if (!IsFilesContainsDatXml(files))
+    //      {
+    //        return;
+    //      }
+//
+    //      var fileDatContent = GetStringFromFile(files, ".dat");
+    //      var fileXmlContent = GetStringFromFile(files, ".xml");
+//
+    //      PublicFunctions.SolutionPackage.Remote.CreatePackageFromDatXml(_obj, fileDatContent, fileXmlContent);
+    //    }
+    
+    public string GetStringFromFile(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files, string extension)
+    {
+      var file = GetDatXmlFile(files, extension);
+      
       byte[] buffer = new Byte[file.OpenReadStream().Length + 10];
       var bytesCount = file.OpenReadStream().Read(buffer, 0, 500 * 1024 * 1024);
       var memory = new MemoryStream(buffer);
       var sr = new StreamReader(memory);
       
       return sr.ReadToEnd().ToString();
+    }
+    
+    public CommonLibrary.IFileObject GetDatXmlFile(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files, string extension)
+    {
+      return files
+        .Where(file => file.FileName.Contains(extension))
+        .First();
     }
     
     public bool IsFilesContainsDatXml(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files)
@@ -106,13 +148,6 @@ namespace Akelon.SolutionStorage.Client
       }
       
       return true;
-    }
-    
-    public CommonLibrary.IFileObject GetDatXmlFile(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files, string extension)
-    {
-      return files
-        .Where(file => file.FileName.Contains(extension))
-        .First();
     }
   }
 }

@@ -6,7 +6,6 @@ using System.IO;
 using System.Text;
 using Ionic.Zip;
 using Sungero.Core;
-using Akelon.SolutionStorage.Structures.Module;
 
 namespace Akelon.SolutionStorage.Isolated.ZipHandler
 {
@@ -32,10 +31,31 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       return true;
     }
     
+    public static Stream CreateZip(Stream fileDat, Stream fileXml)
+    {
+      if (!Directory.Exists(path))
+      {
+        Directory.CreateDirectory(path);
+      }
+      
+      var zip = new ZipFile(fileZipName);
+      
+      CreateDefaultFile(fileDat, fileDatName);
+      CreateDefaultFile(fileXml, fileXmlName);
+      
+      zip.AddFile(fileDatName);
+      zip.AddFile(fileXmlName);
+      zip.Save();
+      
+      byte[] byteZip = File.ReadAllBytes(fileZipName);
+      
+      //Directory.Delete(path, true);
+      
+      return new MemoryStream(byteZip);
+    }
+    
     public static string CreateZip(string fileDat, string fileXml)
     {
-      Logger.Debug($"Isolate Dat: {fileDat}");
-      Logger.Debug($"Isolate Xml: {fileXml}");
       if (!Directory.Exists(path))
       {
         Directory.CreateDirectory(path);
@@ -55,6 +75,21 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       Directory.Delete(path, true);
       
       return Encoding.Default.GetString(byteZip);
+    }
+    
+    public static void CreateDefaultFile(Stream file, string name)
+    {
+      try
+      {
+        using (FileStream fs = File.Create(name))
+        {
+          file.CopyTo(fs);
+        }
+      }
+      catch
+      {
+        throw AppliedCodeException.Create("Create default file error!");
+      }
     }
     
     public static void CreateDefaultFile(string file, string name)

@@ -4,7 +4,6 @@ using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
 using Sungero.Core;
-using Akelon.SolutionStorage.Structures.Module;
 using Akelon.SolutionStorage.Isolated.ZipHandler;
 
 namespace Akelon.SolutionStorage.Isolated.ZipHandler
@@ -13,13 +12,13 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
   {
 
     /// <summary>
-    /// Создание zip-файл из файлов пакета решения
+    /// Создать zip-архивиз файлов пакета решения
     /// </summary>
     /// <param name="fileDat">.dat файл</param>
     /// <param name="fileXml">.xml файл</param>
     /// <returns>zip-файл</returns>
     [Public]
-    public string CreateZipFromFiles(string fileDat, string fileXml)
+    public Stream CreateZipFromFiles(Stream fileDat, Stream fileXml)
     {
       return ZipHelper.CreateZip(fileDat, fileXml);
     }

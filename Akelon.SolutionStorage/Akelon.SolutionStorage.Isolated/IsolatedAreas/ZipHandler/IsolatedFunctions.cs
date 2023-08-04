@@ -29,7 +29,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <param name="content">zip-файл</param>
     /// <returns>true - если в архиве два нужных файла, иначе - false</returns>
     [Public]
-    public bool CheckZipInput(string content)
+    public bool CheckZipInput(Stream fileZip)
     {
       if (ZipHelper.CheckZipInput())
         return true;

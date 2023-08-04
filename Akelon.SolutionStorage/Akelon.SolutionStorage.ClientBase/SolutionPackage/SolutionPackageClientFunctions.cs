@@ -20,19 +20,25 @@ namespace Akelon.SolutionStorage.Client
       var fileSelect = fileDialog.AddFileSelect("zip-архив", true);
       fileSelect.WithFilter("Архивы с расширением .zip", "zip");
       fileSelect.MaxFileSize(500 * 1024 * 1024);
-      var file = fileSelect.Value;
       
       if (fileDialog.Show() == DialogButtons.Ok)
       {
-        if (string.IsNullOrEmpty(_obj.Name))
-          _obj.Name = file.Name.Substring(0, file.Name.Length-4);
-        if (SolutionStorage.IsolatedFunctions.ZipHandler.CheckZipInput(Convert.ToBase64String(file.Content)))
+        var file = fileSelect.Value;
+        if (!file.Name.Contains(".zip"))
         {
-          PublicFunctions.SolutionPackage.Remote.CreatePackageFromZip(_obj, Convert.ToBase64String(file.Content));
+          throw AppliedCodeException.Create("Файл должен иметь расширение .zip");
         }
-        else
-          Dialogs.ShowMessage("Client error in CreateFromZip"); //TODO сделать ресурсом сообщение об ошибке
+        
+        if (string.IsNullOrEmpty(_obj.Name))
+        {
+          SetPackageName();
+        }
+        
+        CreateSimpleDocumentVersion(file);
+        PublicFunctions.SolutionPackage.Remote.CreatePackageFromZip(_obj);
       }
+      
+      _obj.Save();
     }
     
     /// <summary>
@@ -43,19 +49,20 @@ namespace Akelon.SolutionStorage.Client
       var fileDialog = Dialogs.CreateInputDialog(Akelon.SolutionStorage.SolutionPackages.Resources.DatXmlInputDialogTitle);
       
       var fileSelect = fileDialog.AddFileSelectMany("Файлы", true);
-      fileSelect.WithFilter("Файлы с расширением .dat и .xml", "dat", "xml");
+      fileSelect.WithFilter($"Файлы с расширением .dat и .xml", "dat", "xml");
       fileSelect.WithMaxFilesSize(500 * 1024 * 1024);
       
       if (fileDialog.Show() == DialogButtons.Ok)
       {
+        // TODO: Убрать наименование при отмене окна
+        SetPackageName();
+        
         var files = fileSelect.Value;
         CreateSimpleDocumentVersions(files);
-        
-        if (string.IsNullOrEmpty(_obj.Name))
-        {
-          SetPackageName();
-        }
+        PublicFunctions.SolutionPackage.Remote.CreatePackageFromFiles(_obj);
       }
+      
+      _obj.Save();
     }
     
     public void SetPackageName()
@@ -65,50 +72,73 @@ namespace Akelon.SolutionStorage.Client
       if (fileNameDialog.Show() == DialogButtons.Ok)
       {
         _obj.Name = fileName.Value;
-        _obj.Save();
       }
     }
-    
+
     public void CreateSimpleDocumentVersions(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files)
     {
       var versions = new List<Sungero.Docflow.ISimpleDocument>(2);
       foreach (var file in files)
       {
-        byte[] buffer = new Byte[file.OpenReadStream().Length + 10];
-        var bytesCount = file.OpenReadStream().Read(buffer, 0, 500 * 1024 * 1024);
-        var memory = new MemoryStream(buffer);
+        string extension = GetFileExtension(file);
         
-        string extension = string.Empty;
-        if (file.FileName.Contains("dat"))
-        {
-          extension = "dat";
-        }
-        else if (file.FileName.Contains("xml"))
-        {
-          extension = "xml";
-        }
-        var version = Sungero.Docflow.SimpleDocuments.Create();
-        version.CreateVersionFrom(memory, extension);
-        version.Name = file.FileName;
+        var simpleDoc = CreateSimpleDocumentVersion(file, extension);
         
-        _obj.Relations.Add("Addendum", version);
+        _obj.Relations.Add(Constants.SolutionPackage.PackageSourceBindType, simpleDoc);
+        _obj.Relations.Save();
       }
-      
-      PublicFunctions.SolutionPackage.Remote.CreatePackageFromFiles(_obj);
     }
     
-    //    public void CreatePackageFromDatXml(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files)
-    //    {
-    //      if (!IsFilesContainsDatXml(files))
-    //      {
-    //        return;
-    //      }
-//
-    //      var fileDatContent = GetStringFromFile(files, ".dat");
-    //      var fileXmlContent = GetStringFromFile(files, ".xml");
-//
-    //      PublicFunctions.SolutionPackage.Remote.CreatePackageFromDatXml(_obj, fileDatContent, fileXmlContent);
-    //    }
+    public Sungero.Docflow.ISimpleDocument CreateSimpleDocumentVersion(CommonLibrary.IFileObject file, string extension)
+    {
+      byte[] buffer = new Byte[file.OpenReadStream().Length + 10];
+      var bytesCount = file.OpenReadStream().Read(buffer, 0, 500 * 1024 * 1024);
+      
+      var simpleDoc = Sungero.Docflow.SimpleDocuments.Create();
+      using (var memory = new MemoryStream(buffer))
+      {
+        simpleDoc.CreateVersionFrom(memory, extension);
+      }
+      
+      simpleDoc.Name = file.FileName;
+      simpleDoc.Save();
+      
+      return simpleDoc;
+    }
+    
+    public void CreateSimpleDocumentVersion(CommonLibrary.IBinaryObject file)
+    {
+      var simpleDoc = Sungero.Docflow.SimpleDocuments.Create();
+      
+      using (var memory = new MemoryStream(file.Content))
+      {
+        simpleDoc.CreateVersionFrom(memory, "zip");
+      }
+      
+      simpleDoc.Name = file.Name;
+      simpleDoc.Save();
+
+      _obj.Relations.Add(Constants.SolutionPackage.PackageSourceBindType, simpleDoc);
+      _obj.Relations.Save();
+    }
+    
+    public string GetFileExtension(CommonLibrary.IFileObject file)
+    {
+      string fileName = file.FileName;
+      
+      if (fileName.Contains($".dat"))
+      {
+        return "dat";
+      }
+      else if (fileName.Contains($".xml"))
+      {
+        return "xml";
+      }
+      else
+      {
+        throw AppliedCodeException.Create("Файлы должны иметь расширение .dat и .xml!");
+      }
+    }
     
     public string GetStringFromFile(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files, string extension)
     {
@@ -136,9 +166,9 @@ namespace Akelon.SolutionStorage.Client
         Dialogs.NotifyMessage("Нужно выбрать два файла!");
         return false;
       }
-      if (!files.Any(file => file.FileName.Contains(".dat")))
+      if (!files.Any(file => file.FileName.Contains("dat")))
       {
-        Dialogs.NotifyMessage("Не найден файл с расширением .dat");
+        Dialogs.NotifyMessage("Не найден файл с расширением dat");
         return false;
       }
       if (!files.Any(file => file.FileName.Contains(".xml")))

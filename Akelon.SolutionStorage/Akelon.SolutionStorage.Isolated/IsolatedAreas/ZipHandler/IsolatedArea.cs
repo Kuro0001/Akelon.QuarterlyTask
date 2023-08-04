@@ -49,7 +49,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       
       byte[] byteZip = File.ReadAllBytes(fileZipName);
       
-      //Directory.Delete(path, true);
+      Directory.Delete(path, true);
       
       return new MemoryStream(byteZip);
     }

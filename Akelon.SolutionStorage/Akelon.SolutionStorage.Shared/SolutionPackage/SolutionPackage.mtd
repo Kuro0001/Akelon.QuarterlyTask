@@ -111,11 +111,6 @@
           "Name": "solutionPackage",
           "ParameterType": "global::Akelon.SolutionStorage.ISolutionPackage",
           "ParameterTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
-        },
-        {
-          "Name": "fileZip",
-          "ParameterType": "global::System.String",
-          "ParameterTypeFullName": "System.String"
         }
       ],
       "Placement": "Shared",

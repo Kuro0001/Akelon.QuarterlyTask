@@ -151,21 +151,21 @@
   "IsolatedAssemblyName": "Akelon.SolutionStorage.Isolated",
   "IsolatedFunctions": [
     {
-      "NameGuid": "0b150d9d-c828-4904-a91f-5ce6f99e20cd",
+      "NameGuid": "a4ffee19-20ee-4dbf-a88c-70a052a2f81d",
       "Name": "CheckZipInput",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [
         {
-          "Name": "content",
-          "ParameterType": "global::System.String",
-          "ParameterTypeFullName": "System.String"
+          "Name": "fileZip",
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
         }
       ],
       "ReturnType": "global::System.Boolean",
       "ReturnTypeFullName": "System.Boolean"
     },
     {
-      "NameGuid": "0fca3e1d-e204-48e9-8aba-734aafd70827",
+      "NameGuid": "6755c51f-8e1b-4ab6-8566-63d87d517886",
       "Name": "CreateZipFromFiles",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [

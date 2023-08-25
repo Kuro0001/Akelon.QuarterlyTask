@@ -100,4 +100,7 @@
   <data name="Property_Responsible" xml:space="preserve">
     <value>Ответвственный</value>
   </data>
+  <data name="Action_CreatePackageFromFiles" xml:space="preserve">
+    <value>Создать из файлов</value>
+  </data>
 </root>

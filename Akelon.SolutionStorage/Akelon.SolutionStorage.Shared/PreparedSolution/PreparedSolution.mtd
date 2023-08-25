@@ -12,6 +12,16 @@
       "IsEmptySelectionAllowed": true,
       "LargeIconName": "Action_CreatePackage_large_90b79c486bdd43a69ea2950dc2441754.png",
       "SmallIconName": "Action_CreatePackage_small_90b79c486bdd43a69ea2950dc2441754.png"
+    },
+    {
+      "NameGuid": "b90ec8a4-daaa-4d49-b1cc-6f7b6080baf1",
+      "Name": "CreatePackageFromFiles",
+      "ActionArea": "ChildCollection",
+      "CollectionPropertyGuid": "1701e4ee-f555-492d-a51a-f2585865f6b4",
+      "GenerateHandler": true,
+      "IsEmptySelectionAllowed": true,
+      "LargeIconName": null,
+      "SmallIconName": null
     }
   ],
   "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",

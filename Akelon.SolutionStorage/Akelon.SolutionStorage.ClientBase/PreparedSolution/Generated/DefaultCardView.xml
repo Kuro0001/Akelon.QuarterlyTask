@@ -21,7 +21,12 @@
           <property name="AllowGrouping">false</property>
         </property>
         <property name="TotalSummary" iskey="true" value="0" />
-        <property name="SortInfo" iskey="true" value="0" />
+        <property name="SortInfo" iskey="true" value="1">
+          <property name="Item1" isnull="true" iskey="true">
+            <property name="FieldName">Package</property>
+            <property name="SortOrder">Ascending</property>
+          </property>
+        </property>
         <property name="GroupSummary" iskey="true" value="0" />
         <property name="GroupCount">0</property>
         <property name="Columns" iskey="true" value="1">
@@ -78,7 +83,7 @@
             <property name="Name">PreparedSolution_RealizationPlace_Note</property>
             <property name="FieldName">Note</property>
             <property name="VisibleIndex">1</property>
-            <property name="Width">203</property>
+            <property name="Width">251</property>
             <property name="ActualWidth">20*</property>
           </property>
         </property>

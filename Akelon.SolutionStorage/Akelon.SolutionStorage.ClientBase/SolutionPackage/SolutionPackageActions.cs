@@ -58,7 +58,8 @@ namespace Akelon.SolutionStorage.Client
     /// </summary>
     public virtual void CreateFromZip(Sungero.Domain.Client.ExecuteActionArgs e)
     {
-      Functions.SolutionPackage.CreateFromZip(_obj);
+      var sp = SolutionPackages.Create();
+      Functions.SolutionPackage.CreateFromZip(sp);
     }
   }
 }

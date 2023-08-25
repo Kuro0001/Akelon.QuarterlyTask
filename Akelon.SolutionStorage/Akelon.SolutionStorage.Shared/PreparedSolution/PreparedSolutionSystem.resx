@@ -121,4 +121,19 @@
   <data name="Action_CreatePackageConfirmationDescription" xml:space="preserve">
     <value />
   </data>
+  <data name="Action_CreatePackageFromFiles" xml:space="preserve">
+    <value>Create from files</value>
+  </data>
+  <data name="Action_CreatePackageFromFilesDescription" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Action_CreatePackageFromFilesHint" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Action_CreatePackageFromFilesConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_CreatePackageFromFilesConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
 </root>

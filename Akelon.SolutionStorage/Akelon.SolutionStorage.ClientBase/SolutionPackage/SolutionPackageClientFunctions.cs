@@ -91,14 +91,8 @@ namespace Akelon.SolutionStorage.Client
     
     public Sungero.Docflow.ISimpleDocument CreateSimpleDocumentVersion(CommonLibrary.IFileObject file, string extension)
     {
-      byte[] buffer = new Byte[file.OpenReadStream().Length + 10];
-      var bytesCount = file.OpenReadStream().Read(buffer, 0, 500 * 1024 * 1024);
-      
       var simpleDoc = Sungero.Docflow.SimpleDocuments.Create();
-      using (var memory = new MemoryStream(buffer))
-      {
-        simpleDoc.CreateVersionFrom(memory, extension);
-      }
+      simpleDoc.CreateVersionFrom(file.OpenReadStream(), extension);
       
       simpleDoc.Name = file.FileName;
       simpleDoc.Save();

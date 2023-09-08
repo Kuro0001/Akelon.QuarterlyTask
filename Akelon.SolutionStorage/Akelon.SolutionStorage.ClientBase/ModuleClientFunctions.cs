@@ -32,7 +32,7 @@ namespace Akelon.SolutionStorage.Client
     /// </summary>
     public virtual void ShowIncompleteSolution()
     {
-      var solutions = PreparedSolutions.GetAll(s => s.SolutionType == PreparedSolution.SolutionType.Incomplete);
+      var solutions = PreparedSolutions.GetAll(s => s.SolutionType == PreparedSolution.SolutionType.WikiArticle);
       solutions.Show();
     }
 
@@ -41,7 +41,7 @@ namespace Akelon.SolutionStorage.Client
     /// </summary>
     public virtual void ShowCompleteSolution()
     {
-      var solutions = PreparedSolutions.GetAll(s => s.SolutionType == PreparedSolution.SolutionType.Complete);
+      var solutions = PreparedSolutions.GetAll(s => s.SolutionType == PreparedSolution.SolutionType.PackageSolution);
       solutions.Show();
     }
   }

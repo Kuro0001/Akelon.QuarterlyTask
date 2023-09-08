@@ -70,8 +70,8 @@
   <data name="CollectionDisplayName" xml:space="preserve">
     <value>Готовые решения</value>
   </data>
-  <data name="Property_CodeExampleUrl" xml:space="preserve">
-    <value>Url примера кода</value>
+  <data name="Property_WikiArticleUrl" xml:space="preserve">
+    <value>Url вики статьи</value>
   </data>
   <data name="Property_RealizationPlace" xml:space="preserve">
     <value>Места реализации</value>
@@ -79,11 +79,11 @@
   <data name="Property_SolutionType" xml:space="preserve">
     <value>Тип решения</value>
   </data>
-  <data name="Enum_SolutionType_Incomplete" xml:space="preserve">
-    <value>Пример кода</value>
+  <data name="Enum_SolutionType_WikiArticle" xml:space="preserve">
+    <value>Wiki статья</value>
   </data>
-  <data name="Enum_SolutionType_Complete" xml:space="preserve">
-    <value>Полноценное</value>
+  <data name="Enum_SolutionType_PackageSolution" xml:space="preserve">
+    <value>Пакет решения</value>
   </data>
   <data name="Property_Package" xml:space="preserve">
     <value>Пакет</value>

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -9,5 +9,12 @@ namespace Akelon.SolutionStorage.Server
 {
   public partial class ModuleInitializer
   {
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void Function1()
+    {
+    }
   }
 }

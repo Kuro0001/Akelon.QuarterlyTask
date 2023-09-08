@@ -258,8 +258,8 @@
     {
       "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
       "NameGuid": "9806b16f-913f-4b23-8a33-f9b31cdab6e2",
-      "Name": "CodeExampleUrl",
-      "Code": "CodeExampleUrl",
+      "Name": "WikiArticleUrl",
+      "Code": "WikiArticleUrl",
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "e249fb04-64bd-40c1-8f42-ba127118a011"
     },
@@ -280,12 +280,12 @@
       "DirectValues": [
         {
           "NameGuid": "8e7180ae-1aee-42ba-a863-848c512fd9be",
-          "Name": "Incomplete",
+          "Name": "WikiArticle",
           "Code": "Partial"
         },
         {
           "NameGuid": "e48ef540-76d7-4037-ba35-cbaecd356b05",
-          "Name": "Complete",
+          "Name": "PackageSolution",
           "Code": "Complete"
         }
       ],
@@ -319,7 +319,6 @@
       "NameGuid": "f7d6b4f1-95ac-46e1-a8af-45f5347b81cf",
       "Name": "DirectumRXVersion",
       "Code": "DirectumRXVers",
-      "IsRequired": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "1701e4ee-f555-492d-a51a-f2585865f6b4"
     },

@@ -12,7 +12,9 @@ namespace Akelon.SolutionStorage
 
     public override void Created(Sungero.Domain.CreatedEventArgs e)
     {
-      _obj.SolutionType = PreparedSolution.SolutionType.Incomplete;
+      _obj.SolutionType = PreparedSolution.SolutionType.WikiArticle;
+      if (Sungero.Company.Employees.GetAll().Where(em => em.Login == Users.Current.Login).Any())
+        _obj.Responsible = Sungero.Company.Employees.As(Users.Current);
     }
 
     public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)

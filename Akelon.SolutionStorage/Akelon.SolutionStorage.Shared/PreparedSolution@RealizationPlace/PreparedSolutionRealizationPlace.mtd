@@ -25,6 +25,7 @@
       "Name": "Name",
       "CanBeSearch": false,
       "Code": "Name",
+      "IsRequired": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "0b51d57f-a892-4d22-a5c4-65deccce4ac0"
     },
@@ -34,8 +35,23 @@
       "Name": "Note",
       "CanBeSearch": false,
       "Code": "Note",
+      "IsRequired": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "c513fa9a-24b5-4644-a0b8-c51a48b1b8cb"
+    },
+    {
+      "$type": "Sungero.Metadata.NavigationPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "4922bd56-07c6-4ace-8930-ced4a5407ed0",
+      "Name": "Counterparty",
+      "CanBeSearch": false,
+      "Code": "Counterparty",
+      "EntityGuid": "294767f1-009f-4fbd-80fc-f98c49ddc560",
+      "FlatListInStandaloneLookup": true,
+      "HandledEvents": [
+        "ChangedShared"
+      ],
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
+      "PreviousPropertyGuid": "a0fcbf26-ee46-4718-919a-adcacd9728c5"
     }
   ],
   "PublicStructures": [],

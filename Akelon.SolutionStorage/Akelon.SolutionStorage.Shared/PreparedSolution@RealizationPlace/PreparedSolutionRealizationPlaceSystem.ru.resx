@@ -64,4 +64,7 @@
   <data name="Property_Note" xml:space="preserve">
     <value>Примечание</value>
   </data>
+  <data name="Property_Counterparty" xml:space="preserve">
+    <value>Контрагент</value>
+  </data>
 </root>

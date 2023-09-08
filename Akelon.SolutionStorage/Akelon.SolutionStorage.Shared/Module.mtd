@@ -123,6 +123,16 @@
       "Id": "ec7b606a-21ee-4f16-aba8-ab8c2af76d12",
       "MaxVersion": "",
       "MinVersion": "0.0.1.0"
+    },
+    {
+      "Id": "243b34ec-8425-4c7e-b66f-27f7b9c8f38d",
+      "MaxVersion": "",
+      "MinVersion": "4.6.37.0"
+    },
+    {
+      "Id": "df83a2ea-8d43-4ec4-a34a-2e61863014df",
+      "MaxVersion": "",
+      "MinVersion": "4.6.37.0"
     }
   ],
   "ExplorerTreeOrder": [

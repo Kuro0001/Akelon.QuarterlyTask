@@ -16,7 +16,7 @@ namespace Akelon.SolutionStorage.Server
     /// Создать экземпляр документа
     /// </summary>
     /// <returns>Новый экземпляр документа SolutionPackage</returns>
-    [Public, Remote]
+    [Remote]
     public static Akelon.SolutionStorage.ISolutionPackage CreatePackage()
     {
       return SolutionPackages.Create();
@@ -25,7 +25,7 @@ namespace Akelon.SolutionStorage.Server
     /// <summary>
     /// Загрузка zip-архива с пакетом решения
     /// </summary>
-    [Public, Remote]
+    [Remote]
     public void CreatePackageFromZip()
     {
       var files = _obj.Relations.GetRelated();
@@ -51,7 +51,7 @@ namespace Akelon.SolutionStorage.Server
       }
     }
     
-    [Public, Remote]
+    [Remote]
     public void CreatePackageFromFiles()
     {
       var files = _obj.Relations.GetRelated();

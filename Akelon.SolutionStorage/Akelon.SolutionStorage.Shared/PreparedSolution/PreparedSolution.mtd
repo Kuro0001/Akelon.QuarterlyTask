@@ -38,8 +38,38 @@
   "FilterPanel": {
     "NameGuid": "b0125fbd-3b91-4dbb-914a-689276216404",
     "Name": "FilterPanel",
-    "Controls": [],
-    "IsAncestorMetadata": true
+    "Controls": [
+      {
+        "$type": "Sungero.Metadata.FilterGroupMetadata, Sungero.Metadata",
+        "NameGuid": "9b2ae58e-8291-4f80-9619-acb4a0ca442a",
+        "Name": "MainGroup"
+      },
+      {
+        "$type": "Sungero.Metadata.FilterListMetadata, Sungero.Metadata",
+        "NameGuid": "bd5e269e-b768-4507-82ce-21307bfcdc03",
+        "Name": "SolutionTypesFlagsList",
+        "ParentGuid": "9b2ae58e-8291-4f80-9619-acb4a0ca442a"
+      },
+      {
+        "$type": "Sungero.Metadata.FilterListItemMetadata, Sungero.Metadata",
+        "NameGuid": "9f78fb8a-bb9f-4f90-9c99-4f9ebfafb77d",
+        "Name": "WebsiteFlag",
+        "ParentGuid": "bd5e269e-b768-4507-82ce-21307bfcdc03"
+      },
+      {
+        "$type": "Sungero.Metadata.FilterListItemMetadata, Sungero.Metadata",
+        "NameGuid": "33191b06-d8a8-4b7f-acb2-30ae1df9c0b8",
+        "Name": "PackageFlag",
+        "ParentGuid": "bd5e269e-b768-4507-82ce-21307bfcdc03",
+        "PreviousGuid": "9f78fb8a-bb9f-4f90-9c99-4f9ebfafb77d"
+      }
+    ],
+    "IsAncestorMetadata": true,
+    "IsEnabled": false,
+    "Overridden": [
+      "Controls",
+      "IsEnabled"
+    ]
   },
   "Forms": [
     {
@@ -235,7 +265,8 @@
     "BeforeSaveServer",
     "ShowingClient",
     "CreatedServer",
-    "RefreshClient"
+    "RefreshClient",
+    "FilteringServer"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "SolutionStoragePreparedSolution",
@@ -258,8 +289,8 @@
     {
       "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
       "NameGuid": "9806b16f-913f-4b23-8a33-f9b31cdab6e2",
-      "Name": "WikiArticleUrl",
-      "Code": "WikiArticleUrl",
+      "Name": "WebsiteUrl",
+      "Code": "WebsiteUrl",
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "e249fb04-64bd-40c1-8f42-ba127118a011"
     },
@@ -280,12 +311,12 @@
       "DirectValues": [
         {
           "NameGuid": "8e7180ae-1aee-42ba-a863-848c512fd9be",
-          "Name": "WikiArticle",
+          "Name": "Website",
           "Code": "Partial"
         },
         {
           "NameGuid": "e48ef540-76d7-4037-ba35-cbaecd356b05",
-          "Name": "PackageSolution",
+          "Name": "Package",
           "Code": "Complete"
         }
       ],

@@ -11,8 +11,9 @@ namespace Akelon.SolutionStorage.Client
   partial class SolutionPackageFunctions
   {
     /// <summary>
-    /// Загрузка zip-архива с пакетом решения
-    /// Если записи не присвоено наименование, то будет автоматически присваиваться наименование файла</summary>
+    /// Загрузить в версию документа файл с расширеним zip.
+    /// </summary>
+    /// <returns>Документ вида Пакет решения. Пакет в формате zip сохранен в версии документа.</returns>
     public void CreateFromZip()
     {
       var fileDialog = Dialogs.CreateInputDialog(Akelon.SolutionStorage.SolutionPackages.Resources.ZipInputDialogTitle);
@@ -28,22 +29,15 @@ namespace Akelon.SolutionStorage.Client
         {
           throw AppliedCodeException.Create("Файл должен иметь расширение .zip");
         }
-        
-        if (string.IsNullOrEmpty(_obj.Name))
-        {
-          SetPackageName();
-        }
-        
         CreateSimpleDocumentVersion(file);
         PublicFunctions.SolutionPackage.Remote.CreatePackageFromZip(_obj);
       }
-      
-      _obj.Save();
     }
     
     /// <summary>
-    /// Загрузка файлов с расширением .dat и .xml
+    /// Загрузить в версию документа файл с расширеним zip из файлов фармата .dat и .xml.
     /// </summary>
+    /// <returns>Документ вида Пакет решения. Пакет в формате zip сохранен в версии документа.</returns>
     public void CreateFromDatXml()
     {
       var fileDialog = Dialogs.CreateInputDialog(Akelon.SolutionStorage.SolutionPackages.Resources.DatXmlInputDialogTitle);
@@ -54,17 +48,15 @@ namespace Akelon.SolutionStorage.Client
       
       if (fileDialog.Show() == DialogButtons.Ok)
       {
-        // TODO: Убрать наименование при отмене окна
-        SetPackageName();
-        
         var files = fileSelect.Value;
-        CreateSimpleDocumentVersions(files);
-        PublicFunctions.SolutionPackage.Remote.CreatePackageFromFiles(_obj);
+        CreateSimpleDocuments(files);
+        PublicFunctions.SolutionPackage.Remote.CreatePackageFromFiles(_obj); //TODO добавить простые доки без связей, не забыть удалить после работы с ними
       }
-      
-      _obj.Save();
     }
     
+    /// <summary>
+    /// Задать документу наименование
+    /// </summary>
     public void SetPackageName()
     {
       var fileNameDialog = Dialogs.CreateInputDialog("Введите наименование пакета");
@@ -75,7 +67,11 @@ namespace Akelon.SolutionStorage.Client
       }
     }
 
-    public void CreateSimpleDocumentVersions(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files)
+    /// <summary>
+    /// Создать временные простые документы для файлов .dat и .xml
+    /// </summary>
+    /// <param name="files"></param>
+    public void CreateSimpleDocuments(System.Collections.Generic.IEnumerable<CommonLibrary.IFileObject> files)
     {
       var versions = new List<Sungero.Docflow.ISimpleDocument>(2);
       foreach (var file in files)
@@ -88,6 +84,7 @@ namespace Akelon.SolutionStorage.Client
         _obj.Relations.Save();
       }
     }
+    
     
     public Sungero.Docflow.ISimpleDocument CreateSimpleDocumentVersion(CommonLibrary.IFileObject file, string extension)
     {

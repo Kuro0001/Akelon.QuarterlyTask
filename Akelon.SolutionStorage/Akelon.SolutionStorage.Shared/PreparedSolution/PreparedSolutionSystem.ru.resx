@@ -70,8 +70,8 @@
   <data name="CollectionDisplayName" xml:space="preserve">
     <value>Готовые решения</value>
   </data>
-  <data name="Property_WikiArticleUrl" xml:space="preserve">
-    <value>Url вики статьи</value>
+  <data name="Property_WebsiteUrl" xml:space="preserve">
+    <value>Адрес web-сайта</value>
   </data>
   <data name="Property_RealizationPlace" xml:space="preserve">
     <value>Места реализации</value>
@@ -79,11 +79,11 @@
   <data name="Property_SolutionType" xml:space="preserve">
     <value>Тип решения</value>
   </data>
-  <data name="Enum_SolutionType_WikiArticle" xml:space="preserve">
-    <value>Wiki статья</value>
+  <data name="Enum_SolutionType_Website" xml:space="preserve">
+    <value>Web-сайт</value>
   </data>
-  <data name="Enum_SolutionType_PackageSolution" xml:space="preserve">
-    <value>Пакет решения</value>
+  <data name="Enum_SolutionType_Package" xml:space="preserve">
+    <value>Пакет</value>
   </data>
   <data name="Property_Package" xml:space="preserve">
     <value>Пакет</value>
@@ -102,5 +102,17 @@
   </data>
   <data name="Action_CreatePackageFromFiles" xml:space="preserve">
     <value>Создать из файлов</value>
+  </data>
+  <data name="FilterPanel_MainGroup_9b2ae58e82914f809619acb4a0ca442a" xml:space="preserve">
+    <value>Решения</value>
+  </data>
+  <data name="FilterPanel_SolutionTypesFlagsList_bd5e269eb768450782ce21307bfcdc03" xml:space="preserve">
+    <value>Типы решений</value>
+  </data>
+  <data name="FilterPanel_WebsiteFlag_9f78fb8abb9f4f909c994f9ebfafb77d" xml:space="preserve">
+    <value>Web-сайт</value>
+  </data>
+  <data name="FilterPanel_PackageFlag_33191b06d8a84b7facb230ae1df9c0b8" xml:space="preserve">
+    <value>Пакет</value>
   </data>
 </root>

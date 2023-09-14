@@ -15,21 +15,21 @@ namespace Akelon.SolutionStorage.Client
     /// <param name="solutionType">Введенный тип решения. При событии "Изменение контрола/свойства" необходимо ввести новое начение</param>
     public virtual void SetFieldsVisibilityWithSolutionType(Enumeration? solutionType)
     {
-      if (solutionType.Equals(PreparedSolution.SolutionType.PackageSolution))
+      if (solutionType.Equals(PreparedSolution.SolutionType.Package))
       {
         _obj.State.Properties.SolutionDocument.IsVisible = true;
         _obj.State.Properties.Package.IsVisible = true;
         _obj.State.Properties.DirectumRXVersion.IsRequired = true;
         
-        _obj.WikiArticleUrl = null;
+        _obj.WebsiteUrl = null;
         
-        _obj.State.Properties.WikiArticleUrl.IsVisible = false;
-        _obj.State.Properties.WikiArticleUrl.IsRequired = false;
+        _obj.State.Properties.WebsiteUrl.IsVisible = false;
+        _obj.State.Properties.WebsiteUrl.IsRequired = false;
       }
-      else if (solutionType.Equals(PreparedSolution.SolutionType.WikiArticle))
+      else if (solutionType.Equals(PreparedSolution.SolutionType.Website))
       {
-        _obj.State.Properties.WikiArticleUrl.IsVisible = true;
-        _obj.State.Properties.WikiArticleUrl.IsRequired = true;
+        _obj.State.Properties.WebsiteUrl.IsVisible = true;
+        _obj.State.Properties.WebsiteUrl.IsRequired = true;
         
         _obj.SolutionDocument.Clear();
         _obj.Package.Clear();

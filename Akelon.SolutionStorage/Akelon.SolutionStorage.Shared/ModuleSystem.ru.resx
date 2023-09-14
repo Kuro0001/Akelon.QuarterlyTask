@@ -76,17 +76,17 @@
   <data name="CoverDescription_ShowPreparedSolutions" xml:space="preserve">
     <value>Открыть реестр со всеми решениями</value>
   </data>
-  <data name="CoverAction_ShowCompleteSolution" xml:space="preserve">
-    <value>Окрыть полноценные решения</value>
+  <data name="CoverAction_ShowSolutionWithPackages" xml:space="preserve">
+    <value>Окрыть решения с пакетами</value>
   </data>
-  <data name="CoverDescription_ShowCompleteSolution" xml:space="preserve">
-    <value>Окрыть реестр полноценных решений</value>
+  <data name="CoverDescription_ShowSolutionWithPackages" xml:space="preserve">
+    <value>Окрыть реестр решений с типом решения - пакет</value>
   </data>
-  <data name="CoverAction_ShowIncompleteSolution" xml:space="preserve">
-    <value>Открыть решения с примером кода</value>
+  <data name="CoverAction_ShowSolutionsWithWebsites" xml:space="preserve">
+    <value>Открыть решения с web-сайтами</value>
   </data>
-  <data name="CoverDescription_ShowIncompleteSolution" xml:space="preserve">
-    <value>Открыть реестр решений с примером кода</value>
+  <data name="CoverDescription_ShowSolutionsWithWebsites" xml:space="preserve">
+    <value>Открыть реестр решений с типом решения - web-сайт</value>
   </data>
   <data name="CoverGroup_Packages" xml:space="preserve">
     <value>Пакеты</value>
@@ -117,5 +117,14 @@
   </data>
   <data name="CoverDescription_OpenTagsList" xml:space="preserve">
     <value>Открыть список тегов</value>
+  </data>
+  <data name="CoverAction_CreatePreparedSolution" xml:space="preserve">
+    <value>Создать готовое решение</value>
+  </data>
+  <data name="CoverAction_CreateTag" xml:space="preserve">
+    <value>Создать тег</value>
+  </data>
+  <data name="CoverDescription_CreateTag" xml:space="preserve">
+    <value>Создать новый тег</value>
   </data>
 </root>

@@ -81,43 +81,6 @@
       ]
     }
   ],
-  "PublicFunctions": [
-    {
-      "Name": "CreatePackage",
-      "IsRemote": true,
-      "Placement": "Shared",
-      "ReturnType": "global::Akelon.SolutionStorage.ISolutionPackage",
-      "ReturnTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
-    },
-    {
-      "Name": "CreatePackageFromFiles",
-      "IsRemote": true,
-      "Parameters": [
-        {
-          "Name": "solutionPackage",
-          "ParameterType": "global::Akelon.SolutionStorage.ISolutionPackage",
-          "ParameterTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
-        }
-      ],
-      "Placement": "Shared",
-      "ReturnType": "void",
-      "ReturnTypeFullName": "System.Void"
-    },
-    {
-      "Name": "CreatePackageFromZip",
-      "IsRemote": true,
-      "Parameters": [
-        {
-          "Name": "solutionPackage",
-          "ParameterType": "global::Akelon.SolutionStorage.ISolutionPackage",
-          "ParameterTypeFullName": "Akelon.SolutionStorage.ISolutionPackage, Sungero.Domain.Interfaces"
-        }
-      ],
-      "Placement": "Shared",
-      "ReturnType": "void",
-      "ReturnTypeFullName": "System.Void"
-    }
-  ],
   "PublicStructures": [],
   "ResourcesKeys": [
     "ZipInputDialogTitle",

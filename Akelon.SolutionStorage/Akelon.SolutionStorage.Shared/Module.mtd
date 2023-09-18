@@ -214,6 +214,15 @@
     }
   ],
   "IsolatedNamespace": "Akelon.SolutionStorage.Isolated",
+  "Jobs": [
+    {
+      "NameGuid": "d6f2b645-e5a8-4b13-bea5-354f2610b006",
+      "Name": "ClearSolutionPackageRelatedDocuments",
+      "GenerateHandler": true,
+      "MonthSchedule": "Monthly",
+      "StartAt": "1753-01-01T12:00:00"
+    }
+  ],
   "Libraries": [
     {
       "NameGuid": "6bc9155b-9f68-46bb-8163-4a62a845aa11",
@@ -234,7 +243,9 @@
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Akelon.SolutionStorage",
-  "ResourcesKeys": [],
+  "ResourcesKeys": [
+    "MessageTextPackageCreatedSuccesfully"
+  ],
   "ServerAssemblyName": "Akelon.SolutionStorage.Server",
   "ServerNamespace": "Akelon.SolutionStorage.Server",
   "SharedAssemblyName": "Akelon.SolutionStorage.Shared",

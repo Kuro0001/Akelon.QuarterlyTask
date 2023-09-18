@@ -31,9 +31,19 @@ namespace Akelon.SolutionStorage.Client
     public virtual void CreatePackageFromDatXml()
     {
       var document = Akelon.SolutionStorage.Functions.SolutionPackage.Remote.CreatePackage();
-      Functions.SolutionPackage.CreateFromDatXml(document);
-      Functions.SolutionPackage.SetPackageName();
-      document.Show();
+      try
+      {
+        if (Functions.SolutionPackage.CreateFromDatXml(document))
+        {
+          Functions.SolutionPackage.AskPackageName(document);
+          document.Save();
+          Dialogs.NotifyMessage(Akelon.SolutionStorage.Resources.MessageTextPackageCreatedSuccesfully);
+        }
+      }
+      catch
+      {
+        SolutionPackages.Delete(document);
+      }
     }
     
     /// <summary>
@@ -42,9 +52,19 @@ namespace Akelon.SolutionStorage.Client
     public virtual void CreatePackageFromZip()
     {
       var document = Akelon.SolutionStorage.Functions.SolutionPackage.Remote.CreatePackage();
-      Functions.SolutionPackage.CreateFromZip(document);
-      Functions.SolutionPackage.SetPackageName();
-      document.Show();
+      try
+      {
+        if (Functions.SolutionPackage.CreateFromZip(document))
+        {
+          Functions.SolutionPackage.AskPackageName(document);
+          document.Save();
+          Dialogs.NotifyMessage(Akelon.SolutionStorage.Resources.MessageTextPackageCreatedSuccesfully);
+        }
+      }
+      catch
+      {
+        SolutionPackages.Delete(document);
+      }
     }
 
     /// <summary>

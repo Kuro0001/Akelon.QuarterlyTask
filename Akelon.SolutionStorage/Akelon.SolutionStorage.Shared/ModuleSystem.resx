@@ -136,4 +136,10 @@
   <data name="CoverDescription_CreateTag" xml:space="preserve">
     <value>Create new tag</value>
   </data>
+  <data name="JobDisplayName_d6f2b645e5a84b13bea5354f2610b006" xml:space="preserve">
+    <value>Solution storage. Clear solution package relations</value>
+  </data>
+  <data name="JobDescription_d6f2b645e5a84b13bea5354f2610b006" xml:space="preserve">
+    <value>Delete all related documents in all solution packages</value>
+  </data>
 </root>

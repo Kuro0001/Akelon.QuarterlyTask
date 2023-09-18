@@ -13,6 +13,16 @@ namespace Akelon.SolutionStorage.Server
   {
     
     /// <summary>
+    /// Создать новый документ
+    /// </summary>
+    /// <returns>Новый документ класса ElectronicDocument</returns>
+    [Remote]
+    public static Sungero.Docflow.ISimpleDocument CreateSimpleDocument()
+    {
+      return Sungero.Docflow.SimpleDocuments.Create();
+    }
+    
+    /// <summary>
     /// Создать экземпляр документа
     /// </summary>
     /// <returns>Новый экземпляр документа SolutionPackage</returns>
@@ -23,12 +33,25 @@ namespace Akelon.SolutionStorage.Server
     }
     
     /// <summary>
+    /// Удалить связанные документы, использованные для создания версии пакета
+    /// </summary>
+    [Remote]
+    public void DeleteRelatedPackagedDocuments()
+    {
+      var documents = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType);
+      foreach(var doc in documents)
+      {
+        Sungero.Content.ElectronicDocuments.Delete(doc);
+      }
+    }
+    
+    /// <summary>
     /// Загрузка zip-архива с пакетом решения
     /// </summary>
     [Remote]
     public void CreatePackageFromZip()
     {
-      var files = _obj.Relations.GetRelated();
+      var files = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType);
       var fileZip = GetFileWithExtension(files, "zip");
       
       using (var fileZipStream = fileZip.LastVersion.Body.Read())
@@ -46,7 +69,7 @@ namespace Akelon.SolutionStorage.Server
         }
         catch (Exception ex)
         {
-          throw AppliedCodeException.Create($"Server error: CreatePackageFromZip. {ex.Message}"); //TODO сделать ресурсом сообщение об ошибке
+          throw AppliedCodeException.Create(string.Format(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextCreatePackageFromZipFormat(ex.Message)));
         }
       }
     }
@@ -54,8 +77,8 @@ namespace Akelon.SolutionStorage.Server
     [Remote]
     public void CreatePackageFromFiles()
     {
-      var files = _obj.Relations.GetRelated();
-      var fileDat = GetFileWithExtension(files, "dat");
+      var files = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType);
+      var fileDat = GetFileWithExtension(files, "dat");//TODO избавиться от функции, поменять на проверку по приложению обработчику
       var fileXml = GetFileWithExtension(files, "xml");
       
       using (var fileDatStream = fileDat.LastVersion.Body.Read())
@@ -70,7 +93,7 @@ namespace Akelon.SolutionStorage.Server
             }
             catch (Exception ex)
             {
-              throw AppliedCodeException.Create($"Server error: CreatePackageFromFiles. {ex.Message}"); //TODO сделать ресурсом сообщение об ошибке
+              throw AppliedCodeException.Create(string.Format(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextCreatePackageFromFilesFormat(ex.Message)));
             }
           }
         }

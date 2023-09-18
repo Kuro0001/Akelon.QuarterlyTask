@@ -64,4 +64,13 @@
   <data name="DatXmlInputDialogTitle" xml:space="preserve">
     <value>Выберите пакет в виде файлов .dat и .xml</value>
   </data>
+  <data name="MessageErrorTextIncorrectFileExtension" xml:space="preserve">
+    <value>Файл должен иметь расширение .zip</value>
+  </data>
+  <data name="ErrorMessageTextCreatePackageFromZip" xml:space="preserve">
+    <value>Ошибка сервера. (CreatePackageFromZip). {0}</value>
+  </data>
+  <data name="ErrorMessageTextCreatePackageFromFiles" xml:space="preserve">
+    <value>Ошибка сервера. CreatePackageFromFiles. {0}</value>
+  </data>
 </root>

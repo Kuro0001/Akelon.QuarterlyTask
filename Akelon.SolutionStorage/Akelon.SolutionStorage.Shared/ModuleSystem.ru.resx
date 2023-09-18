@@ -127,4 +127,10 @@
   <data name="CoverDescription_CreateTag" xml:space="preserve">
     <value>Создать новый тег</value>
   </data>
+  <data name="JobDisplayName_d6f2b645e5a84b13bea5354f2610b006" xml:space="preserve">
+    <value>Хранилище решений. Очистить связи пакетов решений</value>
+  </data>
+  <data name="JobDescription_d6f2b645e5a84b13bea5354f2610b006" xml:space="preserve">
+    <value>Удалить все связанные документы во всех пакетах решений</value>
+  </data>
 </root>

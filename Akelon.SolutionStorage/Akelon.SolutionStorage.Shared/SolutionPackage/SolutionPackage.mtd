@@ -84,7 +84,10 @@
   "PublicStructures": [],
   "ResourcesKeys": [
     "ZipInputDialogTitle",
-    "DatXmlInputDialogTitle"
+    "DatXmlInputDialogTitle",
+    "MessageErrorTextIncorrectFileExtension",
+    "ErrorMessageTextCreatePackageFromZip",
+    "ErrorMessageTextCreatePackageFromFiles"
   ],
   "RibbonCardMetadata": {
     "NameGuid": "856d71fc-d458-4ac3-b4ba-1f100ea398d3",

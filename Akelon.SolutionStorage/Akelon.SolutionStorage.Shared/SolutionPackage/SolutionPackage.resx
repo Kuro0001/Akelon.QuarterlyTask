@@ -64,4 +64,13 @@
   <data name="DatXmlInputDialogTitle" xml:space="preserve">
     <value>Select the package as .dat and .xml files</value>
   </data>
+  <data name="MessageErrorTextIncorrectFileExtension" xml:space="preserve">
+    <value>FIle extension must be .zip</value>
+  </data>
+  <data name="ErrorMessageTextCreatePackageFromZip" xml:space="preserve">
+    <value>Server error. (CreatePackageFromZip). {0}</value>
+  </data>
+  <data name="ErrorMessageTextCreatePackageFromFiles" xml:space="preserve">
+    <value>ServerError. CreatePackageFromFiles. {0}</value>
+  </data>
 </root>

@@ -49,18 +49,18 @@ namespace Akelon.SolutionStorage.Server
     /// Загрузка zip-архива с пакетом решения
     /// </summary>
     [Remote]
-    public void CreatePackageFromZip()
+    public void CreateFromZip()
     {
-      var files = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType);
-      var fileZip = GetFileWithExtension(files, "zip");
+      var fileZip = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType).Where(f => f.LastVersion.AssociatedApplication.Name == "zip").FirstOrDefault();
       
+      //TODO проверка на зип файл
       using (var fileZipStream = fileZip.LastVersion.Body.Read())
       {
         bool isZipContainsFiles = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CheckZipInput(fileZipStream);
         
         if (!isZipContainsFiles)
         {
-          throw AppliedCodeException.Create("Архив не содержит файлов .dat и .xml!");
+          throw AppliedCodeException.Create(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextIncorrectZipContent);
         }
         
         try
@@ -74,18 +74,25 @@ namespace Akelon.SolutionStorage.Server
       }
     }
     
+    /// <summary>
+    /// Сохранить пакет решения, представленный двумя файлами .dat и .xml, в новую версию документа в формате zip-файла
+    /// </summary>
     [Remote]
-    public void CreatePackageFromFiles()
+    public void CreateFromDatXml()
     {
       var files = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType);
-      var fileDat = GetFileWithExtension(files, "dat");//TODO избавиться от функции, поменять на проверку по приложению обработчику
-      var fileXml = GetFileWithExtension(files, "xml");
+      var fileDat = files.Where(f => f.LastVersion.AssociatedApplication.Name == "dat").FirstOrDefault();
+      var fileXml = files.Where(f => f.LastVersion.AssociatedApplication.Name == "xml").FirstOrDefault();
       
+      if (fileDat == null || fileXml == null)
+      {
+        throw AppliedCodeException.Create(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextInRelatedFilesNoDatOrXmlFiles);
+      }
       using (var fileDatStream = fileDat.LastVersion.Body.Read())
       {
         using (var fileXmlStream = fileXml.LastVersion.Body.Read())
         {
-          using (var stream = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFromFiles(fileDatStream, fileXmlStream))
+          using (var stream = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateFromDatXml(fileDatStream, fileXmlStream))
           {
             try
             {
@@ -98,13 +105,6 @@ namespace Akelon.SolutionStorage.Server
           }
         }
       }
-    }
-    
-    public Sungero.Content.IElectronicDocument GetFileWithExtension(System.Collections.Generic.IEnumerable<Sungero.Content.IElectronicDocument> files, string extension)
-    {
-      return files
-        .Where(file => file.Name.Contains(extension))
-        .First();
     }
   }
 }

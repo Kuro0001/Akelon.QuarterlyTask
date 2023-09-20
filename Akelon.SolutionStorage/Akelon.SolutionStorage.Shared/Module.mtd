@@ -194,8 +194,8 @@
       "ReturnTypeFullName": "System.Boolean"
     },
     {
-      "NameGuid": "6755c51f-8e1b-4ab6-8566-63d87d517886",
-      "Name": "CreateZipFromFiles",
+      "NameGuid": "1157e954-1451-4373-9023-06e6fc0302f6",
+      "Name": "CreateFromDatXml",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [
         {

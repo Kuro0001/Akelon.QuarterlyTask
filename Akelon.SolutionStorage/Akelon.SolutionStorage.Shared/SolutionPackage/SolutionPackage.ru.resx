@@ -73,4 +73,31 @@
   <data name="ErrorMessageTextCreatePackageFromFiles" xml:space="preserve">
     <value>Ошибка сервера. CreatePackageFromFiles. {0}</value>
   </data>
+  <data name="ErrorMessageTextInRelatedFilesNoDatOrXmlFiles" xml:space="preserve">
+    <value>Документ не иммет связанных файлов в формате .dat и/или .xml.</value>
+  </data>
+  <data name="ErrorMessageTextThereAreNoDatOrXml" xml:space="preserve">
+    <value>В выбранных файлах нет файлов формата .dat и/или .xml.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Наименование:</value>
+  </data>
+  <data name="EnterPackageName" xml:space="preserve">
+    <value>Введите наименование пакета</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Файлы</value>
+  </data>
+  <data name="FilesWithDatAndXmlExtensions" xml:space="preserve">
+    <value>Файлы с расширением .dat и .xml</value>
+  </data>
+  <data name="ZipArchive" xml:space="preserve">
+    <value>zip-архив</value>
+  </data>
+  <data name="ArchivesWithZipExtension" xml:space="preserve">
+    <value>Архивы с расширением .zip</value>
+  </data>
+  <data name="ErrorMessageTextIncorrectZipContent" xml:space="preserve">
+    <value>Архив не содержит файлов .dat и .xml.</value>
+  </data>
 </root>

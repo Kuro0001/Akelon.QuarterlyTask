@@ -73,4 +73,31 @@
   <data name="ErrorMessageTextCreatePackageFromFiles" xml:space="preserve">
     <value>ServerError. CreatePackageFromFiles. {0}</value>
   </data>
+  <data name="ErrorMessageTextInRelatedFilesNoDatOrXmlFiles" xml:space="preserve">
+    <value>The document does not have related .dat and/or .xml files.</value>
+  </data>
+  <data name="ErrorMessageTextThereAreNoDatOrXml" xml:space="preserve">
+    <value>There are no .dat and/or .xml files in selected files.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="EnterPackageName" xml:space="preserve">
+    <value>Enter package name</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="FilesWithDatAndXmlExtensions" xml:space="preserve">
+    <value>Files with dat and xml extensions</value>
+  </data>
+  <data name="ZipArchive" xml:space="preserve">
+    <value>zip-archive</value>
+  </data>
+  <data name="ArchivesWithZipExtension" xml:space="preserve">
+    <value>Archives with .zip extension</value>
+  </data>
+  <data name="ErrorMessageTextIncorrectZipContent" xml:space="preserve">
+    <value>The archive does not contain .dat and .xml files.</value>
+  </data>
 </root>

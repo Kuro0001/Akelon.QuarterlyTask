@@ -87,7 +87,16 @@
     "DatXmlInputDialogTitle",
     "MessageErrorTextIncorrectFileExtension",
     "ErrorMessageTextCreatePackageFromZip",
-    "ErrorMessageTextCreatePackageFromFiles"
+    "ErrorMessageTextCreatePackageFromFiles",
+    "ErrorMessageTextInRelatedFilesNoDatOrXmlFiles",
+    "ErrorMessageTextThereAreNoDatOrXml",
+    "Name",
+    "EnterPackageName",
+    "Files",
+    "FilesWithDatAndXmlExtensions",
+    "ZipArchive",
+    "ArchivesWithZipExtension",
+    "ErrorMessageTextIncorrectZipContent"
   ],
   "RibbonCardMetadata": {
     "NameGuid": "856d71fc-d458-4ac3-b4ba-1f100ea398d3",

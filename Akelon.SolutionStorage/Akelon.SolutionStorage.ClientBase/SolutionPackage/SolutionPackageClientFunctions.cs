@@ -20,8 +20,8 @@ namespace Akelon.SolutionStorage.Client
         _obj.Name = "temp_name";
       var fileDialog = Dialogs.CreateInputDialog(Akelon.SolutionStorage.SolutionPackages.Resources.ZipInputDialogTitle);
       
-      var fileSelect = fileDialog.AddFileSelect("zip-архив", true);
-      fileSelect.WithFilter("Архивы с расширением .zip", "zip");
+      var fileSelect = fileDialog.AddFileSelect(Akelon.SolutionStorage.SolutionPackages.Resources.ZipArchive, true);
+      fileSelect.WithFilter(Akelon.SolutionStorage.SolutionPackages.Resources.ArchivesWithZipExtension, "zip");
       fileSelect.MaxFileSize(500 * 1024 * 1024);
       
       if (fileDialog.Show() == DialogButtons.Ok)
@@ -37,7 +37,7 @@ namespace Akelon.SolutionStorage.Client
           CreateRelatedPackagedDocument(stream, file.Name, "zip");
         }
         
-        Functions.SolutionPackage.Remote.CreatePackageFromZip(_obj);
+        Functions.SolutionPackage.Remote.CreateFromZip(_obj);
         return true;
       }
       return false;
@@ -53,8 +53,8 @@ namespace Akelon.SolutionStorage.Client
         _obj.Name = "temp_name";
       var fileDialog = Dialogs.CreateInputDialog(Akelon.SolutionStorage.SolutionPackages.Resources.DatXmlInputDialogTitle);
       
-      var fileSelect = fileDialog.AddFileSelectMany("Файлы", true);
-      fileSelect.WithFilter($"Файлы с расширением .dat и .xml", "dat", "xml");
+      var fileSelect = fileDialog.AddFileSelectMany(Akelon.SolutionStorage.SolutionPackages.Resources.Files, true);
+      fileSelect.WithFilter(Akelon.SolutionStorage.SolutionPackages.Resources.FilesWithDatAndXmlExtensions, "dat", "xml");
       fileSelect.WithMaxFilesSize(500 * 1024 * 1024);
       
       if (fileDialog.Show() == DialogButtons.Ok)
@@ -64,7 +64,7 @@ namespace Akelon.SolutionStorage.Client
         {
           CreateRelatedPackagedDocument(file.OpenReadStream(), file.FileName, GetFileExtension(file));
         }
-        Functions.SolutionPackage.Remote.CreatePackageFromFiles(_obj);
+        Functions.SolutionPackage.Remote.CreateFromDatXml(_obj);
         return true;
       }
       return false;
@@ -75,8 +75,8 @@ namespace Akelon.SolutionStorage.Client
     /// </summary>
     public void AskPackageName()
     {
-      var fileNameDialog = Dialogs.CreateInputDialog("Введите наименование пакета");
-      var fileName = fileNameDialog.AddString("Наименование: ", true);
+      var fileNameDialog = Dialogs.CreateInputDialog(Akelon.SolutionStorage.SolutionPackages.Resources.EnterPackageName);
+      var fileName = fileNameDialog.AddString(Akelon.SolutionStorage.SolutionPackages.Resources.Name, true);
       if (fileNameDialog.Show() == DialogButtons.Ok)
       {
         _obj.Name = fileName.Value;
@@ -120,7 +120,7 @@ namespace Akelon.SolutionStorage.Client
       }
       else
       {
-        throw AppliedCodeException.Create("Файлы должны иметь расширение .dat и .xml!");//TODO сделать ресурсом
+        throw AppliedCodeException.Create(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextThereAreNoDatOrXml);
       }
     }
   }

@@ -100,4 +100,7 @@
   <data name="ErrorMessageTextIncorrectZipContent" xml:space="preserve">
     <value>Архив не содержит файлов .dat и .xml.</value>
   </data>
+  <data name="ErrorMessageTextPackegDoesntHaveXmlFile" xml:space="preserve">
+    <value>Пакет не имеет связанного файла в формате .zip</value>
+  </data>
 </root>

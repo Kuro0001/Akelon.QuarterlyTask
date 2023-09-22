@@ -51,9 +51,10 @@ namespace Akelon.SolutionStorage.Server
     [Remote]
     public void CreateFromZip()
     {
-      var fileZip = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType).Where(f => f.LastVersion.AssociatedApplication.Name == "zip").FirstOrDefault();
+      var fileZip = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType).Where(f => string.Equals(f.LastVersion.AssociatedApplication.Extension, "zip")).FirstOrDefault();
+      if (fileZip == null)
+        throw AppliedCodeException.Create(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextPackegDoesntHaveXmlFile);
       
-      //TODO проверка на зип файл
       using (var fileZipStream = fileZip.LastVersion.Body.Read())
       {
         bool isZipContainsFiles = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CheckZipInput(fileZipStream);
@@ -81,8 +82,8 @@ namespace Akelon.SolutionStorage.Server
     public void CreateFromDatXml()
     {
       var files = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType);
-      var fileDat = files.Where(f => f.LastVersion.AssociatedApplication.Name == "dat").FirstOrDefault();
-      var fileXml = files.Where(f => f.LastVersion.AssociatedApplication.Name == "xml").FirstOrDefault();
+      var fileDat = files.Where(f => f.LastVersion.AssociatedApplication.Extension == "dat").FirstOrDefault();
+      var fileXml = files.Where(f => f.LastVersion.AssociatedApplication.Extension == "xml").FirstOrDefault();
       
       if (fileDat == null || fileXml == null)
       {

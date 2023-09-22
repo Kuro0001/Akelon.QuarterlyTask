@@ -31,9 +31,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     [Public]
     public bool CheckZipInput(Stream fileZip)
     {
-      if (ZipHelper.CheckZipInput())
-        return true;
-      return false;
+      return ZipHelper.CheckZipInput(fileZip);
     }
   }
 }

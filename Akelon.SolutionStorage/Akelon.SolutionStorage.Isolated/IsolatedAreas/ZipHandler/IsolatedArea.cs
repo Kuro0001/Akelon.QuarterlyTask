@@ -26,27 +26,29 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <returns>Если в архиве 2 файла и один из них .dat, второй - .xml, то результат = true, иначе - false.</returns>
     public static bool CheckZipInput(Stream fileZip)
     {
-      bool isCorrect = false;
+      
       try
       {
         if (!Directory.Exists(path))
         {
           Directory.CreateDirectory(path);
         }
-        
+        CreateDefaultFile(fileZip, fileZipName);
         var zip = new ZipFile(fileZipName);
         var fileNames = zip.EntryFileNames;
-        if (fileNames.Count != 2)
-          isCorrect = CheckFilesExtensions(fileNames);
+        Logger.DebugFormat("count = {0}, name1 = {1}", fileNames.Count, fileNames.FirstOrDefault());
+        if (fileNames.Count == 2)
+          return CheckFilesExtensions(fileNames.ToList());
+        return false;
       }
       catch (Exception ex)
       {
         Logger.ErrorFormat("Isolated area. CheckZipInput. Error: {0}", ex.Message);
+        return false;
       }
       finally
       {
         Directory.Delete(path, true);
-        return isCorrect;
       }
     }
     
@@ -55,8 +57,9 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// </summary>
     /// <param name="names">Список наименований файлов в количестве двух (2) штук.</param>
     /// <returns>Если в списке 2 файла и один из них .dat, второй - .xml, то результат = true, иначе - false.</returns>
-    public bool CheckFilesExtensions(List<string> names)
+    public static bool CheckFilesExtensions(List<string> names)
     {
+      Logger.DebugFormat("CheckFilesExtensions");
       if (names[0].EndsWith("dat"))
       {
         if (names[1].EndsWith("xml"))
@@ -70,9 +73,14 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       return false;
     }
     
+    /// <summary>
+    /// Создать zip-архив
+    /// </summary>
+    /// <param name="fileDat">файл формата dat</param>
+    /// <param name="fileXml">файл формата xml</param>
+    /// <returns>Zip-архив в виде потока</returns>
     public static Stream CreateZip(Stream fileDat, Stream fileXml)
     {
-      byte[] byteZip = new byte[0];
       try
       {
         if (!Directory.Exists(path))
@@ -89,42 +97,24 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
         zip.AddFile(fileXmlName);
         zip.Save();
         
-        byteZip = File.ReadAllBytes(fileZipName);
+        return new MemoryStream(File.ReadAllBytes(fileZipName));
       }
       catch (Exception ex)
       {
         Logger.ErrorFormat("Isolated area. CreateZip. Error: {0}", ex.Message);
+        return null;
       }
       finally
       {
         Directory.Delete(path, true);
-        return new MemoryStream(byteZip);
       }
     }
     
-//    public static string CreateZip(string fileDat, string fileXml)
-//    {
-//      if (!Directory.Exists(path))
-//      {
-//        Directory.CreateDirectory(path);
-//      }
-//      
-//      var zip = new ZipFile(fileZipName);
-//      
-//      CreateDefaultFile(fileDat, fileDatName);
-//      CreateDefaultFile(fileXml, fileXmlName);
-//      
-//      zip.AddFile(fileDatName);
-//      zip.AddFile(fileXmlName);
-//      zip.Save();
-//      
-//      byte[] byteZip = File.ReadAllBytes(fileZipName);
-//      
-//      Directory.Delete(path, true);
-//      
-//      return Encoding.Default.GetString(byteZip);
-//    }
-    
+    /// <summary>
+    /// Создать временный файл
+    /// </summary>
+    /// <param name="file">Файл</param>
+    /// <param name="name">Имя файла с указанием полного пути</param>
     public static void CreateDefaultFile(Stream file, string name)
     {
       try
@@ -139,21 +129,5 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
         throw AppliedCodeException.Create("Create default file error!");
       }
     }
-    
-//    public static void CreateDefaultFile(string file, string name)
-//    {
-//      try
-//      {
-//        using (FileStream fs = File.Create(name))
-//        {
-//          byte[] info = new UTF8Encoding(true).GetBytes(file);
-//          fs.Write(info, 0, info.Length);
-//        }
-//      }
-//      catch
-//      {
-//        throw AppliedCodeException.Create("Create default file error!");
-//      }
-//    }
   }
 }

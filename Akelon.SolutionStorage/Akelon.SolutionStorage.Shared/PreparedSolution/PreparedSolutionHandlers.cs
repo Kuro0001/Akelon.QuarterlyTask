@@ -7,6 +7,7 @@ using Akelon.SolutionStorage.PreparedSolution;
 
 namespace Akelon.SolutionStorage
 {
+
   partial class PreparedSolutionRealizationPlaceSharedHandlers
   {
 

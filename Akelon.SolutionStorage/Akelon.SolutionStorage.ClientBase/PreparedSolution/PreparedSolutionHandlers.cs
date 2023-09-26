@@ -12,15 +12,15 @@ namespace Akelon.SolutionStorage
 
     public override void Refresh(Sungero.Presentation.FormRefreshEventArgs e)
     {
-      SolutionStorage.Functions.PreparedSolution.SetFieldsVisibilityWithSolutionType(_obj, _obj.SolutionType);
+      SolutionStorage.Functions.PreparedSolution.SetFieldsVisibilityWithSolutionType(_obj, _obj.SolutionKind);
     }
 
     public override void Showing(Sungero.Presentation.FormShowingEventArgs e)
     {
-       SolutionStorage.Functions.PreparedSolution.SetFieldsVisibilityWithSolutionType(_obj, _obj.SolutionType);
+       SolutionStorage.Functions.PreparedSolution.SetFieldsVisibilityWithSolutionType(_obj, _obj.SolutionKind);
     }
 
-    public virtual void SolutionTypeValueInput(Sungero.Presentation.EnumerationValueInputEventArgs e)
+    public virtual void SolutionKindValueInput(Sungero.Presentation.EnumerationValueInputEventArgs e)
     {
       if (e.NewValue != null && e.NewValue != e.OldValue)
       {

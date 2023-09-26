@@ -54,8 +54,8 @@
       {
         "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
         "NameGuid": "4dd6032c-f009-4b01-bdb5-7f271c6791d0",
-        "Name": "ShowSolutionsWithWebsites",
-        "FunctionName": "ShowSolutionsWithWebsites",
+        "Name": "ShowSolutionsWithThirdPartyResource",
+        "FunctionName": "ShowSolutionsWithThirdPartyResource",
         "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9",
         "PreviousItemGuid": "0ac6fead-45cf-458a-b327-39bbaecbc409"
       },
@@ -194,8 +194,8 @@
       "ReturnTypeFullName": "System.Boolean"
     },
     {
-      "NameGuid": "1157e954-1451-4373-9023-06e6fc0302f6",
-      "Name": "CreateFromDatXml",
+      "NameGuid": "cb886a73-08a5-4519-a8a8-b6fd4074ea1b",
+      "Name": "CreateZipFileFromDatXml",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [
         {

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -8,29 +8,33 @@ using Akelon.SolutionStorage.PreparedSolution;
 namespace Akelon.SolutionStorage.Client
 {
 
-  internal static class PreparedSolutionPackageStaticActions
+  partial class PreparedSolutionActions
   {
 
-    public static bool CanCreatePackage(Sungero.Domain.Client.CanExecuteChildCollectionActionArgs e)
+
+
+    public virtual bool CanCreatePackageFromZip(Sungero.Domain.Client.CanExecuteActionArgs e)
     {
-      return true;
+      return _obj.SolutionKind.Value.Equals(PreparedSolution.SolutionKind.Package);
     }
 
-    public static void CreatePackage(Sungero.Domain.Client.ExecuteChildCollectionActionArgs e)
+    public virtual void CreatePackageFromZip(Sungero.Domain.Client.ExecuteActionArgs e)
     {
-      var sp = SolutionPackages.Create();
-      Functions.SolutionPackage.CreateFromZip(sp);
+      var package = _obj.PackageList.AddNew();
+      package.Package = Functions.SolutionPackage.Remote.CreatePackage();
+      Functions.SolutionPackage.CreateFromZip(package.Package);
     }
 
-    public static bool CanCreatePackageFromFiles(Sungero.Domain.Client.CanExecuteChildCollectionActionArgs e)
+    public virtual bool CanCreatePackageFromDatXml(Sungero.Domain.Client.CanExecuteActionArgs e)
     {
-      return true;
+      return _obj.SolutionKind.Value.Equals(PreparedSolution.SolutionKind.Package);
     }
 
-    public static void CreatePackageFromFiles(Sungero.Domain.Client.ExecuteChildCollectionActionArgs e)
+    public virtual void CreatePackageFromDatXml(Sungero.Domain.Client.ExecuteActionArgs e)
     {
-      var sp = SolutionPackages.Create();
-      Functions.SolutionPackage.CreateFromDatXml(sp);
+      var package = _obj.PackageList.AddNew();
+      package.Package = Functions.SolutionPackage.Remote.CreatePackage();
+      Functions.SolutionPackage.CreateFromDatXml(package.Package);
     }
   }
 }

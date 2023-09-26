@@ -70,9 +70,9 @@ namespace Akelon.SolutionStorage.Client
     /// <summary>
     /// Показать список готовых решений с типом - ссылка
     /// </summary>
-    public virtual void ShowSolutionsWithWebsites()
+    public virtual void ShowSolutionsWithThirdPartyResource()
     {
-      PreparedSolutions.GetAll(s => s.SolutionType == PreparedSolution.SolutionType.Website).Show();
+      PreparedSolutions.GetAll(s => s.SolutionKind == PreparedSolution.SolutionKind.ThirdPartyResource).Show();
     }
 
     /// <summary>
@@ -80,7 +80,7 @@ namespace Akelon.SolutionStorage.Client
     /// </summary>
     public virtual void ShowSolutionWithPackages()
     {
-      PreparedSolutions.GetAll(s => s.SolutionType == PreparedSolution.SolutionType.Package).Show();
+      PreparedSolutions.GetAll(s => s.SolutionKind == PreparedSolution.SolutionKind.Package).Show();
     }
   }
 }

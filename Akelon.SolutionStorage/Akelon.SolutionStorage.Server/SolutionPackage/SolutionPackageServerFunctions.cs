@@ -49,11 +49,14 @@ namespace Akelon.SolutionStorage.Server
     /// Загрузка zip-архива с пакетом решения
     /// </summary>
     [Remote]
-    public void CreateFromZip()
+    public void CreatePackageFromZip()
     {
       var fileZip = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType).Where(f => string.Equals(f.LastVersion.AssociatedApplication.Extension, "zip")).FirstOrDefault();
       if (fileZip == null)
+      {
+        Logger.ErrorFormat("CreatePackageFromZip. file id = {0}. {1}", _obj.Id, Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextPackegDoesntHaveXmlFile);
         throw AppliedCodeException.Create(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextPackegDoesntHaveXmlFile);
+      }
       
       using (var fileZipStream = fileZip.LastVersion.Body.Read())
       {
@@ -61,6 +64,7 @@ namespace Akelon.SolutionStorage.Server
         
         if (!isZipContainsFiles)
         {
+          Logger.ErrorFormat("CreatePackageFromZip. file id = {0}. {1}", _obj.Id, Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextIncorrectZipContent);
           throw AppliedCodeException.Create(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextIncorrectZipContent);
         }
         
@@ -70,6 +74,7 @@ namespace Akelon.SolutionStorage.Server
         }
         catch (Exception ex)
         {
+          Logger.ErrorFormat("CreatePackageFromZip. file id = {0}. {1}", _obj.Id, Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextCreatePackageFromZipFormat(ex.Message));
           throw AppliedCodeException.Create(string.Format(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextCreatePackageFromZipFormat(ex.Message)));
         }
       }
@@ -79,7 +84,7 @@ namespace Akelon.SolutionStorage.Server
     /// Сохранить пакет решения, представленный двумя файлами .dat и .xml, в новую версию документа в формате zip-файла
     /// </summary>
     [Remote]
-    public void CreateFromDatXml()
+    public void CreatePackageFromDatXml()
     {
       var files = _obj.Relations.GetRelated(Constants.SolutionPackage.PackageSourceBindType);
       var fileDat = files.Where(f => f.LastVersion.AssociatedApplication.Extension == "dat").FirstOrDefault();
@@ -87,13 +92,14 @@ namespace Akelon.SolutionStorage.Server
       
       if (fileDat == null || fileXml == null)
       {
+        Logger.ErrorFormat("CreatePackageFromDatXml. file id = {0}. {1}", _obj.Id, Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextInRelatedFilesNoDatOrXmlFiles);
         throw AppliedCodeException.Create(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextInRelatedFilesNoDatOrXmlFiles);
       }
       using (var fileDatStream = fileDat.LastVersion.Body.Read())
       {
         using (var fileXmlStream = fileXml.LastVersion.Body.Read())
         {
-          using (var stream = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateFromDatXml(fileDatStream, fileXmlStream))
+          using (var stream = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFileFromDatXml(fileDatStream, fileXmlStream))
           {
             try
             {
@@ -101,7 +107,8 @@ namespace Akelon.SolutionStorage.Server
             }
             catch (Exception ex)
             {
-              throw AppliedCodeException.Create(string.Format(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextCreatePackageFromFilesFormat(ex.Message)));
+              Logger.ErrorFormat("CreatePackageFromDatXml. file id = {0}. {1}", _obj.Id, Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextCreatePackageFromFilesFormat(ex.Message));
+              throw AppliedCodeException.Create(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextCreatePackageFromFilesFormat(ex.Message));
             }
           }
         }

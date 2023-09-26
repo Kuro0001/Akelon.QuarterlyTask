@@ -82,11 +82,11 @@
   <data name="CoverDescription_ShowSolutionWithPackages" xml:space="preserve">
     <value>Окрыть реестр решений с типом решения - пакет</value>
   </data>
-  <data name="CoverAction_ShowSolutionsWithWebsites" xml:space="preserve">
-    <value>Открыть решения с web-сайтами</value>
+  <data name="CoverAction_ShowSolutionsWithThirdPartyResource" xml:space="preserve">
+    <value>Открыть решения со сторонними ресурсами</value>
   </data>
-  <data name="CoverDescription_ShowSolutionsWithWebsites" xml:space="preserve">
-    <value>Открыть реестр решений с типом решения - web-сайт</value>
+  <data name="CoverDescription_ShowSolutionsWithThirdPartyResource" xml:space="preserve">
+    <value>Открыть реестр решений с видом решения - сторонний ресурс</value>
   </data>
   <data name="CoverGroup_Packages" xml:space="preserve">
     <value>Пакеты</value>
@@ -132,5 +132,8 @@
   </data>
   <data name="JobDescription_d6f2b645e5a84b13bea5354f2610b006" xml:space="preserve">
     <value>Удалить все связанные документы во всех пакетах решений</value>
+  </data>
+  <data name="CoverDescription_CreatePreparedSolution" xml:space="preserve">
+    <value>Создать новую запись в справочнике готовых решений</value>
   </data>
 </root>

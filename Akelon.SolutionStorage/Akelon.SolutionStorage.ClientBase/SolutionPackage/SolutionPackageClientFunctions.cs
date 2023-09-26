@@ -37,7 +37,7 @@ namespace Akelon.SolutionStorage.Client
           CreateRelatedPackagedDocument(stream, file.Name, "zip");
         }
         
-        Functions.SolutionPackage.Remote.CreateFromZip(_obj);
+        Functions.SolutionPackage.Remote.CreatePackageFromZip(_obj);
         return true;
       }
       return false;
@@ -64,7 +64,7 @@ namespace Akelon.SolutionStorage.Client
         {
           CreateRelatedPackagedDocument(file.OpenReadStream(), file.FileName, GetFileExtension(file));
         }
-        Functions.SolutionPackage.Remote.CreateFromDatXml(_obj);
+        Functions.SolutionPackage.Remote.CreatePackageFromDatXml(_obj);
         return true;
       }
       return false;
@@ -120,6 +120,7 @@ namespace Akelon.SolutionStorage.Client
       }
       else
       {
+        Logger.ErrorFormat("GetFileExtension. {0}", Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextThereAreNoDatOrXml);
         throw AppliedCodeException.Create(Akelon.SolutionStorage.SolutionPackages.Resources.ErrorMessageTextThereAreNoDatOrXml);
       }
     }

@@ -103,11 +103,11 @@
   <data name="CoverDescription_ShowSolutionWithPackages" xml:space="preserve">
     <value>Show solutions with packages</value>
   </data>
-  <data name="CoverAction_ShowSolutionsWithWebsites" xml:space="preserve">
-    <value>Show solutions with websites</value>
+  <data name="CoverAction_ShowSolutionsWithThirdPartyResource" xml:space="preserve">
+    <value>Show solutions with third party resource</value>
   </data>
-  <data name="CoverDescription_ShowSolutionsWithWebsites" xml:space="preserve">
-    <value>Show solutions with websites</value>
+  <data name="CoverDescription_ShowSolutionsWithThirdPartyResource" xml:space="preserve">
+    <value>Show solutions with third party resource</value>
   </data>
   <data name="CoverDescription_ShowSolutionPackages" xml:space="preserve">
     <value>Show solution packages</value>
@@ -128,7 +128,7 @@
     <value>Create prepared solution</value>
   </data>
   <data name="CoverDescription_CreatePreparedSolution" xml:space="preserve">
-    <value>CreatePreparedSolution</value>
+    <value>Create a new entry in datebook Prepared solutions</value>
   </data>
   <data name="CoverAction_CreateTag" xml:space="preserve">
     <value>Create tag</value>

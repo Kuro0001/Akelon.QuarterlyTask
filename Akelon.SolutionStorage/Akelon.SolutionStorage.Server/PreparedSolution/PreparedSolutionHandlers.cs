@@ -13,9 +13,9 @@ namespace Akelon.SolutionStorage
     public override IQueryable<T> Filtering(IQueryable<T> query, Sungero.Domain.FilteringEventArgs e)
     {
       if (_filter != null && _filter.WebsiteFlag)
-        query = query.Where(q => Equals(q.SolutionType, PreparedSolution.SolutionType.Website));
+        query = query.Where(q => Equals(q.SolutionKind, PreparedSolution.SolutionKind.ThirdPartyResource));
       if (_filter != null && _filter.PackageFlag)
-        query = query.Where(q => Equals(q.SolutionType, PreparedSolution.SolutionType.Package));
+        query = query.Where(q => Equals(q.SolutionKind, PreparedSolution.SolutionKind.Package));
       return query;
     }
   }
@@ -25,7 +25,7 @@ namespace Akelon.SolutionStorage
 
     public override void Created(Sungero.Domain.CreatedEventArgs e)
     {
-      _obj.SolutionType = PreparedSolution.SolutionType.Website;
+      _obj.SolutionKind = PreparedSolution.SolutionKind.ThirdPartyResource;
       if (Sungero.Company.Employees.GetAll().Where(em => em.Login == Users.Current.Login).Any())
         _obj.Responsible = Sungero.Company.Employees.As(Users.Current);
     }

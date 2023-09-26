@@ -18,7 +18,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <param name="fileXml">.xml файл</param>
     /// <returns>zip-файл</returns>
     [Public]
-    public Stream CreateFromDatXml(Stream fileDat, Stream fileXml)
+    public Stream CreateZipFileFromDatXml(Stream fileDat, Stream fileXml)
     {
       return ZipHelper.CreateZip(fileDat, fileXml);
     }

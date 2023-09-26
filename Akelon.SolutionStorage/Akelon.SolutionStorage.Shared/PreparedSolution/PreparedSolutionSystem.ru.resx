@@ -76,17 +76,17 @@
   <data name="Property_RealizationPlace" xml:space="preserve">
     <value>Места реализации</value>
   </data>
-  <data name="Property_SolutionType" xml:space="preserve">
-    <value>Тип решения</value>
+  <data name="Property_SolutionKind" xml:space="preserve">
+    <value>Вид решения</value>
   </data>
-  <data name="Enum_SolutionType_Website" xml:space="preserve">
-    <value>Web-сайт</value>
+  <data name="Enum_SolutionKind_ThirdPartyResource" xml:space="preserve">
+    <value>Сторонний ресурс</value>
   </data>
-  <data name="Enum_SolutionType_Package" xml:space="preserve">
+  <data name="Enum_SolutionKind_Package" xml:space="preserve">
     <value>Пакет</value>
   </data>
-  <data name="Property_Package" xml:space="preserve">
-    <value>Пакет</value>
+  <data name="Property_PackageList" xml:space="preserve">
+    <value>Список пакетов</value>
   </data>
   <data name="Property_SolutionDocument" xml:space="preserve">
     <value>Документы по решению</value>
@@ -100,8 +100,8 @@
   <data name="Property_Responsible" xml:space="preserve">
     <value>Ответвственный</value>
   </data>
-  <data name="Action_CreatePackageFromFiles" xml:space="preserve">
-    <value>Создать из файлов</value>
+  <data name="Action_CreatePackageFromDatXml" xml:space="preserve">
+    <value>Создать пакет из файлов .dat и .xml</value>
   </data>
   <data name="FilterPanel_MainGroup_9b2ae58e82914f809619acb4a0ca442a" xml:space="preserve">
     <value>Решения</value>
@@ -114,5 +114,23 @@
   </data>
   <data name="FilterPanel_PackageFlag_33191b06d8a84b7facb230ae1df9c0b8" xml:space="preserve">
     <value>Пакет</value>
+  </data>
+  <data name="Action_CreatePackageFromZip" xml:space="preserve">
+    <value>Создать пакет из zip-архива</value>
+  </data>
+  <data name="Action_CreatePackageFromZipHint" xml:space="preserve">
+    <value>Создать пакет из zip-архива</value>
+  </data>
+  <data name="Action_CreatePackageFromZipDescription" xml:space="preserve">
+    <value>Создать пакет из zip-архива и добавить созданный пакет в таблицу Решения</value>
+  </data>
+  <data name="Action_CreatePackageFromDatXmlHint" xml:space="preserve">
+    <value>Создать пакет из файлов .dat и .xml</value>
+  </data>
+  <data name="Action_CreatePackageFromDatXmlDescription" xml:space="preserve">
+    <value>Создать пакет из файлов .dat и .xml и добавить созданный пакет в таблицу Решения</value>
+  </data>
+  <data name="Ribbon_PackageGroup_276bf5037eda497bb3ca8493a25ef5fd" xml:space="preserve">
+    <value>Создать пакет</value>
   </data>
 </root>

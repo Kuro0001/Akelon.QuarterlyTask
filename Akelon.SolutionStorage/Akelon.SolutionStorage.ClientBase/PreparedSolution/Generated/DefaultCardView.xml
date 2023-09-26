@@ -8,7 +8,7 @@
         <property name="View" isnull="true" iskey="true">
           <property name="LinesPerRowMode">None</property>
           <property name="ColumnChooserState" isnull="true" iskey="true">
-            <property name="Location">297,-229.2</property>
+            <property name="Location">972,-152</property>
             <property name="Size">220,250</property>
           </property>
           <property name="AllowMoveColumnToDropArea">false</property>
@@ -21,21 +21,17 @@
           <property name="AllowGrouping">false</property>
         </property>
         <property name="TotalSummary" iskey="true" value="0" />
-        <property name="SortInfo" iskey="true" value="1">
-          <property name="Item1" isnull="true" iskey="true">
-            <property name="FieldName">Package</property>
-            <property name="SortOrder">Ascending</property>
-          </property>
-        </property>
+        <property name="SortInfo" iskey="true" value="0" />
         <property name="GroupSummary" iskey="true" value="0" />
         <property name="GroupCount">0</property>
         <property name="Columns" iskey="true" value="1">
           <property name="Item1" isnull="true" iskey="true">
             <property name="Visible">true</property>
-            <property name="Name">PreparedSolution_Package_Package</property>
+            <property name="Name">PreparedSolution_PackageList_Package</property>
             <property name="FieldName">Package</property>
             <property name="VisibleIndex">0</property>
-            <property name="ActualWidth">NaN</property>
+            <property name="Width">70</property>
+            <property name="ActualWidth">6*</property>
           </property>
         </property>
         <property name="GroupSummarySortInfo" iskey="true" value="0" />
@@ -49,7 +45,7 @@
         <property name="View" isnull="true" iskey="true">
           <property name="LinesPerRowMode">None</property>
           <property name="ColumnChooserState" isnull="true" iskey="true">
-            <property name="Location">295,-2</property>
+            <property name="Location">972,-152</property>
             <property name="Size">220,250</property>
           </property>
           <property name="AllowMoveColumnToDropArea">false</property>
@@ -62,29 +58,33 @@
           <property name="AllowGrouping">false</property>
         </property>
         <property name="TotalSummary" iskey="true" value="0" />
-        <property name="SortInfo" iskey="true" value="1">
-          <property name="Item1" isnull="true" iskey="true">
-            <property name="FieldName">Name</property>
-            <property name="SortOrder">Descending</property>
-          </property>
-        </property>
+        <property name="SortInfo" iskey="true" value="0" />
         <property name="GroupSummary" iskey="true" value="0" />
         <property name="GroupCount">0</property>
-        <property name="Columns" iskey="true" value="2">
+        <property name="Columns" iskey="true" value="3">
           <property name="Item1" isnull="true" iskey="true">
             <property name="Visible">true</property>
             <property name="Name">PreparedSolution_RealizationPlace_Name</property>
             <property name="FieldName">Name</property>
             <property name="VisibleIndex">0</property>
-            <property name="ActualWidth">NaN</property>
+            <property name="Width">117</property>
+            <property name="ActualWidth">10*</property>
           </property>
           <property name="Item2" isnull="true" iskey="true">
             <property name="Visible">true</property>
             <property name="Name">PreparedSolution_RealizationPlace_Note</property>
             <property name="FieldName">Note</property>
             <property name="VisibleIndex">1</property>
-            <property name="Width">251</property>
-            <property name="ActualWidth">20*</property>
+            <property name="Width">105</property>
+            <property name="ActualWidth">9*</property>
+          </property>
+          <property name="Item3" isnull="true" iskey="true">
+            <property name="Visible">true</property>
+            <property name="Name">PreparedSolution_RealizationPlace_Counterparty</property>
+            <property name="FieldName">Counterparty</property>
+            <property name="VisibleIndex">2</property>
+            <property name="Width">94</property>
+            <property name="ActualWidth">8*</property>
           </property>
         </property>
         <property name="GroupSummarySortInfo" iskey="true" value="0" />
@@ -98,7 +98,7 @@
         <property name="View" isnull="true" iskey="true">
           <property name="LinesPerRowMode">None</property>
           <property name="ColumnChooserState" isnull="true" iskey="true">
-            <property name="Location">260,-107.6</property>
+            <property name="Location">972,-152</property>
             <property name="Size">220,250</property>
           </property>
           <property name="AllowMoveColumnToDropArea">false</property>
@@ -120,7 +120,8 @@
             <property name="Name">PreparedSolution_SolutionDocument_Document</property>
             <property name="FieldName">Document</property>
             <property name="VisibleIndex">0</property>
-            <property name="ActualWidth">NaN</property>
+            <property name="Width">94</property>
+            <property name="ActualWidth">8*</property>
           </property>
         </property>
         <property name="GroupSummarySortInfo" iskey="true" value="0" />

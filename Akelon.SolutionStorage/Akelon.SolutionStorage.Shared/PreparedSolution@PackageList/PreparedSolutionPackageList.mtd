@@ -1,11 +1,11 @@
 {
   "$type": "Sungero.Metadata.EntityMetadata, Sungero.Metadata",
   "NameGuid": "008d4430-5c8b-4c8a-9c95-41c8c07a1445",
-  "Name": "PreparedSolutionPackage",
+  "Name": "PreparedSolutionPackageList",
   "AccessRightsMode": "NoRight",
   "BaseGuid": "a3d38bf5-0414-41f6-bb33-a4621d2e5a60",
   "CanBeNavigationPropertyType": true,
-  "Code": "Package",
+  "Code": "PackageList",
   "ExtraSearchProperties": [],
   "IsChildEntity": true,
   "Properties": [

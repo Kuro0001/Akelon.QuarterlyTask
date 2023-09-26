@@ -76,20 +76,20 @@
   <data name="Property_RealizationPlace" xml:space="preserve">
     <value>Realization place</value>
   </data>
-  <data name="Property_SolutionType" xml:space="preserve">
-    <value>Solution type</value>
+  <data name="Property_SolutionKind" xml:space="preserve">
+    <value>Solution kind</value>
   </data>
-  <data name="Enum_SolutionType_Website" xml:space="preserve">
-    <value>Website</value>
+  <data name="Enum_SolutionKind_ThirdPartyResource" xml:space="preserve">
+    <value>Third party resource</value>
   </data>
-  <data name="Enum_SolutionType_Package" xml:space="preserve">
+  <data name="Enum_SolutionKind_Package" xml:space="preserve">
     <value>Package</value>
   </data>
   <data name="Property_SolutionDocument" xml:space="preserve">
     <value>Solution documents</value>
   </data>
-  <data name="Property_Package" xml:space="preserve">
-    <value>Package</value>
+  <data name="Property_PackageList" xml:space="preserve">
+    <value>Package list</value>
   </data>
   <data name="Property_DirectumRXVersion" xml:space="preserve">
     <value>Directum RX Version</value>
@@ -106,34 +106,34 @@
   <data name="Property_AddTag" xml:space="preserve">
     <value>Тэги</value>
   </data>
-  <data name="Action_CreatePackage" xml:space="preserve">
-    <value>Создать пакет</value>
+  <data name="Action_CreatePackageFromZip" xml:space="preserve">
+    <value>Create package from zip-archive</value>
   </data>
-  <data name="Action_CreatePackageDescription" xml:space="preserve">
-    <value>Создать пакет</value>
+  <data name="Action_CreatePackageFromZipDescription" xml:space="preserve">
+    <value>Create a package from a zip-archive and add the created package to the Solutions table</value>
   </data>
-  <data name="Action_CreatePackageHint" xml:space="preserve">
-    <value>Создать пакет</value>
+  <data name="Action_CreatePackageFromZipHint" xml:space="preserve">
+    <value>Create package from zip archive</value>
   </data>
-  <data name="Action_CreatePackageConfirmationMessage" xml:space="preserve">
+  <data name="Action_CreatePackageFromZipConfirmationMessage" xml:space="preserve">
     <value />
   </data>
-  <data name="Action_CreatePackageConfirmationDescription" xml:space="preserve">
+  <data name="Action_CreatePackageFromZipConfirmationDescription" xml:space="preserve">
     <value />
   </data>
-  <data name="Action_CreatePackageFromFiles" xml:space="preserve">
-    <value>Create from files</value>
+  <data name="Action_CreatePackageFromDatXml" xml:space="preserve">
+    <value>Create package from .dat and .xml files</value>
   </data>
-  <data name="Action_CreatePackageFromFilesDescription" xml:space="preserve">
-    <value>1</value>
+  <data name="Action_CreatePackageFromDatXmlDescription" xml:space="preserve">
+    <value>Create a package from .dat and .xml files and add the created package to the Solutions table</value>
   </data>
-  <data name="Action_CreatePackageFromFilesHint" xml:space="preserve">
-    <value>1</value>
+  <data name="Action_CreatePackageFromDatXmlHint" xml:space="preserve">
+    <value>Create package from .dat and .xml files</value>
   </data>
-  <data name="Action_CreatePackageFromFilesConfirmationMessage" xml:space="preserve">
+  <data name="Action_CreatePackageFromDatXmlConfirmationMessage" xml:space="preserve">
     <value />
   </data>
-  <data name="Action_CreatePackageFromFilesConfirmationDescription" xml:space="preserve">
+  <data name="Action_CreatePackageFromDatXmlConfirmationDescription" xml:space="preserve">
     <value />
   </data>
   <data name="FilterPanel_MainGroup_9b2ae58e82914f809619acb4a0ca442a" xml:space="preserve">
@@ -147,5 +147,8 @@
   </data>
   <data name="FilterPanel_PackageFlag_33191b06d8a84b7facb230ae1df9c0b8" xml:space="preserve">
     <value>Package</value>
+  </data>
+  <data name="Ribbon_PackageGroup_276bf5037eda497bb3ca8493a25ef5fd" xml:space="preserve">
+    <value>Create package</value>
   </data>
 </root>

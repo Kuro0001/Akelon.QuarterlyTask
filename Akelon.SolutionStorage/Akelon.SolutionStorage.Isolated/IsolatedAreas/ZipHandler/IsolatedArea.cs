@@ -12,7 +12,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
   
   public class ZipHelper
   {
-    const string path = @"C:\TempDirectory\";
+    const string path = @"C:\DirectumRX_SolutionStorage_TempDirectory\";
     const string fileDatName = path + "fileDat.dat";
     const string fileXmlName = path + "fileXml.xml";
     const string fileZipName = path + "fileZip.zip";
@@ -43,7 +43,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       }
       catch (Exception ex)
       {
-        Logger.ErrorFormat("Isolated area. CheckZipInput. Error: {0}", ex.Message);
+        Logger.ErrorFormat("ZipHelper. CheckZipInput. Error: {0}", ex.Message);
         return false;
       }
       finally
@@ -59,18 +59,25 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <returns>Если в списке 2 файла и один из них .dat, второй - .xml, то результат = true, иначе - false.</returns>
     public static bool CheckFilesExtensions(List<string> names)
     {
-      Logger.DebugFormat("CheckFilesExtensions");
-      if (names[0].EndsWith("dat"))
+      try
       {
-        if (names[1].EndsWith("xml"))
-          return true;
-      }
-      else
-        if (names[0].EndsWith("xml"))
-          if (names[1].EndsWith("dat"))
+        Logger.DebugFormat("CheckFilesExtensions");
+        if (names[0].EndsWith("dat"))
+        {
+          if (names[1].EndsWith("xml"))
             return true;
-      
-      return false;
+        }
+        else
+          if (names[0].EndsWith("xml"))
+            if (names[1].EndsWith("dat"))
+              return true;
+        return false;
+      }
+      catch (Exception ex)
+      {
+        Logger.ErrorFormat("ZipHelper. CheckFilesExtensions. Error: {0}", ex.Message);
+        return false;
+      }
     }
     
     /// <summary>
@@ -101,7 +108,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       }
       catch (Exception ex)
       {
-        Logger.ErrorFormat("Isolated area. CreateZip. Error: {0}", ex.Message);
+        Logger.ErrorFormat("ZipHelper. CreateZip. Error: {0}", ex.Message);
         return null;
       }
       finally
@@ -126,6 +133,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       }
       catch
       {
+        Logger.ErrorFormat("ZipHelper. CreateDefaultFile. Error: Create default file error");
         throw AppliedCodeException.Create("Create default file error!");
       }
     }

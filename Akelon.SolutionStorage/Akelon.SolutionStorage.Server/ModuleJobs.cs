@@ -10,6 +10,14 @@ namespace Akelon.SolutionStorage.Server
   {
 
     /// <summary>
+    /// Удалить устаревшие временные файлы изолированной области
+    /// </summary>
+    public virtual void ClearTempIsolatedAreaDirectory()
+    {
+      Functions.Module.ClearTempIsolatedAreaDirectory();
+    }
+
+    /// <summary>
     /// Удалить все связанные документы в пакетах решений
     /// </summary>
     public virtual void ClearSolutionPackageRelatedDocuments()

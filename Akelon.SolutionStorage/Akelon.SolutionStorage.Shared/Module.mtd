@@ -211,6 +211,13 @@
       ],
       "ReturnType": "global::System.IO.Stream",
       "ReturnTypeFullName": "System.IO.Stream"
+    },
+    {
+      "NameGuid": "62b04e65-d9b4-4030-a1f9-639700139f15",
+      "Name": "GetDirectoryPath",
+      "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String"
     }
   ],
   "IsolatedNamespace": "Akelon.SolutionStorage.Isolated",
@@ -220,7 +227,14 @@
       "Name": "ClearSolutionPackageRelatedDocuments",
       "GenerateHandler": true,
       "MonthSchedule": "Monthly",
-      "StartAt": "1753-01-01T12:00:00"
+      "StartAt": "1753-01-01T00:00:00"
+    },
+    {
+      "NameGuid": "4e6c2126-0d8f-4922-9d61-68c08548d9e0",
+      "Name": "ClearTempIsolatedAreaDirectory",
+      "GenerateHandler": true,
+      "MonthSchedule": "Monthly",
+      "StartAt": "1753-01-01T00:00:00"
     }
   ],
   "Libraries": [

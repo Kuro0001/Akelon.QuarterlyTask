@@ -12,12 +12,55 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
   
   public class ZipHelper
   {
-    const string path = @"C:\DirectumRX_SolutionStorage_TempDirectory\";
-    const string fileDatName = path + "fileDat.dat";
-    const string fileXmlName = path + "fileXml.xml";
-    const string fileZipName = path + "fileZip.zip";
+    /// <summary>
+    /// Место расположения папки для временных файлов в формате ( @"C:\путь\" )
+    /// </summary>
+    const string directoryPath = @"C:\DirectumRX_SolutionStorage_TempDirectory\";
+    
+    /// <summary>
+    /// Получить место расположения папки для временных файлов
+    /// </summary>
+    /// <returns>формат ( @"C:\путь\" )</returns>
+    public static string GetDirectoryPath()
+    {
+      return directoryPath;
+    }
     
     public ZipHelper() { }
+    
+    /// <summary>
+    /// Удалить временный файл
+    /// </summary>
+    public static void DeleteTempFile(string name)
+    {
+      try
+      {
+        File.Delete(name);
+      }
+      catch (Exception ex)
+      {
+        Logger.ErrorFormat("ZipHelper. DeleteTempFile ({0}). Error: {1}", name, ex.Message);
+      }
+    }
+    
+    /// <summary>
+    /// Получить уникальное имя для временного файла
+    /// </summary>
+    /// <param name="path">путь до места, где должен находиться файл</param>
+    /// <param name="extension">расширение файла в формале ".ext"</param>
+    /// <returns>Полное имя файла с расширением</returns>
+    public static string GetTempFileName(string path, string extension)
+    {
+      var fullName = path + Guid.NewGuid().ToString() + extension;
+      return fullName;
+//      if (File.Exists(fullName))
+//      {
+//        // Рекурсивный вызов функции до момента, пока не будет найдено уникальное имя для временного файла
+//        retun this.GetTempFileName(path, extension);
+//      }
+//      else
+//        return fullName;
+    }
     
     /// <summary>
     /// Проверить расширения файлов в zip-архиве на наличие .dat и .xml
@@ -26,29 +69,33 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <returns>Если в архиве 2 файла и один из них .dat, второй - .xml, то результат = true, иначе - false.</returns>
     public static bool CheckZipInput(Stream fileZip)
     {
-      
+      var tempFileName = string.Empty;
       try
       {
-        if (!Directory.Exists(path))
+        // Проверить наличие папки для временных файлов
+        if (!Directory.Exists(directoryPath))
         {
-          Directory.CreateDirectory(path);
+          Directory.CreateDirectory(directoryPath);
         }
-        CreateDefaultFile(fileZip, fileZipName);
-        var zip = new ZipFile(fileZipName);
+        // создать уникальное имя для временного файла
+        tempFileName = GetTempFileName(directoryPath, ".zip");
+        
+        CreateDefaultFile(fileZip, tempFileName);
+        var zip = new ZipFile(tempFileName);
+        //проверить содержание zip файла
         var fileNames = zip.EntryFileNames;
-        Logger.DebugFormat("count = {0}, name1 = {1}", fileNames.Count, fileNames.FirstOrDefault());
         if (fileNames.Count == 2)
           return CheckFilesExtensions(fileNames.ToList());
         return false;
       }
       catch (Exception ex)
       {
-        Logger.ErrorFormat("ZipHelper. CheckZipInput. Error: {0}", ex.Message);
+        Logger.ErrorFormat("ZipHelper. CheckZipInput. File name = {0} . Error: {1}", tempFileName, ex.Message);
         return false;
       }
       finally
       {
-        Directory.Delete(path, true);
+        DeleteTempFile(tempFileName);
       }
     }
     
@@ -88,18 +135,26 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <returns>Zip-архив в виде потока</returns>
     public static Stream CreateZip(Stream fileDat, Stream fileXml)
     {
+      var fileZipName = string.Empty;
+      var fileDatName = string.Empty;
+      var fileXmlName = string.Empty;
       try
       {
-        if (!Directory.Exists(path))
+        // Проверить наличие папки для временных файлов
+        if (!Directory.Exists(directoryPath))
         {
-          Directory.CreateDirectory(path);
+          Directory.CreateDirectory(directoryPath);
         }
+        // создать уникальные имена для временных файлов
+        fileZipName = GetTempFileName(directoryPath, ".zip");
+        fileDatName = GetTempFileName(directoryPath, ".dat");
+        fileXmlName = GetTempFileName(directoryPath, ".xml");
         
         var zip = new ZipFile(fileZipName);
-        
+        // создать временные файлы
         CreateDefaultFile(fileDat, fileDatName);
         CreateDefaultFile(fileXml, fileXmlName);
-        
+        // добавить файлы в архив
         zip.AddFile(fileDatName);
         zip.AddFile(fileXmlName);
         zip.Save();
@@ -113,7 +168,9 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       }
       finally
       {
-        Directory.Delete(path, true);
+        DeleteTempFile(fileZipName);
+        DeleteTempFile(fileDatName);
+        DeleteTempFile(fileXmlName);
       }
     }
     
@@ -133,8 +190,8 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       }
       catch
       {
-        Logger.ErrorFormat("ZipHelper. CreateDefaultFile. Error: Create default file error");
-        throw AppliedCodeException.Create("Create default file error!");
+        Logger.ErrorFormat("ZipHelper. CreateDefaultFile, Name = {0}. Error: Create default file error", name);
+        throw AppliedCodeException.Create(string.Format("ZipHelper. CreateDefaultFile, Name = {0}. Error: Create default file error", name));
       }
     }
   }

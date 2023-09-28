@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Sungero.Core;
 
 namespace Akelon.SolutionStorage.Constants

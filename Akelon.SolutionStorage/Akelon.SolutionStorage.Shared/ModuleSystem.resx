@@ -142,4 +142,10 @@
   <data name="JobDescription_d6f2b645e5a84b13bea5354f2610b006" xml:space="preserve">
     <value>Delete all related documents in all solution packages</value>
   </data>
+  <data name="JobDisplayName_4e6c21260d8f49229d6168c08548d9e0" xml:space="preserve">
+    <value>Solution storage. Clear temp isolated area directory</value>
+  </data>
+  <data name="JobDescription_4e6c21260d8f49229d6168c08548d9e0" xml:space="preserve">
+    <value>Clear temp isolated area directory</value>
+  </data>
 </root>

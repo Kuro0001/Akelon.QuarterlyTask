@@ -136,4 +136,10 @@
   <data name="CoverDescription_CreatePreparedSolution" xml:space="preserve">
     <value>Создать новую запись в справочнике готовых решений</value>
   </data>
+  <data name="JobDisplayName_4e6c21260d8f49229d6168c08548d9e0" xml:space="preserve">
+    <value>Хранилище решений. Очистить временную папку изолированной области</value>
+  </data>
+  <data name="JobDescription_4e6c21260d8f49229d6168c08548d9e0" xml:space="preserve">
+    <value>Очистить временную папку изолированной области</value>
+  </data>
 </root>

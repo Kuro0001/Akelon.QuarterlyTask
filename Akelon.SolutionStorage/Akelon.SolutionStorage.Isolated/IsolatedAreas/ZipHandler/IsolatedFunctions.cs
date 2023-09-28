@@ -12,6 +12,16 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
   {
 
     /// <summary>
+    /// Получить место расположения папки для временных файлов
+    /// </summary>
+    /// <returns> Строка формата ( @"C:\путь\" )</returns>
+    [Public]
+    public string GetDirectoryPath()
+    {
+       return ZipHelper.GetDirectoryPath();
+    }
+
+    /// <summary>
     /// Создать zip-архивиз файлов пакета решения
     /// </summary>
     /// <param name="fileDat">.dat файл</param>

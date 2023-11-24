@@ -22,7 +22,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     }
 
     /// <summary>
-    /// Создать zip-архивиз файлов пакета решения
+    /// Создать zip-архив из файлов пакета решения
     /// </summary>
     /// <param name="fileDat">.dat файл</param>
     /// <param name="fileXml">.xml файл</param>

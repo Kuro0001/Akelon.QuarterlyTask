@@ -46,9 +46,6 @@
       ]
     }
   ],
-  "HandledEvents": [
-    "BeforeSaveServer"
-  ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "SolutionStorageTag",
   "IsVisible": false,

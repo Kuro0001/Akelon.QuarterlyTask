@@ -15,7 +15,7 @@ namespace Akelon.SolutionStorage.Shared
     /// </summary>
     public void ClearTempIsolatedAreaDirectory()
     {
-      var directory = new DirectoryInfo(SolutionStorage.IsolatedFunctions.ZipHandler.GetDirectoryPath());
+      var directory = new DirectoryInfo(Sungero.Docflow.PublicFunctions.Module.GetDocflowParamsValue(Constants.Module.IsolatedDirectoryPathKey).ToString());
       var delayDate = Calendar.Now.AddDays(-1);
       var files = directory.GetFiles()
         .Where(f => f.CreationTime <= delayDate);

@@ -148,4 +148,22 @@
   <data name="JobDescription_4e6c21260d8f49229d6168c08548d9e0" xml:space="preserve">
     <value>Clear temp isolated area directory</value>
   </data>
+  <data name="CoverTab_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="CoverGroup_Parameters" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="CoverAction_SetParametersAction" xml:space="preserve">
+    <value>Set params</value>
+  </data>
+  <data name="CoverDescription_SetParametersAction" xml:space="preserve">
+    <value>Enter module parameters value</value>
+  </data>
+  <data name="CoverAction_ShowParametersAction" xml:space="preserve">
+    <value>Show params</value>
+  </data>
+  <data name="CoverDescription_ShowParametersAction" xml:space="preserve">
+    <value>Show module parameters value</value>
+  </data>
 </root>

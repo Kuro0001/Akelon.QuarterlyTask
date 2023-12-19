@@ -142,4 +142,22 @@
   <data name="JobDescription_4e6c21260d8f49229d6168c08548d9e0" xml:space="preserve">
     <value>Очистить временную папку изолированной области</value>
   </data>
+  <data name="CoverTab_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="CoverGroup_Parameters" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="CoverAction_SetParametersAction" xml:space="preserve">
+    <value>Ввести параметры</value>
+  </data>
+  <data name="CoverDescription_SetParametersAction" xml:space="preserve">
+    <value>Ввести значение параметров модуля</value>
+  </data>
+  <data name="CoverAction_ShowParametersAction" xml:space="preserve">
+    <value>Показать параметры</value>
+  </data>
+  <data name="CoverDescription_ShowParametersAction" xml:space="preserve">
+    <value>Показать значение параметры модуля</value>
+  </data>
 </root>

@@ -61,4 +61,25 @@
   <data name="MessageTextPackageCreatedSuccesfully" xml:space="preserve">
     <value>Package created succesfully</value>
   </data>
+  <data name="ErrorTextSetParams" xml:space="preserve">
+    <value>Entering parameters error</value>
+  </data>
+  <data name="DialogTitleSetModuleParams" xml:space="preserve">
+    <value>Set module parameters value </value>
+  </data>
+  <data name="DialogParamTextModuleParamDirPath" xml:space="preserve">
+    <value>Path to local folder for isolated area</value>
+  </data>
+  <data name="ErrorTextCantSetParams" xml:space="preserve">
+    <value>Cannot enter parameters value</value>
+  </data>
+  <data name="ErrorDescriptionAllowedOnlyToAdmins" xml:space="preserve">
+    <value>Only system administrators can change module parameters value.</value>
+  </data>
+  <data name="DialogTextShowModuleParams" xml:space="preserve">
+    <value>Module parameters</value>
+  </data>
+  <data name="DialogParamTextModuleIsOnLinux" xml:space="preserve">
+    <value>DRX is deployed on Linux OS</value>
+  </data>
 </root>

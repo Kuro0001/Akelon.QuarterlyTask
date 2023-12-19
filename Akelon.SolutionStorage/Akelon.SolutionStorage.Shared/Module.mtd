@@ -13,6 +13,14 @@
     "NameGuid": "7b53991a-b0b2-4a47-a92a-34dc45e1a0a7",
     "Actions": [
       {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "02506c4c-b6e2-465d-9fc9-c90f9805f6d8",
+        "Name": "SetParametersAction",
+        "FunctionName": "SetParametersAction",
+        "GroupId": "0553e27e-ce52-4fda-b3d6-f3b6bad89b76",
+        "PreviousItemGuid": "0d9a2c9c-a562-46de-9c95-0a883f4287bc"
+      },
+      {
         "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
         "NameGuid": "089ff697-d4fc-43ad-bb3c-a3da50ae246f",
         "Name": "ShowPreparedSolutions",
@@ -34,6 +42,13 @@
         "FunctionName": "ShowSolutionWithPackages",
         "GroupId": "1c36d387-e25f-4589-b71e-aa0959280ca9",
         "PreviousItemGuid": "089ff697-d4fc-43ad-bb3c-a3da50ae246f"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "0d9a2c9c-a562-46de-9c95-0a883f4287bc",
+        "Name": "ShowParametersAction",
+        "FunctionName": "ShowParametersAction",
+        "GroupId": "0553e27e-ce52-4fda-b3d6-f3b6bad89b76"
       },
       {
         "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
@@ -110,6 +125,12 @@
         "IconName": "GroupIconTags_c805396e56584347b555d4efe880fc62.png",
         "PreviousItemGuid": "914c3054-6993-4d13-81de-ddf23500257e",
         "TabId": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
+      },
+      {
+        "NameGuid": "0553e27e-ce52-4fda-b3d6-f3b6bad89b76",
+        "Name": "Parameters",
+        "BackgroundPosition": "Stretch",
+        "TabId": "1727886c-8a0f-4f5b-a5ae-0e46f5837fe2"
       }
     ],
     "Header": {
@@ -120,6 +141,11 @@
       {
         "NameGuid": "41ed9d2a-cd9d-452a-80f3-085ca6752039",
         "Name": "Main"
+      },
+      {
+        "NameGuid": "1727886c-8a0f-4f5b-a5ae-0e46f5837fe2",
+        "Name": "Settings",
+        "PreviousItemGuid": "41ed9d2a-cd9d-452a-80f3-085ca6752039"
       }
     ]
   },
@@ -180,10 +206,20 @@
   "IsolatedAssemblyName": "Akelon.SolutionStorage.Isolated",
   "IsolatedFunctions": [
     {
-      "NameGuid": "a4ffee19-20ee-4dbf-a88c-70a052a2f81d",
+      "NameGuid": "60a332da-881e-4295-956e-092e95cbb249",
       "Name": "CheckZipInput",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [
+        {
+          "Name": "directoryPath",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "isOsLinux",
+          "ParameterType": "global::System.Boolean",
+          "ParameterTypeFullName": "System.Boolean"
+        },
         {
           "Name": "fileZip",
           "ParameterType": "global::System.IO.Stream",
@@ -194,10 +230,20 @@
       "ReturnTypeFullName": "System.Boolean"
     },
     {
-      "NameGuid": "cb886a73-08a5-4519-a8a8-b6fd4074ea1b",
+      "NameGuid": "b5c9c00b-59ea-441d-a5e2-380491376d8c",
       "Name": "CreateZipFileFromDatXml",
       "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
       "Parameters": [
+        {
+          "Name": "directoryPath",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "isOsLinux",
+          "ParameterType": "global::System.Boolean",
+          "ParameterTypeFullName": "System.Boolean"
+        },
         {
           "Name": "fileDat",
           "ParameterType": "global::System.IO.Stream",
@@ -211,13 +257,6 @@
       ],
       "ReturnType": "global::System.IO.Stream",
       "ReturnTypeFullName": "System.IO.Stream"
-    },
-    {
-      "NameGuid": "62b04e65-d9b4-4030-a1f9-639700139f15",
-      "Name": "GetDirectoryPath",
-      "IsolatedAreaId": "c58c1815-06fe-4f41-9eb4-d205ec946c87",
-      "ReturnType": "global::System.String",
-      "ReturnTypeFullName": "System.String"
     }
   ],
   "IsolatedNamespace": "Akelon.SolutionStorage.Isolated",
@@ -258,7 +297,14 @@
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Akelon.SolutionStorage",
   "ResourcesKeys": [
-    "MessageTextPackageCreatedSuccesfully"
+    "MessageTextPackageCreatedSuccesfully",
+    "ErrorTextSetParams",
+    "DialogTitleSetModuleParams",
+    "DialogParamTextModuleParamDirPath",
+    "ErrorTextCantSetParams",
+    "ErrorDescriptionAllowedOnlyToAdmins",
+    "DialogTextShowModuleParams",
+    "DialogParamTextModuleIsOnLinux"
   ],
   "ServerAssemblyName": "Akelon.SolutionStorage.Server",
   "ServerNamespace": "Akelon.SolutionStorage.Server",

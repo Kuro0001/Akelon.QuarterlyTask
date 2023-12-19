@@ -15,18 +15,18 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <summary>
     /// Место расположения папки для временных файлов в формате ( @"C:\путь\" )
     /// </summary>
-    const string directoryPath = @"C:\DirectumRX_SolutionStorage_TempDirectory\";
-    
+    public string directoryPath = @"C:\DirectumRX_SolutionStorage_TempDirectory\";
     /// <summary>
-    /// Получить место расположения папки для временных файлов
+    /// Система расположена на ОС Линукс
     /// </summary>
-    /// <returns>формат ( @"C:\путь\" )</returns>
-    public static string GetDirectoryPath()
-    {
-      return directoryPath;
-    }
+    public bool isOsLinux = false;
     
-    public ZipHelper() { }
+    public ZipHelper(string directoryPath, bool isOsLinux) 
+    {
+      this.isOsLinux = isOsLinux;
+      var separator = isOsLinux ? '/' : '\\' ;
+      this.directoryPath = directoryPath + separator;
+    }
     
     /// <summary>
     /// Удалить временный файл
@@ -53,13 +53,6 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     {
       var fullName = path + Guid.NewGuid().ToString() + extension;
       return fullName;
-//      if (File.Exists(fullName))
-//      {
-//        // Рекурсивный вызов функции до момента, пока не будет найдено уникальное имя для временного файла
-//        retun this.GetTempFileName(path, extension);
-//      }
-//      else
-//        return fullName;
     }
     
     /// <summary>
@@ -67,7 +60,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// </summary>
     /// <param name="fileZip">Zip-файл, включающий в себя пакет решения</param>
     /// <returns>Если в архиве 2 файла и один из них .dat, второй - .xml, то результат = true, иначе - false.</returns>
-    public static bool CheckZipInput(Stream fileZip)
+    public bool CheckZipInput(Stream fileZip)
     {
       var tempFileName = string.Empty;
       try
@@ -133,7 +126,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <param name="fileDat">файл формата dat</param>
     /// <param name="fileXml">файл формата xml</param>
     /// <returns>Zip-архив в виде потока</returns>
-    public static Stream CreateZip(Stream fileDat, Stream fileXml)
+    public Stream CreateZip(Stream fileDat, Stream fileXml)
     {
       var fileZipName = string.Empty;
       var fileDatName = string.Empty;

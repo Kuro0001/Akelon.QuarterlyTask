@@ -61,4 +61,25 @@
   <data name="MessageTextPackageCreatedSuccesfully" xml:space="preserve">
     <value>Пакет решения успешно создан</value>
   </data>
+  <data name="ErrorTextSetParams" xml:space="preserve">
+    <value>Ошибка ввода параметров</value>
+  </data>
+  <data name="DialogTitleSetModuleParams" xml:space="preserve">
+    <value>Введите значение параметров модуля</value>
+  </data>
+  <data name="DialogParamTextModuleParamDirPath" xml:space="preserve">
+    <value>Путь к локальной папке для из. области</value>
+  </data>
+  <data name="ErrorTextCantSetParams" xml:space="preserve">
+    <value>Невозможно ввести значение параметров</value>
+  </data>
+  <data name="ErrorDescriptionAllowedOnlyToAdmins" xml:space="preserve">
+    <value>Изменять значение параметров модуля могут только администраторы системы.</value>
+  </data>
+  <data name="DialogTextShowModuleParams" xml:space="preserve">
+    <value>Параметры модуля</value>
+  </data>
+  <data name="DialogParamTextModuleIsOnLinux" xml:space="preserve">
+    <value>DRX развернут на ОС Линукс</value>
+  </data>
 </root>

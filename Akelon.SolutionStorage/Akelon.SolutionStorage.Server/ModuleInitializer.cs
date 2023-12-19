@@ -12,6 +12,7 @@ namespace Akelon.SolutionStorage.Server
     public override void Initializing(Sungero.Domain.ModuleInitializingEventArgs e)
     {
       GrantRightsToSolutionStorage();
+      CreatDocflowParams();
     }
 
     /// <summary>
@@ -25,6 +26,17 @@ namespace Akelon.SolutionStorage.Server
       Akelon.SolutionStorage.Tags.AccessRights.Save();
       Akelon.SolutionStorage.SolutionPackages.AccessRights.Grant(Roles.AllUsers, DefaultAccessRightsTypes.FullAccess);
       Akelon.SolutionStorage.SolutionPackages.AccessRights.Save();
+    }
+    
+    /// <summary>
+    /// Создать параметры модуля в Docflow по дефолту
+    /// </summary>
+    public void CreatDocflowParams()
+    {
+      var isOsLinux = false;
+      var isolatedDirectoryPath = @"C:\DirectumRX_SolutionStorage_TempDirectory\";
+      Sungero.Docflow.PublicFunctions.Module.InsertDocflowParam(Constants.Module.IsOsLinuxKey, isOsLinux.ToString());
+      Sungero.Docflow.PublicFunctions.Module.InsertDocflowParam(Constants.Module.IsolatedDirectoryPathKey, isolatedDirectoryPath);
     }
   }
 }

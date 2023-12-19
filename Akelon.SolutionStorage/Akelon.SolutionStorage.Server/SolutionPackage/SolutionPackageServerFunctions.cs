@@ -60,7 +60,9 @@ namespace Akelon.SolutionStorage.Server
       
       using (var fileZipStream = fileZip.LastVersion.Body.Read())
       {
-        bool isZipContainsFiles = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CheckZipInput(fileZipStream);
+        var isolatedDirectoryPath = Sungero.Docflow.PublicFunctions.Module.GetDocflowParamsValue(Constants.Module.IsolatedDirectoryPathKey).ToString();
+        var isOsLinux = Convert.ToBoolean(Sungero.Docflow.PublicFunctions.Module.GetDocflowParamsValue(Constants.Module.IsOsLinuxKey));
+        bool isZipContainsFiles = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CheckZipInput(isolatedDirectoryPath, isOsLinux, fileZipStream);
         
         if (!isZipContainsFiles)
         {
@@ -99,7 +101,9 @@ namespace Akelon.SolutionStorage.Server
       {
         using (var fileXmlStream = fileXml.LastVersion.Body.Read())
         {
-          using (var stream = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFileFromDatXml(fileDatStream, fileXmlStream))
+          var isolatedDirectoryPath = Sungero.Docflow.PublicFunctions.Module.GetDocflowParamsValue(Constants.Module.IsolatedDirectoryPathKey).ToString();
+          var isOsLinux = Convert.ToBoolean(Sungero.Docflow.PublicFunctions.Module.GetDocflowParamsValue(Constants.Module.IsOsLinuxKey));
+          using (var stream = Akelon.SolutionStorage.IsolatedFunctions.ZipHandler.CreateZipFileFromDatXml(isolatedDirectoryPath, isOsLinux, fileDatStream, fileXmlStream))
           {
             try
             {

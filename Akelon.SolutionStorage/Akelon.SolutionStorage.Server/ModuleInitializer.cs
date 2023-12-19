@@ -34,7 +34,7 @@ namespace Akelon.SolutionStorage.Server
     public void CreatDocflowParams()
     {
       var isOsLinux = false;
-      var isolatedDirectoryPath = @"C:\DirectumRX_SolutionStorage_TempDirectory\";
+      var isolatedDirectoryPath = @"C:\DirectumRX_SolutionStorage_TempDirectory";
       Sungero.Docflow.PublicFunctions.Module.InsertDocflowParam(Constants.Module.IsOsLinuxKey, isOsLinux.ToString());
       Sungero.Docflow.PublicFunctions.Module.InsertDocflowParam(Constants.Module.IsolatedDirectoryPathKey, isolatedDirectoryPath);
     }

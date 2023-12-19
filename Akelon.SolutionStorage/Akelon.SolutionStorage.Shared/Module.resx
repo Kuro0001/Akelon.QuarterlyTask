@@ -82,4 +82,10 @@
   <data name="DialogParamTextModuleIsOnLinux" xml:space="preserve">
     <value>DRX is deployed on Linux OS</value>
   </data>
+  <data name="ErrorTextIncorrectDirectoryPath" xml:space="preserve">
+    <value>Incorrect dirrectory path format</value>
+  </data>
+  <data name="ErrorDescriptionIncorrectDirectoryPath" xml:space="preserve">
+    <value>The Linux OS is selected, but the path contains the '\' symbol intended for OS Windows.</value>
+  </data>
 </root>

@@ -13,9 +13,9 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
   public class ZipHelper
   {
     /// <summary>
-    /// Место расположения папки для временных файлов в формате ( @"C:\путь\" )
+    /// Место расположения папки для временных файлов
     /// </summary>
-    public string directoryPath = @"C:\DirectumRX_SolutionStorage_TempDirectory\";
+    public string directoryPath = @"C:\DirectumRX_SolutionStorage_TempDirectory";
     /// <summary>
     /// Система расположена на ОС Линукс
     /// </summary>

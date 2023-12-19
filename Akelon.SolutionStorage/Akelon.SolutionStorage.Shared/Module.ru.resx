@@ -82,4 +82,10 @@
   <data name="DialogParamTextModuleIsOnLinux" xml:space="preserve">
     <value>DRX развернут на ОС Линукс</value>
   </data>
+  <data name="ErrorTextIncorrectDirectoryPath" xml:space="preserve">
+    <value>Некорректный формат пути папки</value>
+  </data>
+  <data name="ErrorDescriptionIncorrectDirectoryPath" xml:space="preserve">
+    <value>Выбрана ОС Линукс, но в пути содержится символ '\', предназначенный для ОС Windows.</value>
+  </data>
 </root>

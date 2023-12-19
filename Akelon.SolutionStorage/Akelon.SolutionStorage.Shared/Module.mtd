@@ -304,14 +304,16 @@
     "ErrorTextCantSetParams",
     "ErrorDescriptionAllowedOnlyToAdmins",
     "DialogTextShowModuleParams",
-    "DialogParamTextModuleIsOnLinux"
+    "DialogParamTextModuleIsOnLinux",
+    "ErrorTextIncorrectDirectoryPath",
+    "ErrorDescriptionIncorrectDirectoryPath"
   ],
   "ServerAssemblyName": "Akelon.SolutionStorage.Server",
   "ServerNamespace": "Akelon.SolutionStorage.Server",
   "SharedAssemblyName": "Akelon.SolutionStorage.Shared",
   "SharedNamespace": "Akelon.SolutionStorage.Shared",
   "SpecialFolders": [],
-  "Version": "0.0.1.0",
+  "Version": "0.0.1.1",
   "Widgets": [],
   "Versions": [
     {

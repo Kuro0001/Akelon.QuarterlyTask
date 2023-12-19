@@ -32,6 +32,14 @@ namespace Akelon.SolutionStorage.Client
         
         if (dialog.Show() == DialogButtons.Ok)
         {
+          if (isOsLinux.Value == true && isolatedDirectoryPath.Value.Contains('\\'))
+          {
+            Dialogs.ShowMessage(Akelon.SolutionStorage.Resources.ErrorTextIncorrectDirectoryPath,
+                                Akelon.SolutionStorage.Resources.ErrorDescriptionIncorrectDirectoryPath,
+                                MessageType.Error);
+            return;
+          }
+          
           Sungero.Docflow.PublicFunctions.Module.InsertOrUpdateDocflowParam(Constants.Module.IsolatedDirectoryPathKey, isolatedDirectoryPath.Value);
           Sungero.Docflow.PublicFunctions.Module.InsertOrUpdateDocflowParam(Constants.Module.IsOsLinuxKey, isOsLinux.Value.ToString());
           Functions.Module.ShowParametersAction();
@@ -54,7 +62,7 @@ namespace Akelon.SolutionStorage.Client
       {
         var isolatedDirectoryPath = Sungero.Docflow.PublicFunctions.Module.GetDocflowParamsValue(Constants.Module.IsolatedDirectoryPathKey);
         var isOsLinux = Convert.ToBoolean(Sungero.Docflow.PublicFunctions.Module.GetDocflowParamsValue(Constants.Module.IsOsLinuxKey));
-        var mesageDescription = String.Format("{0}: {1} \n {2}: {3}",
+        var mesageDescription = String.Format("*{0}: ({1}) \n *{2}: ({3})",
                                               Akelon.SolutionStorage.Resources.DialogParamTextModuleParamDirPath,
                                               isolatedDirectoryPath,
                                               Akelon.SolutionStorage.Resources.DialogParamTextModuleIsOnLinux,

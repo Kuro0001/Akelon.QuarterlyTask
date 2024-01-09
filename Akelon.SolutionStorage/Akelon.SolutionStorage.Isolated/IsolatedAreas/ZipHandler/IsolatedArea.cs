@@ -25,7 +25,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     {
       this.isOsLinux = isOsLinux;
       var separator = isOsLinux ? '/' : '\\' ;
-      this.directoryPath = directoryPath + separator;
+      this.directoryPath = (directoryPath[directoryPath.Count() - 1] == separator) ? directoryPath : directoryPath + separator;
     }
     
     /// <summary>

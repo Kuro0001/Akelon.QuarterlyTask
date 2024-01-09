@@ -278,18 +278,8 @@
   ],
   "Libraries": [
     {
-      "NameGuid": "6bc9155b-9f68-46bb-8163-4a62a845aa11",
-      "Name": "ZipFile",
-      "Scope": "ClientBase"
-    },
-    {
       "NameGuid": "65f202e7-199b-4326-a271-a597b5f6845e",
       "Name": "IonicZip",
-      "Scope": "Server"
-    },
-    {
-      "NameGuid": "640ea379-0356-4d15-ac46-1e92018b8efe",
-      "Name": "CompressionLibrary",
       "Scope": "Server"
     }
   ],

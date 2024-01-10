@@ -141,7 +141,7 @@
           "Name": "DirectumRXVersion",
           "ColumnNumber": 0,
           "ColumnSpan": 1,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
           "ParentGuid": "bcf991a2-776d-4dd8-84d2-fc155a283d60",
           "PropertyGuid": "f7d6b4f1-95ac-46e1-a8af-45f5347b81cf",
           "RowNumber": 4,
@@ -342,11 +342,11 @@
       "PreviousPropertyGuid": "0387d0fb-59ba-4bc0-9019-e351288ef8b4"
     },
     {
-      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "$type": "Sungero.Metadata.DoublePropertyMetadata, Sungero.Metadata",
       "NameGuid": "f7d6b4f1-95ac-46e1-a8af-45f5347b81cf",
       "Name": "DirectumRXVersion",
       "Code": "DirectumRXVers",
-      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
       "PreviousPropertyGuid": "1701e4ee-f555-492d-a51a-f2585865f6b4"
     },
     {

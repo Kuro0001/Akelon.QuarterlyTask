@@ -86,6 +86,6 @@
     <value>Некорректный формат пути папки</value>
   </data>
   <data name="ErrorDescriptionIncorrectDirectoryPath" xml:space="preserve">
-    <value>Выбрана ОС Линукс, но в пути содержится символ '\', предназначенный для ОС Windows.</value>
+    <value>Выбрана ОС Линукс, но в пути содержится символ '\', предназначенный для ОС Windows или указан не относительный путь до каталога.</value>
   </data>
 </root>

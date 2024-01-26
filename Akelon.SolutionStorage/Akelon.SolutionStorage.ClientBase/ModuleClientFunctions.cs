@@ -32,7 +32,7 @@ namespace Akelon.SolutionStorage.Client
         
         if (dialog.Show() == DialogButtons.Ok)
         {
-          if (isOsLinux.Value == true && isolatedDirectoryPath.Value.Contains('\\'))
+          if (isOsLinux.Value == true && isolatedDirectoryPath.Value.Contains('\\') && isolatedDirectoryPath.Value[0] != '/')
           {
             Dialogs.ShowMessage(Akelon.SolutionStorage.Resources.ErrorTextIncorrectDirectoryPath,
                                 Akelon.SolutionStorage.Resources.ErrorDescriptionIncorrectDirectoryPath,

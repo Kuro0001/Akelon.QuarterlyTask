@@ -12,7 +12,8 @@ namespace Akelon.SolutionStorage.Server
     public override void Initializing(Sungero.Domain.ModuleInitializingEventArgs e)
     {
       GrantRightsToSolutionStorage();
-      CreatDocflowParams();
+      CreateDocflowParams();
+      CheckAssociatedApplications();
     }
 
     /// <summary>
@@ -31,12 +32,43 @@ namespace Akelon.SolutionStorage.Server
     /// <summary>
     /// Создать параметры модуля в Docflow по дефолту
     /// </summary>
-    public void CreatDocflowParams()
+    public void CreateDocflowParams()
     {
       var isOsLinux = false;
       var isolatedDirectoryPath = @"C:\DirectumRX_SolutionStorage_TempDirectory";
       Sungero.Docflow.PublicFunctions.Module.InsertDocflowParam(Constants.Module.IsOsLinuxKey, isOsLinux.ToString());
       Sungero.Docflow.PublicFunctions.Module.InsertDocflowParam(Constants.Module.IsolatedDirectoryPathKey, isolatedDirectoryPath);
+    }
+    
+    /// <summary>
+    /// Проверить необходимые для модуля приложения-обработчики, при необходимости создать
+    /// </summary>
+    public void CheckAssociatedApplications()
+    {
+      var associatedApplications = Sungero.Content.AssociatedApplications.GetAll();
+      if (!associatedApplications.Where(app => app.Extension == "dat").Any())
+      {
+        CreateAssociatedApplications("dat", "Dat");
+      }
+      if (!associatedApplications.Where(app => app.Extension == "xml").Any())
+      {
+        CreateAssociatedApplications("xml", "Xml");
+      }
+      if (!associatedApplications.Where(app => app.Extension == "zip").Any())
+      {
+        CreateAssociatedApplications("zip", "Zip");
+      }
+    }
+    
+    /// <summary>
+    /// Проверить приложения-обработчики
+    /// </summary>
+    public void CreateAssociatedApplications(string extension, string name)
+    {
+      var datApplication = Sungero.Content.AssociatedApplications.Create();
+        datApplication.Extension = extension;
+        datApplication.Name = name;
+        datApplication.Save();
     }
   }
 }

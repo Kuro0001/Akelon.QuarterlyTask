@@ -21,11 +21,11 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// </summary>
     public bool isOsLinux = false;
     
-    public ZipHelper(string directoryPath, bool isOsLinux) 
+    public ZipHelper(string directoryPath, bool isOsLinux)
     {
+      Logger.DebugFormat("ZipHelper. Constructor. directoryPath = ({0}), isOsLinux = {1}", directoryPath, isOsLinux);
       this.isOsLinux = isOsLinux;
-      var separator = isOsLinux ? '/' : '\\' ;
-      this.directoryPath = (directoryPath[directoryPath.Count() - 1] == separator) ? directoryPath : directoryPath + separator;
+      this.directoryPath = directoryPath;
     }
     
     /// <summary>
@@ -36,6 +36,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
       try
       {
         File.Delete(name);
+        Logger.DebugFormat("ZipHelper. DeleteTempFile ({0}). Success", name);
       }
       catch (Exception ex)
       {
@@ -46,12 +47,14 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <summary>
     /// Получить уникальное имя для временного файла
     /// </summary>
-    /// <param name="path">путь до места, где должен находиться файл</param>
     /// <param name="extension">расширение файла в формале ".ext"</param>
     /// <returns>Полное имя файла с расширением</returns>
-    public static string GetTempFileName(string path, string extension)
+    public string GetTempFileName(string extension)
     {
+      var separator = isOsLinux ? '/' : '\\' ;
+      var path = (directoryPath[directoryPath.Count() - 1] == separator) ? directoryPath : directoryPath + separator;
       var fullName = path + Guid.NewGuid().ToString() + extension;
+       Logger.DebugFormat("ZipHelper. GetTempFileName. path = ({0}). extension = ({1})", path, extension);
       return fullName;
     }
     
@@ -62,23 +65,32 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     /// <returns>Если в архиве 2 файла и один из них .dat, второй - .xml, то результат = true, иначе - false.</returns>
     public bool CheckZipInput(Stream fileZip)
     {
+      Logger.DebugFormat("ZipHelper. CheckZipInput");
       var tempFileName = string.Empty;
       try
       {
         // Проверить наличие папки для временных файлов
         if (!Directory.Exists(directoryPath))
         {
+          Logger.DebugFormat("ZipHelper. CheckZipInput. Create directoryPath = ({0})", directoryPath);
           Directory.CreateDirectory(directoryPath);
         }
         // создать уникальное имя для временного файла
-        tempFileName = GetTempFileName(directoryPath, ".zip");
+        tempFileName = GetTempFileName(".zip");
         
         CreateDefaultFile(fileZip, tempFileName);
         var zip = new ZipFile(tempFileName);
-        //проверить содержание zip файла
+        // проверить содержание zip файла
         var fileNames = zip.EntryFileNames;
+        // очистить переменную zip-файла, закрыть файл
+        zip.Dispose();
         if (fileNames.Count == 2)
-          return CheckFilesExtensions(fileNames.ToList());
+        {
+          var isExtensionsCorrect = CheckFilesExtensions(fileNames.ToList());
+          Logger.DebugFormat("ZipHelper. CheckZipInput. File name = ({0}). Return (isExtensionsCorrect) = {1}", tempFileName, isExtensionsCorrect);
+          return isExtensionsCorrect;
+        }
+        Logger.DebugFormat("ZipHelper. CheckZipInput. File name = ({0}). Return false. Files count in zip < 2.", tempFileName);
         return false;
       }
       catch (Exception ex)
@@ -101,7 +113,7 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
     {
       try
       {
-        Logger.DebugFormat("CheckFilesExtensions");
+        Logger.DebugFormat("ZipHelper. CheckFilesExtensions.");
         if (names[0].EndsWith("dat"))
         {
           if (names[1].EndsWith("xml"))
@@ -136,12 +148,14 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
         // Проверить наличие папки для временных файлов
         if (!Directory.Exists(directoryPath))
         {
+          Logger.DebugFormat("ZipHelper. CreateZip. Create directoryPath = ({0})", directoryPath);
           Directory.CreateDirectory(directoryPath);
         }
         // создать уникальные имена для временных файлов
-        fileZipName = GetTempFileName(directoryPath, ".zip");
-        fileDatName = GetTempFileName(directoryPath, ".dat");
-        fileXmlName = GetTempFileName(directoryPath, ".xml");
+        fileZipName = GetTempFileName(".zip");
+        fileDatName = GetTempFileName(".dat");
+        fileXmlName = GetTempFileName(".xml");        
+        Logger.DebugFormat("ZipHelper. CreateZip. Zip name = ({0}), dat name = ({1}), xml name = ({2})", fileZipName, fileDatName, fileXmlName);
         
         var zip = new ZipFile(fileZipName);
         // создать временные файлы
@@ -152,11 +166,12 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
         zip.AddFile(fileXmlName);
         zip.Save();
         
+         Logger.DebugFormat("ZipHelper. CreateZip. All done");
         return new MemoryStream(File.ReadAllBytes(fileZipName));
       }
       catch (Exception ex)
       {
-        Logger.ErrorFormat("ZipHelper. CreateZip. Error: {0}", ex.Message);
+        Logger.ErrorFormat("ZipHelper. CreateZip. Zip name = ({0}) Error: {1}", fileZipName, ex.Message);
         return null;
       }
       finally
@@ -179,12 +194,13 @@ namespace Akelon.SolutionStorage.Isolated.ZipHandler
         using (FileStream fs = File.Create(name))
         {
           file.CopyTo(fs);
+          Logger.DebugFormat("ZipHelper. CreateDefaultFile. Name = ({0}). Success", name);
         }
       }
-      catch
+      catch (Exception ex)
       {
-        Logger.ErrorFormat("ZipHelper. CreateDefaultFile, Name = {0}. Error: Create default file error", name);
-        throw AppliedCodeException.Create(string.Format("ZipHelper. CreateDefaultFile, Name = {0}. Error: Create default file error", name));
+        Logger.ErrorFormat("ZipHelper. CreateDefaultFile, Name = {0}. Error: {1}", name, ex.Message);
+        throw AppliedCodeException.Create(string.Format("ZipHelper. CreateDefaultFile, Name = {0}. Error: {1}", name, ex.Message));
       }
     }
   }
